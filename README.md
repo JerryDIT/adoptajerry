@@ -20,5 +20,4 @@ Join the party !
 We need you to bootstrap the application! So if you like the project and want to help us to move it forward :
 
 1.  [Join this tracker](https://www.pivotaltracker.com/projects/620519/) to know what needs to be done.
-2.  [Join the HackSense](http://we.makesense.org/?p=5949) in Paris on September, 29th 2012.
-3.  Submit your pull requests here :)
+2.  Submit your pull requests here :)
