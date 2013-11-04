@@ -1,23 +1,22 @@
-Adopt a Jerry !
-===============
+Adopt a Jerry!
+=============
 
-adoptajerry.cc is the social application to capitalize on the interactions within the Jerry community.
+adoptajerry is the central repo to display the Jerry family.
+
+It aims to be a crowd-sourced portfolio for the purpose of inspiration and replicability.
 
 About Jerry
 -----------
 
-[Jerry](flavors.me/jerrydiy) is a DIY (Do It Yourself) / DIWO (Do It With Others) server that can be built from end of life materials. Our goal is to empower communities in the field of digital technologies.
+[The Jerry Do It Together project](http://youandjerrycan.org)
 
 About the application
 ---------------------
 
-Watch the [video-prototyping](http://vimeo.com/46923757) of what we envision for the application and [send us your feedback](https://twitter.com/JerryDIY) !  
-We make the application open so that anyone in the Jerry community and beyond can contribute and be inspired by the project.
+Watch the [video-prototyping](http://vimeo.com/46923757) of the application. [Feedback welcome !](https://github.com/JerryDIT/adoptajerry/issues)
+
 
 Join the party !
 ----------------
 
-We need you to bootstrap the application! So if you like the project and want to help us to move it forward :
-
-1.  [Join this tracker](https://www.pivotaltracker.com/projects/620519/) to know what needs to be done.
-2.  Submit your pull requests here :)
+It's boostrap time, so if you are willing to put energy into the project let's get in touch on the forum : [Jerry DIT - Tech Lab](https://groups.google.com/forum/#!forum/techlab-jerrydit)
