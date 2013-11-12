@@ -1,0 +1,28 @@
+<%= form_for @jerry do |f| %>
+
+  <%# Display errors if any %>
+  <% if @jerry.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@jerry.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @jerry.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <%# form fields %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
