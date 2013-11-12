@@ -1,11 +1,13 @@
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @jerry.name %>
-</p>
- 
+</h1>
+<a href="<%= @jerry.avatar.url(:large).to_s %>">  
+  <%= image_tag @jerry.avatar.url(:medium).to_s %>
+</a>
 <p>
   <strong>Bio:</strong>
   <%= @jerry.bio %>
 </p>
 
-<%= link_to 'Back to the family', jerries_path %>
+<%= link_to 'Edit', edit_jerry_path(@jerry) %> | 
+<%= link_to 'Back to family', jerries_path %>

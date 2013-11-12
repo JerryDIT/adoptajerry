@@ -1,3 +1,5 @@
+require 'carrierwave/orm/activerecord'
+
 class JerriesController < ApplicationController
 	def new
 		@jerry = Jerry.new
@@ -27,7 +29,7 @@ class JerriesController < ApplicationController
 	def update
 		@jerry = Jerry.find(params[:id])
 
-		if @jerry.update(params[:jerry].permit(:name, :bio))
+		if @jerry.update(params[:jerry].permit(:name, :bio, :avatar))
 			redirect_to @jerry
 		else
 			render 'edit'
@@ -42,7 +44,7 @@ class JerriesController < ApplicationController
 
 	private
 		def jerry_params
-			params.require(:jerry).permit(:name, :bio)
+			params.require(:jerry).permit(:name, :bio, :avatar)
 	end
 end
 	

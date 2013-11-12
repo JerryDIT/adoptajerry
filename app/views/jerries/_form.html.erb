@@ -1,4 +1,4 @@
-<%= form_for @jerry do |f| %>
+<%= form_for @jerry, :html => {:multipart => true} do |f| %>
 
   <%# Display errors if any %>
   <% if @jerry.errors.any? %>
@@ -21,6 +21,10 @@
   <p>
     <%= f.label :bio %><br>
     <%= f.text_area :bio %>
+  </p>
+  <p>
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
   </p>
   <p>
     <%= f.submit %>
