@@ -1,0 +1,19 @@
+<h1><%= link_to "The Jerry family", controller: "jerries" %></h1>
+
+<%= link_to 'New Jerry', new_jerry_path %> 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bio</th>
+  </tr>
+ 
+  <% @jerries.each do |jerry| %>
+    <tr>
+      <td><%= jerry.name %></td>
+      <td><%= jerry.bio %></td>
+      <td><%= link_to 'Show', jerry %></td>
+      <td><%= link_to 'Update', edit_jerry_path(jerry) %></td>
+      <td><%= link_to 'Kill', jerry_path(jerry), method: :delete, data: { confirm: "Are you sure you want to kill #{jerry.name}?\nYou can't go back!" } %></td>
+    </tr>
+  <% end %>
+</table>
