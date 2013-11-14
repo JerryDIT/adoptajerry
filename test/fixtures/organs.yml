@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  role: MyString
+  quantifier: 1
+  unit: MyString
+  quantity: 1
+  technology: MyString
+  jerry_id: 
+
+two:
+  role: MyString
+  quantifier: 1
+  unit: MyString
+  quantity: 1
+  technology: MyString
+  jerry_id: 

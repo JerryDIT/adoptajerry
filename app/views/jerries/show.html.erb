@@ -1,6 +1,4 @@
-<h1>
-  <%= @jerry.name %>
-</h1>
+<h1><%= @jerry.name %></h1>
 <a href="<%= @jerry.avatar.url(:large).to_s %>">  
   <%= image_tag @jerry.avatar.url(:medium).to_s %>
 </a>
@@ -8,6 +6,17 @@
   <strong>Bio:</strong>
   <%= @jerry.bio %>
 </p>
-
 <%= link_to 'Edit', edit_jerry_path(@jerry) %> | 
 <%= link_to 'Back to family', jerries_path %>
+
+<% if @jerry.organs.any? %>
+<h2>Organs</h2>
+<%= render @jerry.organs %>
+<% end %>
+
+<h2>Add an organ to <%= @jerry.name %>:</h2>
+<%= render 'organs/form' %>
+
+<%= link_to 'Back to family', jerries_path %>
+<br>
+~ ~ ~ ~ ~ ~ ~

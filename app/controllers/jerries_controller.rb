@@ -1,10 +1,12 @@
 require 'carrierwave/orm/activerecord'
 
 class JerriesController < ApplicationController
+
+	http_basic_authenticate_with name: "emak", password: "jerry", except: [:index, :show, :new, :create]
+
 	def new
 		@jerry = Jerry.new
 	end
-
 	def create
 		@jerry = Jerry.new(jerry_params)
 		if @jerry.save
@@ -13,19 +15,15 @@ class JerriesController < ApplicationController
 			render 'new'
 		end
 	end
-
 	def show
 		@jerry = Jerry.find(params[:id])		
 	end
-
 	def index
 		@jerries = Jerry.all
 	end
-
 	def edit
 		@jerry = Jerry.find(params[:id])
 	end
-
 	def update
 		@jerry = Jerry.find(params[:id])
 
@@ -35,7 +33,6 @@ class JerriesController < ApplicationController
 			render 'edit'
 		end
 	end
-
 	def destroy
 		@jerry = Jerry.find(params[:id])
 		@jerry.destroy
@@ -47,4 +44,3 @@ class JerriesController < ApplicationController
 			params.require(:jerry).permit(:name, :bio, :avatar)
 	end
 end
-	

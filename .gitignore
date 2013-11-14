@@ -17,3 +17,6 @@
 
 # Ignore uploaded files
 /public/uploads
+
+# Ignore doc
+/doc/api

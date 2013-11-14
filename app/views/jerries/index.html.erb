@@ -9,7 +9,7 @@
  
   <% @jerries.each do |jerry| %>
     <tr>
-      <td><%= image_tag jerry.avatar.url(:small).to_s %></td>
+      <td><%= link_to image_tag(jerry.avatar.url(:small).to_s), jerry %></td>
       <td><%= link_to jerry.name.to_s, jerry %></td>
       <td><%= jerry.bio %></td>
       <td><%= link_to 'Edit', edit_jerry_path(jerry) %> | </td>

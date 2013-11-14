@@ -4,7 +4,7 @@
   <% if @jerry.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@jerry.errors.count, "error") %> prohibited
-      this post from being saved:</h2>
+      this Jerry from being saved:</h2>
     <ul>
     <% @jerry.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -26,6 +26,7 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar %>
   </p>
+
   <p>
     <%= f.submit %>
   </p>
