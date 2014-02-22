@@ -1,21 +1,34 @@
-<h1><%= link_to "The Jerry family", controller: "jerries" %></h1>
+<div class="row">
+  <div class="small-centered columns text-center">
+    <h2><small>Jerry DIT presents</small> The Jerry Family</h2>
+    <%= link_to '+ Add new Jerry', new_jerry_path, class: 'button radius alert' %>
+  </div>
 
-<table>
-  <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Bio</th>
-  </tr>
- 
-  <% @jerries.each do |jerry| %>
-    <tr>
-      <td><%= link_to image_tag(jerry.avatar.url(:small).to_s), jerry %></td>
-      <td><%= link_to jerry.name.to_s, jerry %></td>
-      <td><%= jerry.bio %></td>
-      <td><%= link_to 'Edit', edit_jerry_path(jerry) %> | </td>
-      <td><%= link_to 'Kill', jerry_path(jerry), method: :delete, data: { confirm: "Are you sure you want to kill #{jerry.name}?\nYou can't go back!" } %></td>
-    </tr>
-  <% end %>
-</table>
+  <!-- Thumbnails -->
+  <div class="large-12 columns">
+    <div class="row">
 
-<%= link_to 'Add a new Jerry', new_jerry_path %> 
+      <% @jerries.each do |jerry| %>
+      <div class="large-4 small-6 columns">
+        <%= link_to image_tag(jerry.avatar.url(:large).to_s), jerry %>
+
+        <div class="panel">
+          <h5><%= link_to jerry.name.to_s, jerry %></h5>
+          <h6 class="subheader"><%= jerry.bio %></h6>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="large-4 small-6 columns">
+        <img src="http://placehold.it/500x500&text=Thumbnail">
+
+        <div class="panel">
+          <h5>Mothership</h5>
+          <h6 class="subheader">The mother of all Jerry</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Thumbnails -->
+</div>

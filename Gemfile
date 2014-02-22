@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'foundation-rails'
 
 group :doc do
   gem 'sdoc', require: false
