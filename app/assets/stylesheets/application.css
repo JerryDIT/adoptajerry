@@ -13,3 +13,6 @@
 
  *= require_tree .
  */
+#browser_id_form button {
+    margin-bottom: 0;
+}

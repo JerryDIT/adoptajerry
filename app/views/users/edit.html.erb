@@ -1,0 +1,11 @@
+<h1>Edit your username</h1>
+<p>
+  Pick a username, <br>
+  it will be publicly visible.
+</p>
+<%= form_for @user do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Save', class: 'button success radius' %>
+  or
+  <%= link_to 'Cancel', root_url %>
+<% end %>

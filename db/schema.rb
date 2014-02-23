@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112142555) do
+ActiveRecord::Schema.define(version: 20140222225950) do
 
   create_table "jerries", force: true do |t|
     t.string   "name"
@@ -33,5 +33,13 @@ ActiveRecord::Schema.define(version: 20131112142555) do
   end
 
   add_index "organs", ["jerry_id"], name: "index_organs_on_jerry_id"
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

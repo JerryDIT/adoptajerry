@@ -1,7 +1,5 @@
 class OrgansController < ApplicationController
   
-  http_basic_authenticate_with name: "emak", password: "jerry", only: :destroy
-
   def create
     @jerry = Jerry.find(params[:jerry_id])
     @organ = @jerry.organs.create(params[:organ].permit(:role, :quantifier, :unit, :quantity, :technology))

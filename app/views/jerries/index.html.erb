@@ -1,34 +1,33 @@
-<div class="row">
-  <div class="small-centered columns text-center">
-    <h2><small>Jerry DIT presents</small> The Jerry Family</h2>
-    <%= link_to '+ Add new Jerry', new_jerry_path, class: 'button radius alert' %>
-  </div>
+<div class="small-centered columns text-center">
+  <h2><small>Jerry DIT presents</small> The Jerry Family</h2>
+  <%= link_to '+ Add new Jerry', new_jerry_path, class: 'button radius alert' %>
+</div>
 
-  <!-- Thumbnails -->
-  <div class="large-12 columns">
-    <div class="row">
+<!-- Thumbnails -->
+<div class="large-12 columns">
+  <div class="row">
 
-      <% @jerries.each do |jerry| %>
-      <div class="large-4 small-6 columns">
-        <%= link_to image_tag(jerry.avatar.url(:large).to_s), jerry %>
+    <% @jerries.each do |jerry| %>
+    <div class="large-4 small-6 columns">
+      <%= link_to image_tag(jerry.avatar.url(:large).to_s), jerry %>
 
-        <div class="panel">
-          <h5><%= link_to jerry.name.to_s, jerry %></h5>
-          <h6 class="subheader"><%= jerry.bio %></h6>
-        </div>
+      <div class="panel">
+        <h5><%= link_to jerry.name.to_s, jerry %></h5>
+        <h6 class="subheader"><%= jerry.bio %></h6>
       </div>
-      <% end %>
+    </div>
+    <% end %>
 
-      <div class="large-4 small-6 columns">
-        <img src="http://placehold.it/500x500&text=Thumbnail">
+    <div class="large-4 small-6 columns">
+      <img src="http://placehold.it/500x500&text=Thumbnail">
 
-        <div class="panel">
-          <h5>Mothership</h5>
-          <h6 class="subheader">The mother of all Jerry</h6>
-        </div>
+      <div class="panel">
+        <h5>Mothership</h5>
+        <h6 class="subheader">The mother of all Jerry</h6>
       </div>
     </div>
   </div>
-
-  <!-- End Thumbnails -->
 </div>
+
+<!-- End Thumbnails -->
+<%= render 'layouts/footer' %>

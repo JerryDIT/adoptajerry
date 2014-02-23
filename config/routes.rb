@@ -4,6 +4,10 @@ Adoptajerry::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'jerries#index'
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
+  get 'users/profile' => 'users#edit', as: :edit_user
+  patch 'users/profile' => 'users#update', as: :user
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

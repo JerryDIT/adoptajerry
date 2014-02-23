@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'foundation-rails'
+gem 'omniauth-browserid'
 
 group :doc do
   gem 'sdoc', require: false

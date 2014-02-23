@@ -14,46 +14,23 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="divider"></li>
-      <li class="has-dropdown">
-        <a href="#">Main Item 1</a>
-        <ul class="dropdown">
-          <li><label>Section Name</label></li>
-          <li class="has-dropdown">
-            <a href="#" class="">Has Dropdown, Level 1</a>
-            <ul class="dropdown">
-              <li><a href="#">Dropdown Options</a></li>
-              <li><a href="#">Dropdown Options</a></li>
-              <li><a href="#">Level 2</a></li>
-              <li><a href="#">Subdropdown Option</a></li>
-              <li><a href="#">Subdropdown Option</a></li>
-              <li><a href="#">Subdropdown Option</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li class="divider"></li>
-          <li><label>Section Name</label></li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li class="divider"></li>
-          <li><a href="#">See all →</a></li>
-        </ul>
+
+      <% if current_user %>
+      <li>
+        <%= link_to "Aloha! #{current_user.name}", edit_user_path, title: 'Edit my username' %>
       </li>
       <li class="divider"></li>
-      <li><a href="#">Main Item 2</a></li>
-      <li class="divider"></li>
-      <li class="has-dropdown">
-        <a href="#">Main Item 3</a>
-        <ul class="dropdown">
-          <li><a href="#">Dropdown Option</a></li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li><a href="#">Dropdown Option</a></li>
-          <li class="divider"></li>
-          <li><a href="#">See all →</a></li>
-        </ul>
+      <li><%= link_to "Sign Out", signout_path %></li>
+
+      <% else %>
+      <li>
+        <form id='browser_id_form' action='/auth/browser_id/callback'>
+          <input type='hidden' name='assertion'/>
+          <button type='submit' class='small secondary'>Sign in with BrowserID</button>
+        </form>
       </li>
+      <% end %>
+
     </ul>
   </section>
 </nav>
