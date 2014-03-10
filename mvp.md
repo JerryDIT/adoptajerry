@@ -1,6 +1,7 @@
 # MVP adoptajerry
 
 ## User Experience
+
 * En tant que visiteur, j'ai un apperçu des Jerry via leur miniature présente sur la home.
 * En tant que visiteur, je peux naviguer sur les profils des Jerrys depuis la home.
 * En tant que visiteur, je peux trouver un lien vers le site vitrine de Jerry sur chaque page.
@@ -15,7 +16,19 @@
 En tant que tuteur, je reçois un email périodique(périodicité à définir) avec un objectif pour compléter une partie du profil
 ******
 
-## Formulaire 
+## Formulaire
+
+_UI_
+barre de progression  
+  * ratio de récup, XX% d'objets réemployés
+    * à partir des infos renseignées sur chacun des composants
+coté créateur
+  * YY% du profil est remplis
+
+recette = ingrédients + timeline (step by step)
+chaque bloc  
+  * est autoporté
+  * peut être enrichi/réutilisé dans une autre recette.
 
 ### description des organes
 * roles
@@ -52,6 +65,7 @@ En tant que tuteur, je reçois un email périodique(périodicité à définir) a
 
 
 ### Mission [possibilités de plusieurs missions]
+
 * date de naissance
 * localisation
 * Création d'album photo sur les moments marquants de l'histoire de Jerry / [upload au compte goutte pour éviter surcharge]
@@ -62,9 +76,11 @@ En tant que tuteur, je reçois un email périodique(périodicité à définir) a
 * quelles difficultés dans la réalisation de cette mission / les challenges ?
   * mots-clés pour matcher les dudes !!!
 
+!!! contextualiser sur les contraintes environnementales (climat, poussière, ...)
 
 
 *******
+
 ## Pour la suite
 
 ### Rendre visible les impacts
@@ -78,6 +94,7 @@ En tant que tuteur, je reçois un email périodique(périodicité à définir) a
   * co-construction
 
 ### Créer une entrée par les challenges
+
   * commentaires
   * échanges
   * matching de challenges similaires
@@ -86,3 +103,8 @@ En tant que tuteur, je reçois un email périodique(périodicité à définir) a
 
 look, fonctionalités, charme, zone géographique, le plus récup, le plus social, super héros ...
 
+## Inspiration
+
+  * makr.io: remix, 
+  * picbreeder: arbre généalogique, filiation, mise en valeur par les patterns de couleurs
+  * timeline JS pour la recette
