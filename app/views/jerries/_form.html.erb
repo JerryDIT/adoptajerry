@@ -1,4 +1,4 @@
-<%= form_for @jerry, :html => {:multipart => true} do |f| %>
+<%= nested_form_for @jerry, :html => {:multipart => true} do |f| %>
 
   <%# Display errors if any %>
   <% if @jerry.errors.any? %>
@@ -13,21 +13,37 @@
   </div>
   <% end %>
   
-  <%# form fields %>
+  <%# jerry fields %>
   <p>
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :bio %><br>
+    <%= f.label :bio %>
     <%= f.text_area :bio %>
   </p>
   <p>
-    <%= f.label :avatar %><br>
+    <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </p>
+  <p> <%# organs fields %>
+    <%= f.fields_for :organs do |of| %>
+      <%= of.label :role %>
+      <%= of.text_field :role %>
 
+      <%= of.label :quantifier %>
+      <%= of.text_field :quantifier %>
+
+      <%= of.label :unit %>
+      <%= of.text_field :unit %>
+
+      <%= of.link_to_remove "Remove this organ" %>
+    <% end %>
+  </p>
   <p>
-    <%= f.submit %>
+    <%= f.link_to_add "Add an Organ", :organs %>
+  </p>
+  <p>
+    <%= f.submit class: 'button radius success' %>
   </p>
 <% end %>

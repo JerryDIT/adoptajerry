@@ -1,7 +1,4 @@
 <p>
   <strong><%= organ.role %>:</strong>
   <%= organ.quantifier.to_s + " " + organ.unit %>
-  <%= link_to 'Remove', [organ.jerry, organ],
-               method: :delete,
-               data: { confirm: 'Are you sure? It might be painfull...' } %>
 </p>

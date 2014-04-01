@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'foundation-rails'
 gem 'omniauth-browserid'
+gem 'nested_form'
 
 group :doc do
   gem 'sdoc', require: false
