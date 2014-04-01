@@ -13,6 +13,7 @@ gem 'mini_magick'
 gem 'foundation-rails'
 gem 'omniauth-browserid'
 gem 'nested_form'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false
