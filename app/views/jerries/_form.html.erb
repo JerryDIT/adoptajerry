@@ -27,17 +27,8 @@
     <%= f.file_field :avatar %>
   </p>
   <p> <%# organs fields %>
-    <%= f.fields_for :organs do |of| %>
-      <%= of.label :role %>
-      <%= of.text_field :role %>
-
-      <%= of.label :quantifier %>
-      <%= of.text_field :quantifier %>
-
-      <%= of.label :unit %>
-      <%= of.text_field :unit %>
-
-      <%= of.link_to_remove "Remove this organ" %>
+    <%= f.fields_for :organs do |organ_form| %>
+      <%= render 'organs/fields', f: organ_form %>
     <% end %>
   </p>
   <p>
