@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
 //= require jquery_nested_form
-//= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+//= require turbolinks
