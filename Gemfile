@@ -21,11 +21,11 @@ group :doc do
 end
 
 group :development do
+  gem 'jazz_hands'	
   gem 'sqlite3'
-	gem 'jazz_hands'	
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
+  gem 'pg'
 end
