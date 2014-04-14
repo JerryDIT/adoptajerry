@@ -7,7 +7,7 @@ class JerriesController < ApplicationController
   end
 
   def create
-    @jerry = Jerry.new(jerry_params)
+    @jerry = Jerry.new jerry_params
     if @jerry.save && current_maker.jerries << @jerry
       redirect_to @jerry
     else
@@ -23,13 +23,18 @@ class JerriesController < ApplicationController
   end
 
   def edit
+    redirect_to @jerry, notice: 'You can not edit this Jerry' unless maker_allowed?
   end
 
   def update
-    if @jerry.update(jerry_params)
-      redirect_to @jerry
+    if maker_allowed?
+      if @jerry.update jerry_params
+        redirect_to @jerry
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to @jerry, notice: 'You can not edit this Jerry'
     end
   end
 
@@ -41,11 +46,15 @@ class JerriesController < ApplicationController
   private
 
   def get_jerry
-    @jerry = Jerry.find(params[:id])
+    @jerry = Jerry.find params[:id]
   end
 
   def maker_authenticate
     redirect_to root_path, notice: 'You must be signed in' unless current_maker
+  end
+
+  def maker_allowed?
+    @jerry.makers.include? current_maker
   end
 
   def jerry_params
