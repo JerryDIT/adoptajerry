@@ -6,8 +6,8 @@ Adoptajerry::Application.routes.draw do
   root 'jerries#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
-  get 'users/profile' => 'users#edit', as: :edit_user
-  patch 'users/profile' => 'users#update', as: :user
+  get 'makers/profile' => 'makers#edit', as: :edit_maker
+  patch 'makers/profile' => 'makers#update', as: :maker
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

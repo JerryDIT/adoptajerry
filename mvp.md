@@ -1,6 +1,6 @@
 # MVP adoptajerry
 
-## User Experience
+## Maker Experience
 
 * En tant que visiteur, j'ai un apperçu des Jerry via leur miniature présente sur la home.
 * En tant que visiteur, je peux naviguer sur les profils des Jerrys depuis la home.

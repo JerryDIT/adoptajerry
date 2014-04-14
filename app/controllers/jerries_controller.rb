@@ -1,6 +1,6 @@
 class JerriesController < ApplicationController
   before_action :get_jerry, except: [:new, :create, :index]
-  before_action :user_authenticate, except: [:index, :show]
+  before_action :maker_authenticate, except: [:index, :show]
 
   def new
     @jerry = Jerry.new
@@ -44,9 +44,9 @@ class JerriesController < ApplicationController
     @jerry = Jerry.find(params[:id])
   end
 
-  def user_authenticate
-    if current_user
-      @user = current_user
+  def maker_authenticate
+    if current_maker
+      @maker = current_maker
     else
       redirect_to root_path, notice: 'You must be signed in'
     end
