@@ -115,13 +115,13 @@ $warning-color: #FB0120;
 
 // We use these to control header font styles
 // $header-font-family: 'Inconsolata', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $header-font-weight: 300;
+$header-font-weight: 700;
 // $header-font-style: normal;
 // $header-font-color: #222;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
-// $header-text-rendering: optimizeLegibility;
+$header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
@@ -1132,7 +1132,7 @@ $button-font-color: #222;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
+$topbar-title-weight: 700;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements

@@ -1,6 +1,6 @@
 <div class="small-centered columns text-center">
   <h2><small>Jerry DIT presents</small> The Jerry Family</h2>
-  <%= link_to '+ Add new Jerry', new_jerry_path, class: 'button radius' %>
+  <%= link_to '|+| New Jerry', new_jerry_path, class: 'button radius' %>
 </div>
 
 <!-- Thumbnails -->
@@ -9,7 +9,11 @@
 
     <% @jerries.each do |jerry| %>
     <div class="large-4 small-6 columns">
-      <%= link_to image_tag(jerry.avatar.url(:large).to_s), jerry %>
+      <% if jerry.avatar? %>
+        <%= link_to image_tag(jerry.avatar.url(:medium).to_s), jerry %>
+      <% else %>
+        <%= link_to image_tag("http://placehold.it/310x310&text=#{jerry.name}"), jerry %>
+      <% end %>
 
       <div class="panel">
         <h5><%= link_to jerry.name.to_s, jerry %></h5>
@@ -19,7 +23,7 @@
     <% end %>
 
     <div class="large-4 small-6 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
+      <img src="http://placehold.it/310x310&text=Mothership">
 
       <div class="panel">
         <h5>Mothership</h5>
