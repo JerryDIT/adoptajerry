@@ -44,7 +44,7 @@ $body-font-family: 'Inconsolata', "Helvetica Neue", "Helvetica", Helvetica, Aria
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+$font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;
@@ -52,11 +52,11 @@ $body-font-family: 'Inconsolata', "Helvetica Neue", "Helvetica", Helvetica, Aria
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-$alert-color: #FFFF00;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
+$primary-color: #76C7B7;
+$secondary-color: #FDA331;
+$alert-color: #D381C3;
+$success-color: #A1C659;
+$warning-color: #FB0120;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
