@@ -8,7 +8,7 @@ class MakersController < ApplicationController
     if @maker.update maker_params
       redirect_to root_url, notice: 'Makername successfuly updated!'
     else
-      render 'edit', notice: "#{maker_params} is already taken !"
+      render 'edit', notice: "#{maker_params[:name]} is already taken !"
     end
   end
 

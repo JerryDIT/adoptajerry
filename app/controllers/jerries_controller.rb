@@ -8,7 +8,7 @@ class JerriesController < ApplicationController
 
   def create
     @jerry = Jerry.new(jerry_params)
-    if @jerry.save
+    if @jerry.save && current_maker.jerries << @jerry
       redirect_to @jerry
     else
       render 'new'
@@ -45,11 +45,7 @@ class JerriesController < ApplicationController
   end
 
   def maker_authenticate
-    if current_maker
-      @maker = current_maker
-    else
-      redirect_to root_path, notice: 'You must be signed in'
-    end
+    redirect_to root_path, notice: 'You must be signed in' unless current_maker
   end
 
   def jerry_params

@@ -3,6 +3,8 @@ class Jerry < ActiveRecord::Base
   validates_associated :organs
   accepts_nested_attributes_for :organs, allow_destroy: true
 
+  has_and_belongs_to_many :makers
+
   validates :name, presence: true, length: {minimum: 3}, uniqueness: true
   mount_uploader :avatar, AvatarUploader
 end

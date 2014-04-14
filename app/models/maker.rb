@@ -1,4 +1,6 @@
 class Maker < ActiveRecord::Base
+  has_and_belongs_to_many :jerries
+  
   validates :uid, presence: true
   validates :provider, presence: true
   validates :name, uniqueness: true
