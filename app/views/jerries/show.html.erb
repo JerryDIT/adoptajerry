@@ -6,8 +6,7 @@
   <strong>Bio:</strong>
   <%= @jerry.bio %>
 </p>
-<%= link_to 'Edit', edit_jerry_path(@jerry) %> | 
-<%= link_to 'Back to family', jerries_path %>
+<%= link_to 'Edit profile', edit_jerry_path(@jerry), :class => "button tiny radius" if @jerry.makers.include? current_maker %>
 
 <% if @jerry.organs.any? %>
 <h2>Organs</h2>
@@ -18,7 +17,3 @@
 <h2>Skills</h2>
 <%= render @jerry.skills %>
 <% end %>
-
-<%= link_to 'Back to family', jerries_path %>
-<br>
-~ ~ ~ ~ ~ ~ ~
