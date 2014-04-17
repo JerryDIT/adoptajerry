@@ -1,0 +1,9 @@
+<h1><%= "Contributions from #{@maker.name}" %></h1>
+<% if @jerries.any? %>
+  <% @jerries.each do |jerry| %>
+  <p>
+    <%= link_to image_tag(jerry.avatar.url(:small).to_s), jerry_path(jerry) if jerry.avatar.url %>
+    <%= link_to jerry.name, jerry_path(jerry) %>
+  </p>
+  <% end %>
+<% end %>

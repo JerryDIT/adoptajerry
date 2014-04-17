@@ -1,4 +1,9 @@
 class MakersController < ApplicationController
+  def show
+    @maker = Maker.find(params[:id])
+    @jerries = @maker.jerries
+  end
+
   def edit
     @maker = current_maker
   end
@@ -13,6 +18,7 @@ class MakersController < ApplicationController
   end
 
   private
+
   def maker_params
     params.require(:maker).permit(:name)
   end

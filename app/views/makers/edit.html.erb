@@ -3,7 +3,7 @@
   Pick a makername, <br>
   it will be publicly visible.
 </p>
-<%= form_for @maker do |f| %>
+<%= form_for @maker, :url => edit_profile_path do |f| %>
   <%= f.text_field :name %>
   <%= f.submit 'Save', class: 'button radius' %>
   or
