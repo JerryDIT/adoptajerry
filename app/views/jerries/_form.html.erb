@@ -34,6 +34,15 @@
   <p>
     <%= f.link_to_add "Add an Organ", :organs %>
   </p>
+  <p> <%# skills fields %>
+    <%= f.fields_for :skills do |skills_form| %>
+      <%= render 'skills/fields', f: skills_form %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.link_to_add "Add a Skill", :skills %>
+  </p>
+  <%# submit %>
   <p>
     <%= f.submit class: 'button radius success' %>
   </p>

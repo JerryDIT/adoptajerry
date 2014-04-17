@@ -58,7 +58,15 @@ class JerriesController < ApplicationController
   end
 
   def jerry_params
-    params.require(:jerry).permit(:name, :bio, :avatar, organs_attributes: [:id, :role, :quantifier, :unit, :_destroy])
+    params.require(:jerry).permit(
+      :name, 
+      :bio, 
+      :avatar, 
+      organs_attributes:
+        [:id, :role, :quantifier, :unit, :_destroy],
+      skills_attributes:
+        [:id, :layer, :name, :url, :_destroy]
+    )
   end
 
 end
