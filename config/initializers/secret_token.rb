@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Adoptajerry::Application.config.secret_key_base = 'fb10846be6291702d52eb149d4cee333b76d6427613c057ab97a24d25afbb77e141543e88fb0c4624d3d8eacb1198ad3265d939128460a332a64a77fc2a0b0e5'
+Adoptajerry::Application.config.secret_key_base = ENV['SECRET_TOKEN']

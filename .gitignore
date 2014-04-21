@@ -22,3 +22,6 @@
 
 # Ignore doc
 /doc/api
+
+# Ignore application configuration
+/config/application.yml
