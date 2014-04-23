@@ -20,7 +20,7 @@
       <% if @jerry.avatar? %>
         <%= image_tag @jerry.avatar.url(:medium).to_s %>
       <% else %>
-        <%= image_tag "http://placehold.it/300x300&text=Add a picture" %>
+        <%= image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Add a picture"}" %>
       <% end %>
     </div>
     <div class="medium-6 columns">
