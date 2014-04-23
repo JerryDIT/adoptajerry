@@ -20,16 +20,18 @@
       <% if @jerry.avatar? %>
         <%= image_tag @jerry.avatar.url(:medium).to_s %>
       <% else %>
-        <%= image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Add a picture"}" %>
+        <%= image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Jerry picture"}" %>
       <% end %>
     </div>
     <div class="medium-6 columns">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: "Jerry Khan" %>
       <%= f.label :bio %>
-      <%= f.text_area :bio %>
+      <%= f.text_area :bio, placeholder: "Born to conquer the digital divides" %>
       <%= f.label :change_avatar %>
       <%= f.file_field :avatar %>
+      <%= f.label :location %>
+      <%= f.text_field :location, placeholder: "Lomé, Togo" %>
     </div>
   </div>
 

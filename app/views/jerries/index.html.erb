@@ -17,7 +17,13 @@
 
       <div class="panel">
         <h5><%= link_to jerry.name.to_s, jerry %></h5>
-        <h6 class="subheader"><%= jerry.bio %></h6>
+        <h6 class="subheader">
+          <% if jerry.location %>
+            <%= "in #{jerry.location}" %>
+          <% else %>
+            on the internets
+          <% end %>
+        </h6>
       </div>
     </div>
     <% end %>

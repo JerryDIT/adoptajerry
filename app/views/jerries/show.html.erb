@@ -11,6 +11,9 @@
 <p>
   <strong>Bio:</strong>
   <%= @jerry.bio %>
+  <br>
+  <strong>Location:</strong>
+  <%= @jerry.location %>
 </p>
 <%= link_to 'Edit profile', edit_jerry_path(@jerry), :class => "button tiny radius" if @jerry.makers.include? current_maker %>
 
