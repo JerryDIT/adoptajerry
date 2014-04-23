@@ -1,11 +1,10 @@
-<h1>Edit your makername</h1>
-<p>
-  Pick a makername, <br>
-  it will be publicly visible.
-</p>
-<%= form_for @maker, :url => edit_profile_path do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit 'Save', class: 'button radius' %>
-  or
-  <%= link_to 'Cancel', root_url %>
-<% end %>
+<div class="medium-5 small-centered columns">
+  <h1><%= "Hi #{@maker.name}!" %></h1>
+  <%= form_for @maker, :url => edit_profile_path do |f| %>
+    <%= f.label :your_public_makername %>
+    <%= f.text_field :name %>
+    <%= f.submit 'Save', class: 'button radius' %>
+    or
+    <%= link_to 'Cancel', root_url %>
+  <% end %>
+</div>
