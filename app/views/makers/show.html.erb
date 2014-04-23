@@ -2,7 +2,11 @@
 <% if @jerries.any? %>
   <% @jerries.each do |jerry| %>
   <p>
-    <%= link_to image_tag(jerry.avatar.url(:small).to_s), jerry_path(jerry) if jerry.avatar.url %>
+  <% if jerry.avatar.url %>
+    <%= link_to image_tag(jerry.avatar.url(:small).to_s), jerry_path(jerry) %>
+  <% else %>
+    <%= link_to image_tag("http://placehold.it/50x50&text=#{jerry.name.first.upcase}"), jerry_path(jerry) %>
+  <% end %>
     <%= link_to jerry.name, jerry_path(jerry) %>
   </p>
   <% end %>
