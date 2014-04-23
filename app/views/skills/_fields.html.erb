@@ -1,10 +1,18 @@
-<%= f.label :layer %>
-<%= f.text_field :layer %>
+<div class="row">
+  <div class="medium-4 columns">
+    <%= f.label :layer %>
+    <%= f.text_field :layer %>
+  </div>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+  <div class="medium-4 columns">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
 
-<%= f.label :url %>
-<%= f.text_field :url %>
+  <div class="medium-4 columns">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
 
-<%= f.link_to_remove "Remove this skill" %>
+  <%= f.link_to_remove "Remove this skill", class: "right" %>
+</div>

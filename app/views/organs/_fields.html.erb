@@ -1,10 +1,18 @@
-<%= f.label :role %>
-<%= f.text_field :role %>
+<div class="row">
+  <div class="medium-4 columns">
+    <%= f.label :role %>
+    <%= f.text_field :role %>
+  </div>
 
-<%= f.label :quantifier %>
-<%= f.text_field :quantifier %>
+  <div class="medium-4 columns">
+    <%= f.label :quantifier %>
+    <%= f.text_field :quantifier %>
+  </div>
 
-<%= f.label :unit %>
-<%= f.text_field :unit %>
+  <div class="medium-4 columns">
+    <%= f.label :unit %>
+    <%= f.text_field :unit %>
+  </div>
 
-<%= f.link_to_remove "Remove this organ" %>
+  <%= f.link_to_remove "Remove this organ", class: "right" %>
+</div>

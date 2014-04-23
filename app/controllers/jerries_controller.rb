@@ -4,6 +4,8 @@ class JerriesController < ApplicationController
 
   def new
     @jerry = Jerry.new
+    @jerry.organs.build
+    @jerry.skills.build
   end
 
   def create

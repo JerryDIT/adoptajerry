@@ -1,7 +1,6 @@
-<h1>Update <%= @jerry.name %></h1>
-<a href="<%= @jerry.avatar.url(:large).to_s %>">  
-  <%= image_tag @jerry.avatar.url(:medium).to_s %>
-</a>
+<div class="large-8 columns small-centered">
+
+<h1>Edit <%= @jerry.name %></h1>
 <%= render 'form' %>
 
-<%= link_to 'Back to the family', jerries_path %>
+</div>

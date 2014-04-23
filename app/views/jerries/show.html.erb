@@ -1,7 +1,13 @@
 <h1><%= @jerry.name %></h1>
-<a href="<%= @jerry.avatar.url(:large).to_s %>">  
-  <%= image_tag @jerry.avatar.url(:medium).to_s %>
-</a>
+
+<% if @jerry.avatar? %>
+  <a href="<%= @jerry.avatar.url(:large).to_s %>">  
+    <%= image_tag @jerry.avatar.url(:medium).to_s %>
+  </a>
+<% else %>
+  <%= image_tag "http://placehold.it/300x300&text=#{@jerry.name}" %>
+<% end %>
+
 <p>
   <strong>Bio:</strong>
   <%= @jerry.bio %>

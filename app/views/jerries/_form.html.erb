@@ -14,36 +14,47 @@
   <% end %>
   
   <%# jerry fields %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </p>
-  <p>
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
-  </p>
-  <p> <%# organs fields %>
+  <div class="row">
+    <div class="medium-6 columns avatar">
+      <%= f.label :avatar %>
+      <% if @jerry.avatar? %>
+        <%= image_tag @jerry.avatar.url(:medium).to_s %>
+      <% else %>
+        <%= image_tag "http://placehold.it/300x300&text=Add a picture" %>
+      <% end %>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
+      <%= f.label :change_avatar %>
+      <%= f.file_field :avatar %>
+    </div>
+  </div>
+
+  <%# organs fields %>
+  <div class="panel">
+    <h3>Organs</h3>
     <%= f.fields_for :organs do |organ_form| %>
       <%= render 'organs/fields', f: organ_form %>
     <% end %>
-  </p>
-  <p>
-    <%= f.link_to_add "Add an Organ", :organs %>
-  </p>
-  <p> <%# skills fields %>
+    <%= f.link_to_add "|+| Add an Organ", :organs, class: "button small radius" %>
+  </div>
+
+  <%# skills fields %>
+  <div class="panel">
+    <h3>Skills</h3>
     <%= f.fields_for :skills do |skills_form| %>
       <%= render 'skills/fields', f: skills_form %>
     <% end %>
-  </p>
-  <p>
-    <%= f.link_to_add "Add a Skill", :skills %>
-  </p>
+    <%= f.link_to_add "|+| Add a Skill", :skills, class: "button small radius" %>
+  </div>
+
   <%# submit %>
   <p>
     <%= f.submit class: 'button radius success' %>
+    or 
+    <%= link_to "Cancel", action_name == "edit" ? jerry_path(@jerry) : root_path %>
   </p>
 <% end %>
