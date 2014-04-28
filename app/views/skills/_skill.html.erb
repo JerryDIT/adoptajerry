@@ -1,4 +1,8 @@
 <p>
   <strong><%= skill.layer %>:</strong>
-  <%= link_to skill.name, skill.url %>
+  <% if skill.url.empty? %>
+    <%= skill.name %>
+  <% else %>
+    <%= link_to skill.name, skill.url %>
+  <% end %>
 </p>
