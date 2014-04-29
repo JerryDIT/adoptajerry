@@ -1,6 +1,6 @@
 class JerriesController < ApplicationController
-  before_action :get_jerry, except: [:new, :create, :index]
-  before_action :maker_authenticate, except: [:index, :show]
+  before_action :get_jerry, except: [:new, :create, :index, :roulette]
+  before_action :maker_authenticate, except: [:index, :show, :roulette]
 
   def new
     @jerry = Jerry.new
@@ -56,6 +56,12 @@ class JerriesController < ApplicationController
   def destroy
     @jerry.destroy
     redirect_to jerries_path
+  end
+
+  def roulette
+    rand_id = Jerry.ids.shuffle.first
+    @jerry = Jerry.find(rand_id)
+    redirect_to @jerry
   end
 
   private
