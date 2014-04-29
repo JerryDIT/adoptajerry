@@ -30,6 +30,8 @@
 
   <h2>Makers</h2>
   <% @jerry.makers.each do |maker| %>
-  	<%= link_to "+#{maker.name}", maker_path(maker)  %>
+  	<%= link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary" %>
   <% end %>
+  <br><br>
+  <%= link_to 'Add a maker', edit_team_path(@jerry), :class => "button tiny radius" if @jerry.makers.include? current_maker %>
 </div>

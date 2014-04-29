@@ -11,9 +11,10 @@ class MakersController < ApplicationController
   def update
     @maker = current_maker
     if @maker.update maker_params
-      redirect_to root_url, notice: 'Makername successfuly updated!'
+      redirect_to maker_path(@maker)
     else
-      render 'edit', notice: "#{maker_params[:name]} is already taken !"
+      flash.now.notice = "#{maker_params[:name]} is not available! please choose a new name"
+      render 'edit'
     end
   end
 

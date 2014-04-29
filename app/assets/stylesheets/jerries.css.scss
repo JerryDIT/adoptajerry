@@ -8,3 +8,13 @@
 .avatar {
   margin-bottom: 1.25rem;
 }
+.new_maker {
+  margin-top: 1.25rem;
+}
+.flash-error, .flash-notice {
+  background-color: #DEDEDE;
+  padding: 0 1rem;
+}
+.flash-error::before, .flash-notice::before { 
+  content: "» ";
+}

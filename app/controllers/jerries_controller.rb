@@ -30,6 +30,15 @@ class JerriesController < ApplicationController
 
   def update
     if maker_allowed?
+      if params[:jerry][:makers]
+        new_maker = Maker.find_by :uid => params[:jerry][:makers][:uid]
+        if new_maker
+          @jerry.makers << new_maker
+        else
+          flash.now.notice = "Unknown maker #{params[:jerry][:makers][:uid]}, can not be added to the team"
+          return render 'edit_team'
+        end
+      end 
       if @jerry.update jerry_params
         redirect_to @jerry
       else
@@ -38,6 +47,10 @@ class JerriesController < ApplicationController
     else
       redirect_to @jerry, notice: 'You can not edit this Jerry'
     end
+  end
+
+  def edit_team
+    redirect_to @jerry, notice: 'You can not edit this Jerry' unless maker_allowed?
   end
 
   def destroy

@@ -9,6 +9,7 @@ Adoptajerry::Application.routes.draw do
   get 'makers/profile' => 'makers#edit', as: :edit_profile
   patch 'makers/profile' => 'makers#update', as: :profile
   get 'makers/:id' => 'makers#show', as: :maker
+  get 'jerries/:id/team/edit' => 'jerries#edit_team', as: :edit_team
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
