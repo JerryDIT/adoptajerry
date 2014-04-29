@@ -35,7 +35,7 @@ class JerriesController < ApplicationController
         if new_maker
           @jerry.makers << new_maker
         else
-          flash.now.notice = "Unknown maker #{params[:jerry][:makers][:uid]}, can not be added to the team"
+          flash.now.notice = "Unknown maker '#{params[:jerry][:makers][:uid]}', can not be added to the team"
           return render 'edit_team'
         end
       end 
@@ -65,7 +65,7 @@ class JerriesController < ApplicationController
   end
 
   def maker_authenticate
-    redirect_to root_path, notice: 'You must be signed in' unless current_maker
+    redirect_to root_path, notice: 'You must be signed in --→' unless current_maker
   end
 
   def maker_allowed?

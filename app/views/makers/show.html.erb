@@ -1,5 +1,8 @@
 <div class="medium-8 small-centered columns">
   <h1><%= "Contributions from #{@maker.name}" %></h1>
+  <% if @maker == current_maker %>
+    <%= link_to 'Edit my makername', edit_profile_path, class: 'button tiny radius' %>
+  <% end %>
   <% if @jerries.any? %>
     <% @jerries.each do |jerry| %>
     <p>

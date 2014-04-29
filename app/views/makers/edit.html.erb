@@ -3,8 +3,8 @@
   <%= form_for @maker, :url => edit_profile_path do |f| %>
     <%= f.label :your_public_makername %>
     <%= f.text_field :name %>
-    <%= f.submit 'Save', class: 'button radius' %>
+    <%= f.submit 'Save', class: 'button radius success' %>
     or
-    <%= link_to 'Cancel', root_url %>
+    <%= link_to 'Cancel', maker_path(@maker) %>
   <% end %>
 </div>
