@@ -14,5 +14,11 @@
  *= require_tree .
  */
 #browser_id_form button {
-    margin-bottom: 0;
+  margin-bottom: 0;
+  background-color: #E1E1E1;
+}
+#browser_id_form button:before {
+  /*padding-right: 5px;*/
+  content: url(persona-glyph.png);
+  height: 1rem;
 }
