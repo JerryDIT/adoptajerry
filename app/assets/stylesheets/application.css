@@ -22,3 +22,6 @@
   content: url(persona-glyph.png);
   height: 1rem;
 }
+p.label.secondary, a.label.secondary {
+  color: #222;
+}

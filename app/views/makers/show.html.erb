@@ -1,12 +1,14 @@
 <div class="medium-8 small-centered columns">
-  <h1><%= "Contributions from #{@maker.name}" %></h1>
   <div class="panel">
     <%= gravatar_tag @maker.uid, :size => 50 %>
     <% if @maker == current_maker %>
       <%= link_to 'Edit my profile', edit_profile_path, class: 'button tiny radius right' %>
     <% end %>
+    <p class="label radius secondary"><%= "+#{@maker.name}"%></p>
     <h5 class="subheader"><%= "Happy maker since #{@maker.created_at.strftime("%B %Y")}" %></h5>
   </div>
+
+  <h1><%= "Contributions from #{@maker.name}" %></h1>
 
   <% if @jerries.any? %>
     <% @jerries.each do |jerry| %>
