@@ -41,7 +41,7 @@ Your app is running on http://localhost:3000
 
 ### Browse the issues 
 
-And find an issue you can contribute to.
+And [find an issue](https://github.com/JerryDIT/adoptajerry/issues) you can contribute to.
 
 ### Say hello :)
 
