@@ -18,10 +18,19 @@
   background-color: #E1E1E1;
 }
 #browser_id_form button:before {
-  /*padding-right: 5px;*/
-  content: url(persona-glyph.png);
+  padding-right: 5px;
+  content: url(/persona-glyph.png);
   height: 1rem;
+}
+#browser_id_form input, #browser_id_form button, #browser_id_form .button {
+  top: 3px;
 }
 p.label.secondary, a.label.secondary {
   color: #222;
+}
+a img:hover {
+  opacity: 0.8;
+}
+.profile {
+  background-color: yellow;
 }

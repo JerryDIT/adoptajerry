@@ -1,38 +1,40 @@
 <!-- Navigation -->
-
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1>
-        <%= link_to "# adopt -a jerry", root_path %>
-      </h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-
-      <% if current_maker %>
-      <li>
-        <%= link_to "Aloha! #{current_maker.name}", maker_path(current_maker) %>
+<div class="fixed">
+  <nav class="top-bar" data-topbar > 
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <%= link_to "cd /home", root_path, title: "Go to the home page" %>
+        </h1>
       </li>
-      <li class="divider"></li>
-      <li><%= link_to "Sign Out", signout_path %></li>
-
-      <% else %>
-      <li>
-        <form id='browser_id_form' action='/auth/browser_id/callback'>
-          <input type='hidden' name='assertion'/>
-          <button type='submit' class='radius small secondary'>Sign in with Persona</button>
-        </form>
-      </li>
-      <% end %>
-
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
     </ul>
-  </section>
-</nav>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><%= link_to "Geting started", start_path %></li>
+        <li><a href="http://youandjerrycan.org">About Jerry DIT →</a></li>
+        <% if current_maker %>
+        <li>
+          <%= link_to "Aloha! #{current_maker.name}", maker_path(current_maker) %>
+        </li>
+        <li class="divider"></li>
+        <li><%= link_to "Sign Out", signout_path %></li>
+
+        <% else %>
+        <li>
+          <form id='browser_id_form' action='/auth/browser_id/callback'>
+            <input type='hidden' name='assertion'/>
+            <button type='submit' class='secondary'>Sign in with Persona</button>
+          </form>
+        </li>
+        <% end %>
+
+      </ul>
+    </section>
+  </nav>
+</div>
 
 <!-- End Navigation -->
