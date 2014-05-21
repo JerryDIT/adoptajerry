@@ -45,6 +45,7 @@ GEM
     coffee-script-source (1.7.0)
     columnize (0.3.6)
     coolline (0.4.3)
+    daemon_controller (1.2.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger (1.6.6)
@@ -140,6 +141,10 @@ GEM
       faraday
       multi_json
       omniauth (~> 1.0)
+    passenger (4.0.42)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.17.1)
     polyglot (0.3.4)
     posix-spawn (0.3.8)
@@ -245,6 +250,7 @@ DEPENDENCIES
   mini_magick
   nested_form
   omniauth-browserid
+  passenger
   pg
   rails (= 4.0.2)
   rails_12factor
