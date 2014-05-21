@@ -15,6 +15,18 @@
   background-color: #E1E1E1;
   padding: 0 1rem;
 }
-.flash-error::before, .flash-notice::before { 
+.flash-error::before, .flash-notice::before {
   content: "» ";
+}
+.profile {
+  background-color: #FFFF00;
+  img:hover {
+    opacity: 0.42;
+  }
+}
+#fold {
+  height: 14rem;
+  h2 {
+    padding: 2.3rem;
+  }
 }
