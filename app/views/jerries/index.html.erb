@@ -11,7 +11,7 @@
 
     <div class="large-4 small-6 columns">
       <div class="profile">
-        <%= link_to image_tag("/add_jerry.png"), new_jerry_path %>
+        <%= link_to image_tag("/add_jerry.png", alt: "+ add a new Jerry"), new_jerry_path %>
       </div>
 
       <div class="panel">
@@ -26,9 +26,9 @@
     <div class="large-4 small-6 columns">
       <div class="profile">
         <% if jerry.avatar? %>
-          <%= link_to image_tag(jerry.avatar.url(:medium).to_s), jerry %>
+          <%= link_to image_tag(jerry.avatar.url(:medium).to_s, alt: "Avatar of #{jerry.name}"), jerry %>
         <% else %>
-          <%= link_to image_tag("http://placehold.it/310x310&text=#{jerry.name}"), jerry %>
+          <%= link_to image_tag("http://placehold.it/310x310&text=#{jerry.name}", alt: "Avatar of #{jerry.name}"), jerry %>
         <% end %>
       </div>
 
