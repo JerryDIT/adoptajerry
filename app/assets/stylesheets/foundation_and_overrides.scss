@@ -1,7 +1,24 @@
 //
 // FOUNDATION SETTINGS
 //
- @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+@font-face {
+  font-family: 'Inconsolata';
+  font-weight: 400;
+  src: local('Inconsolata'),
+       local('inconsolata'),
+       font-url('Inconsolata-Regular.eot?') format('eot'),
+       font-url('Inconsolata-Regular.woff') format('woff'),
+       font-url('Inconsolata-Regular.ttf')  format('truetype'),
+       font-url('Inconsolata-Regular.svg#Inconsolata-Regular') format('svg');
+}
+@font-face {
+	font-family: 'Inconsolata';
+  font-weight: 700;
+	src: font-url('Inconsolata-Bold.eot?') format('eot'),
+	     font-url('Inconsolata-Bold.woff') format('woff'),
+	     font-url('Inconsolata-Bold.ttf')  format('truetype'),
+	     font-url('Inconsolata-Bold.svg#Inconsolata-Bold') format('svg');
+}
 
 // This is the default html and body font-size for the base rem value.
 // $rem-base: 16px;
