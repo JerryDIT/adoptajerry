@@ -1,7 +1,7 @@
 Adopt a Jerry!
 =============
 
-"adoptajerry" is the central repo to highlight the Jerry family.  
+"adoptajerry.cc" is the central repo to highlight the Jerry family.  
 It aims to be a crowd-sourced portfolio for the purpose of inspiration,
 replicability, and dreams achievement.
 [demo app](http://staging-adoptajerry.herokuapp.com/)
@@ -16,14 +16,19 @@ it was envisioned in 2012.
 
 Contribute
 ----------
-### Report bugs or ask for new features
-Do it [in the issues] with the appropriate `tags` in the
+### Report bugs and ask for new features
 
-### Run the rails app locally
+Do it [in the issues] using the appropriate `tag`
 
-  1. clone the master branch of this repo
+### Work on the code
 
-    `git clone git@github.com:JerryDIT/adoptajerry.git`
+#### Run the app locally
+
+  1. [Fork the main repo](https://github.com/JerryDIT/adoptajerry/fork)
+
+  2. clone your fork
+
+    `git clone git@github.com:YOUR_NAME/adoptajerry.git`
 
   2. cd into the directory
 
@@ -37,12 +42,23 @@ Do it [in the issues] with the appropriate `tags` in the
 
     `rails server`
 
-Your app is running on http://localhost:3000
+Your app is running on <http://localhost:3000>
 
-### Browse the issues
+#### Do some work
+  
+  1. [Fix a bug or work on a feature](https://github.com/JerryDIT/adoptajerry/issues)
+  2. When you're happy, push your work to your clone
+  
+    `git push origin master`  
 
-And [find an issue](https://github.com/JerryDIT/adoptajerry/issues) you can contribute to.
+  3. Do a pull request
+  
 
 ### Say hello :)
 
 If you are willing to put energy into the project let's get in touch on the forum : [Jerry DIT - Tech Lab](https://groups.google.com/forum/#!forum/techlab-jerrydit)
+
+License
+-------
+
+Adoptajerry is Copyright © 2014 [JerryDIT](http://youandjerrycan.org). It is free software under AGPLv3, and may be redistributed under the terms specified in the [LICENSE](https://github.com/JerryDIT/adoptajerry/blob/master/LICENSE).
