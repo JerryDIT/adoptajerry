@@ -1,29 +1,34 @@
 Adopt a Jerry!
 =============
 
-"adoptajerry" is the central repo to highlight the Jerry family.  
-It aims to be a crowd-sourced portfolio for the purpose of inspiration, replicability, and dreams achievement.
+"adoptajerry.cc" is the central repo to highlight the Jerry family.  
+It aims to be a crowd-sourced portfolio for the purpose of inspiration,
+replicability, and dreams achievement.
+[demo app](http://staging-adoptajerry.herokuapp.com/)
 
-About Jerry
------------
+Learn more about the [Jerry Do It Together](http://youandjerrycan.org) project.
 
-[The Jerry Do It Together project](http://youandjerrycan.org)
+Original idea
+-------------
 
+Watch the [video-prototyping](http://vimeo.com/46923757) of the application as
+it was envisioned in 2012.
 
-About the application
----------------------
+Contribute
+----------
+### Report bugs and ask for new features
 
-Watch the [video-prototyping](http://vimeo.com/46923757) of the application. [Feedback welcome](https://github.com/JerryDIT/adoptajerry/issues)
+Do it [in the issues] using the appropriate `tag`
 
+### Work on the code
 
-Get involved
-------------
+#### Run the app locally
 
-### Run the rails app locally
-  
-  1. clone the master branch of this repo
+  1. [Fork the main repo](https://github.com/JerryDIT/adoptajerry/fork)
 
-    `git clone git@github.com:JerryDIT/adoptajerry.git`
+  2. clone your fork
+
+    `git clone git@github.com:YOUR_NAME/adoptajerry.git`
 
   2. cd into the directory
 
@@ -37,12 +42,23 @@ Get involved
 
     `rails server`
 
-Your app is running on http://localhost:3000
+Your app is running on <http://localhost:3000>
 
-### Browse the issues 
+#### Do some work
+  
+  1. [Fix a bug or work on a feature](https://github.com/JerryDIT/adoptajerry/issues)
+  2. When you're happy, push your work to your clone
+  
+    `git push origin master`  
 
-And [find an issue](https://github.com/JerryDIT/adoptajerry/issues) you can contribute to.
+  3. Do a pull request
+  
 
 ### Say hello :)
 
-It's boostrap time, so if you are willing to put energy into the project let's get in touch on the forum : [Jerry DIT - Tech Lab](https://groups.google.com/forum/#!forum/techlab-jerrydit)
+If you are willing to put energy into the project let's get in touch on the forum : [Jerry DIT - Tech Lab](https://groups.google.com/forum/#!forum/techlab-jerrydit)
+
+License
+-------
+
+Adopajerry is Copyright © 2014 JerryDIT. It is free software, and may be redistributed under the terms specified in the [LICENSE](https://github.com/JerryDIT/adoptajerry/blob/master/LICENSE) file.
