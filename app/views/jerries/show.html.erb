@@ -1,37 +1,39 @@
-<div class="medium-8 small-centered columns">
-  <h1><%= @jerry.name %></h1>
+<h1 class="column"><%= @jerry.name %></h1>
+<div class="medium-4 columns">
 
   <% if @jerry.avatar? %>
-    <a href="<%= @jerry.avatar.url(:large).to_s %>">
-      <%= image_tag @jerry.avatar.url(:medium).to_s, alt: "Avatar of #{@jerry.name}" %>
-    </a>
+    <%= image_tag @jerry.avatar.url(:medium).to_s, alt: "Avatar of #{@jerry.name}" %>
   <% else %>
     <%= image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "Avatar of #{@jerry.name}" %>
   <% end %>
 
   <p>
-    <strong>Bio:</strong>
+    <% if !@jerry.location.blank? %>
+      <strong>Location:</strong><%= @jerry.location %>
+      <br>
+    <% end %>
     <%= @jerry.bio %>
-    <br>
-    <strong>Location:</strong>
-    <%= @jerry.location %>
   </p>
   <%= link_to 'Edit profile', edit_jerry_path(@jerry), :class => "button tiny radius" if @jerry.makers.include? current_maker %>
-
-  <% if @jerry.organs.any? %>
-  <h2>Organs</h2>
-  <%= render @jerry.organs %>
+</div>
+<div class="medium-8 columns">
+  <div class="medium-6 columns">
+    <% if @jerry.organs.any? %>
+      <h2>Organs</h2>
+    <%= render @jerry.organs %>
   <% end %>
-
-  <% if @jerry.skills.any? %>
-  <h2>Skills</h2>
-  <%= render @jerry.skills %>
+  </div>
+  <div class="medium-6 columns">
+    <% if @jerry.skills.any? %>
+      <h2>Skills</h2>
+    <%= render @jerry.skills %>
   <% end %>
-
-  <h2>Makers</h2>
-  <% @jerry.makers.each do |maker| %>
-  	<%= link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary" %>
+  </div>
+  <div class="medium-12 columns clearfix">
+    <h2>Makers</h2>
+    <% @jerry.makers.each do |maker| %>
+      <%= link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary" %>
   <% end %>
-  <br><br>
-  <%= link_to 'Add a maker', edit_team_path(@jerry), :class => "button tiny radius" if @jerry.makers.include? current_maker %>
+    <%= link_to 'Add a maker', edit_team_path(@jerry), :class => "button tiny radius right" if @jerry.makers.include? current_maker %>
+  </div>
 </div>

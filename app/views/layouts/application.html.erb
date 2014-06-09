@@ -23,7 +23,7 @@
     <p class="flash-notice"><%= flash[:notice] %></p>
     <% end %>
     
-    <div class="row">
+    <div class="row <%= controller_name %>">
       <%= yield %>
     </div>
 

@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.jerries {
+  h2 {
+    border-bottom: 5px solid #DDD;
+  }
+}
 #jerry_bio {
   min-height: 3.9rem;
 }
@@ -28,5 +33,6 @@
   min-height: 14rem;
   h2 {
     padding: 2.3rem;
+    border: none;
   }
 }
