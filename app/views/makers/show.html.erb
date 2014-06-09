@@ -4,11 +4,19 @@
     <% if @maker == current_maker %>
       <%= link_to 'Edit my profile', edit_profile_path, class: 'button tiny radius right' %>
     <% end %>
-    <p class="label radius secondary"><%= "+#{@maker.name}"%></p>
-    <h5 class="subheader"><%= "Happy maker since #{@maker.created_at.strftime("%B %Y")}" %></h5>
+    <p class="makername label radius secondary"><%= "+#{@maker.name}"%></p>
+    <p>
+      <%= "from #{@maker.city}" unless @maker.city.blank? %>
+      <% if !@maker.bio.blank? %>
+        <br>
+        <%= @maker.bio %>
+        <br>
+      <% end %>
+      <em><%= "Happy maker since #{@maker.created_at.strftime("%B %Y")}" %></em>
+    </p>
   </div>
 
-  <h1><%= "Contributions from #{@maker.name}" %></h1>
+  <h3>Contributions</h3>
 
   <% if @jerries.any? %>
     <% @jerries.each do |jerry| %>

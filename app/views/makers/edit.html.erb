@@ -3,8 +3,12 @@
   <%= gravatar_tag @maker.uid, :size => 50 %>
   <p>Change your avatar at <%= link_to "gravatar.com" %> </p>
   <%= form_for @maker, :url => edit_profile_path do |f| %>
-    <%= f.label :your_public_makername %>
+    <%= f.label :public_makername %>
     <%= f.text_field :name %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.label :about_you %>
+    <%= f.text_area :bio %>
     <%= f.submit 'Save', class: 'button radius success' %>
     or
     <%= link_to 'Cancel', maker_path(@maker) %>
