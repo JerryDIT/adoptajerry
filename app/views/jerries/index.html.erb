@@ -1,34 +1,39 @@
 <div id="fold" class="small-centered columns">
-  <div class="medium-2 medium-offset-2 columns">
-    <%= image_tag "/jerry_dit_logo.png", alt: "Jerry Do It Together" %>
+  <!--div class="medium-2 medium-offset-2 columns">
+    <%# image_tag "/jerry_dit_logo.png", alt: "Jerry Do It Together" %>
   </div>
-  <h2><small>presents</small> The Jerry Family</h2>
+  <h2><small>presents</small> The Jerry Family</h2-->
+  <div class="small-centered columns">
+    <h1 class="text-center">Hey yoo!</h1>
+    <%= image_tag("http://lorempicsum.com/up/960/450/6", alt: "Jerry Do It Together") %>
+  </div>
 </div>
 
 <!-- Thumbnails -->
 <div class="large-12 columns">
   <div class="row">
 
-    <div class="medium-4 small-6 columns">
+    <div class="medium-3 small-6 small-centered columns">
       <div class="profile">
         <%= link_to image_tag("/add_jerry.png", alt: "+ add a new Jerry"), new_jerry_path %>
       </div>
-
       <div class="panel">
-        <h4><%= link_to "Add a new Jerry", new_jerry_path %></h4>
-        <h6 class="subheader">
-
-        </h6>
+        <h5 class="text-center"><%= link_to "Add a new Jerry", new_jerry_path %></h5>
       </div>
     </div>
 
+    <h2 class="text-center">Meet the family !</h2>
+
+  </div>
+
+  <div class="row">
     <% @jerries.each do |jerry| %>
-    <div class="medium-4 small-6 columns">
+    <div class="medium-3 small-6 columns">
       <div class="profile">
         <% if jerry.avatar? %>
           <%= link_to image_tag(jerry.avatar.url(:medium).to_s, alt: "Avatar of #{jerry.name}"), jerry %>
         <% else %>
-          <%= link_to image_tag("http://placehold.it/310x310&text=#{jerry.name}", alt: "Avatar of #{jerry.name}"), jerry %>
+          <%= link_to image_tag("http://placehold.it/300x300&text=#{jerry.name}", alt: "Avatar of #{jerry.name}"), jerry %>
         <% end %>
       </div>
 

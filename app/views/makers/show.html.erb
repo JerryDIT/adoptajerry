@@ -6,7 +6,7 @@
     <% end %>
     <p class="makername label radius secondary"><%= "+#{@maker.name}"%></p>
     <p>
-      <%= "from #{@maker.city}" unless @maker.city.blank? %>
+      <%= "@#{@maker.city}" unless @maker.city.blank? %>
       <% if !@maker.bio.blank? %>
         <br>
         <%= @maker.bio %>

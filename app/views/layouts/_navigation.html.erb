@@ -5,7 +5,7 @@
       <!-- Title Area -->
       <li class="name">
         <h1>
-          <%= link_to "/home", root_path, title: "Go to the home page" %>
+          <%= link_to "home", root_path, title: "Go to the home page" %>
         </h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
@@ -13,9 +13,13 @@
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
+      <ul class="left">
+        <li><%= link_to "Build your Jerry", build_path %></li>
+        <li><%= link_to "About Jerry →", "http://youandjerrycan.org", target: "_blank" %></li>
+      </ul>
+    </section>
+    <section class="top-bar-section">
       <ul class="right">
-        <li><%= link_to "Getting started", start_path %></li>
-        <li><a href="http://youandjerrycan.org">About Jerry DIT →</a></li>
         <% if current_maker %>
         <li>
           <%= link_to "Aloha! #{current_maker.name}", maker_path(current_maker) %>

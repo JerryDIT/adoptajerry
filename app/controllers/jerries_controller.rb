@@ -71,7 +71,7 @@ class JerriesController < ApplicationController
   end
 
   def maker_authenticate
-    redirect_to root_path, notice: 'You must be signed in --→' unless current_maker
+    redirect_to root_path, notice: 'Please Sign in first --→' unless current_maker
   end
 
   def maker_allowed?
