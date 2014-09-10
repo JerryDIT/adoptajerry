@@ -74,6 +74,10 @@ $secondary-color: #FDA331;
 $alert-color: #D381C3;
 $success-color: #A1C659;
 $warning-color: #FB0120;
+$nav-color-1: #999;
+$nav-color-2: #6F6F6F;
+$nav-color-3: #4D4D4D;
+$jaune-canari: #FFFF00;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -1163,13 +1167,13 @@ $topbar-title-weight: 700;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
+$topbar-link-color-hover: #666;
+$topbar-link-color-active: $jaune-canari;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
-$topbar-link-hover-lightness: 10%; // Darken by 10%
-$topbar-link-bg-hover: scale-color($topbar-bg-color, $lightness: 25%);
+// $topbar-link-hover-lightness: 10%; // Darken by 10%
+$topbar-link-bg-hover: $jaune-canari; 
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;

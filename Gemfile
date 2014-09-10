@@ -17,6 +17,7 @@ gem 'omniauth-browserid'
 gem 'nested_form'
 gem 'figaro'
 gem 'gravatarify'
+gem 'haml'
 
 group :doc do
   gem 'sdoc', require: false

@@ -47,9 +47,10 @@ Your app is running on <http://localhost:3000>
 #### Do some work
   
   1. [Fix a bug or work on a feature](https://github.com/JerryDIT/adoptajerry/issues)
-  2. When you're happy, push your work to your clone
+      `git branch your-contribution`
+  2. When you're happy, push your work to your fork
   
-    `git push origin master`  
+    `git push origin your-contribution`  
 
   3. Do a pull request
   

@@ -3,8 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jerries {
+  h1 {
+    margin: rem-calc(25) auto;
+  }
   h2 {
     border-bottom: 5px solid #DDD;
+  }
+  iframe {
+    border: none;
+    margin-top: rem-calc(10);
+    margin-bottom: rem-calc(20);
   }
 }
 #jerry_bio {
@@ -24,7 +32,7 @@
   content: "» ";
 }
 .profile {
-  background-color: #FFFF00;
+  background-color: $jaune-canari;
   img:hover {
     opacity: 0.42;
   }
@@ -40,5 +48,10 @@
   h2 {
     padding: 2.3rem;
     border: none;
+  }
+}
+#family {
+  h2 {
+    margin: 2rem auto;
   }
 }

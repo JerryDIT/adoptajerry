@@ -12,7 +12,6 @@
 <!-- Thumbnails -->
 <div class="large-12 columns">
   <div class="row">
-
     <div class="medium-3 small-6 small-centered columns">
       <div class="profile">
         <%= link_to image_tag("/add_jerry.png", alt: "+ add a new Jerry"), new_jerry_path %>
@@ -21,12 +20,10 @@
         <h5 class="text-center"><%= link_to "Add a new Jerry", new_jerry_path %></h5>
       </div>
     </div>
-
-    <h2 class="text-center">Meet the family !</h2>
-
   </div>
 
-  <div class="row">
+  <div id="family" class="row">
+    <h2 class="text-center">Meet the family !</h2>
     <% @jerries.each do |jerry| %>
     <div class="medium-3 small-6 columns">
       <div class="profile">
