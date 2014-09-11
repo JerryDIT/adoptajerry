@@ -10,14 +10,15 @@
 </div>
 
 <!-- Thumbnails -->
-<div class="large-12 columns">
+<div id="register" class="large-12 columns">
   <div class="row">
+    <h2 class="text-center">Register your Jerry</h2>
     <div class="medium-3 small-6 small-centered columns">
       <div class="profile">
         <%= link_to image_tag("/add_jerry.png", alt: "+ add a new Jerry"), new_jerry_path %>
       </div>
       <div class="panel">
-        <h5 class="text-center"><%= link_to "Add a new Jerry", new_jerry_path %></h5>
+        <h5 class="text-center"><%= link_to "Jerry [...]", new_jerry_path %></h5>
       </div>
     </div>
   </div>
