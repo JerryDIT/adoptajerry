@@ -28,7 +28,7 @@ Contribute
 ----------
 ### Report bugs and ask for new features
 
-Do it [in the issues] using the appropriate `tag`
+Do it [in the issues](https://github.com/JerryDIT/adoptajerry/issues) using the appropriate `tag`
 
 ### Contribute to the code
 
