@@ -1,22 +1,21 @@
 Adopt a Jerry!
 =============
 
-"adoptajerry.cc" is the central repo to highlight the Jerry family.  
+[adoptajerry.cc](http://adoptajerry.cc) is the central repo to highlight the Jerry family.  
 It aims to be a crowd-sourced portfolio for the purpose of inspiration,
 replicability, and dreams achievement.
-[App in production](http://adoptajerry.cc)
 
 Learn more about the [Jerry Do It Together](http://youandjerrycan.org) project.
 
 Vision
 ------
 
-### Original idea
+### Original idea - 2012
 Watch the [video-prototyping](http://vimeo.com/46923757) of the application as
 it was envisioned in 2012.
 
-### Present (sept. 2014)
-[adoptajerry](http://adoptajerry.cc) is an free software SASS application.
+### Present - sept. 2014
+[adoptajerry](http://adoptajerry.cc) is a free software web application. The master branch is running in production.
 
 ### Future
 adoptajerry is able to run on different servers. Each instance of the app have its own database that sync up and down to the database of reference. The application accessible at [adoptajerry.cc](http://adoptajerry.cc) is serving data from the database of reference.
@@ -24,7 +23,6 @@ The application remains free software under AGPLv3. And the content of the datab
 
 #### Example of use case
 adoptajerry can run on an offline local network hosted on a Jerry Computer during a workshop. When the workshop is done, the instance is plugged to the internet and its database automatically synchronized to the database of reference.
-
 
 Contribute
 ----------
