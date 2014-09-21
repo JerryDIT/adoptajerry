@@ -41,7 +41,7 @@
         <h5><%= link_to jerry.name.to_s, jerry %></h5>
         <h6 class="subheader">
           <% if jerry.location %>
-            <%= "in #{jerry.location}" %>
+            <%= "in #{jerry.location.split(',').first}" %>
           <% else %>
             on the internets
           <% end %>
