@@ -4,15 +4,27 @@ Adopt a Jerry!
 "adoptajerry.cc" is the central repo to highlight the Jerry family.  
 It aims to be a crowd-sourced portfolio for the purpose of inspiration,
 replicability, and dreams achievement.
-[demo app](http://staging-adoptajerry.herokuapp.com/)
+[App in production](http://adoptajerry.cc)
 
 Learn more about the [Jerry Do It Together](http://youandjerrycan.org) project.
 
-Original idea
--------------
+Vision
+------
 
+### Original idea
 Watch the [video-prototyping](http://vimeo.com/46923757) of the application as
 it was envisioned in 2012.
+
+### Present (sept. 2014)
+[adoptajerry](http://adoptajerry.cc) is an free software SASS application.
+
+### Future
+adoptajerry is able to run on different servers. Each instance of the app have its own database that sync up and down to the database of reference. The application accessible at [adoptajerry.cc](http://adoptajerry.cc) is serving data from the database of reference.
+The application remains free software under AGPLv3. And the content of the database might be distributed under an open data license such as the [Open Data Commons Open Database License \(ODbL\)](http://opendatacommons.org/licenses/odbl/summary/). The choice of the license is something to be discussed within the JerryClan.
+
+#### Example of use case
+adoptajerry can run on an offline local network hosted on a Jerry Computer during a workshop. When the workshop is done, the instance is plugged to the internet and its database automatically synchronized to the database of reference.
+
 
 Contribute
 ----------
@@ -20,13 +32,13 @@ Contribute
 
 Do it [in the issues] using the appropriate `tag`
 
-### Work on the code
+### Contribute to the code
 
-#### Run the app locally
+#### Install the app locally
 
-  1. [Fork the main repo](https://github.com/JerryDIT/adoptajerry/fork)
+  1. [Fork the main repo](https://github.com/JerryDIT/adoptajerry/fork) on your github acount.
 
-  2. clone your fork
+  2. clone your fork locally
 
     `git clone git@github.com:YOUR_NAME/adoptajerry.git`
 
@@ -38,6 +50,10 @@ Do it [in the issues] using the appropriate `tag`
 
     `bundle install`
 
+  4. run the migrations
+
+    `rake db:migrate`
+
   4. start your app
 
     `rails server`
@@ -45,15 +61,16 @@ Do it [in the issues] using the appropriate `tag`
 Your app is running on <http://localhost:3000>
 
 #### Do some work
-  
+
   1. [Fix a bug or work on a feature](https://github.com/JerryDIT/adoptajerry/issues)
       `git branch your-contribution`
-  2. When you're happy, push your work to your fork
-  
-    `git push origin your-contribution`  
 
-  3. Do a pull request
-  
+  2. When you're happy, push your work to your fork
+
+    `git push origin your-contribution`
+
+  3. Do a pull request from the github interface.
+
 
 ### Say hello :)
 
