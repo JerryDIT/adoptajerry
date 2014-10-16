@@ -10,7 +10,17 @@ class Maker < ActiveRecord::Base
     create! do |maker|
       maker.provider = auth[:provider]
       maker.uid = auth[:uid]
-      maker.name = auth[:info][:name] ? auth[:info][:name].split('@')[0][0..6] + '-' + rand(36**3).to_s(36) : rand(36**5).to_s(36)
+      maker.set_name(auth[:info][:name])
+    end
+  end
+
+  def set_name(email)
+    if email
+      self.name = email.split('@')[0][0..6] + '-' + rand(36**3).to_s(36)
+      #=> 'myname-h9k' if email == 'myname@xmail.com' 
+    else
+      self.name = rand(36**5).to_s(36)
+      #=> 'f8lk2'
     end
   end
 end
