@@ -21,6 +21,6 @@ class MakersController < ApplicationController
   private
 
   def maker_params
-    params.require(:maker).permit(:name, :city, :bio)
+    params.require(:maker).permit(:name, :city, :bio, :twitter_url, :website)
   end
 end
