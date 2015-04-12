@@ -43,9 +43,9 @@
     <h5 class="text-center">
       <span data-tooltip="right" aria-haspopup="true" class="has-tip tip-right" title="You can set a milestone when you are done with editing the content of the pad below. Just click on the star to 'Save a revision' \o/">Good practice</span>
     </h5>
-    <iframe name='embed_readwrite' src='http://lite4.framapad.org/p/jerrydit-adoptajerry-<%= 'staging' unless Rails.env == 'production' %>-<%= @jerry.id %>?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true&userName=<%= current_maker ? current_maker.name : "Curious" %>' width=1000 height=600></iframe>
+    <iframe name='embed_readwrite' src='http://lite6.framapad.org/p/jerrydit-adoptajerry-<%= 'staging' unless Rails.env == 'production' %>-<%= @jerry.id %>?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=true&userName=<%= current_maker ? current_maker.name : "Curious" %>' width=1000 height=600></iframe>
     <div class="small-6 small-centered columns">
-      <%= link_to 'Edit this pad on Framapad', "http://lite4.framapad.org/p/jerrydit-adoptajerry-#{'staging' unless Rails.env == 'production'}-#{@jerry.id}", class: "button radius expand", target: "_blank" %>
+      <%= link_to 'Edit this pad on Framapad', "http://lite6.framapad.org/p/jerrydit-adoptajerry-#{'staging' unless Rails.env == 'production'}-#{@jerry.id}", class: "button radius expand", target: "_blank" %>
     </div>
   </div>
 </div>
