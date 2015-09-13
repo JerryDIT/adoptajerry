@@ -41,6 +41,9 @@ end
 # http://tzinfo.github.io/datasourcenotfound
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# Authorization library which restricts what resources a given user is allowed to access.
+gem 'cancancan', '~> 1.10'
+
 source 'https://rails-assets.org' do
   # Superheroic JavaScript MVW Framework
   gem 'rails-assets-angular', '1.4.0'
