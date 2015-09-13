@@ -38,6 +38,9 @@ group :production do
   gem 'pg'
 end
 
+# http://tzinfo.github.io/datasourcenotfound
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
 source 'https://rails-assets.org' do
   # Superheroic JavaScript MVW Framework
   gem 'rails-assets-angular', '1.4.0'
