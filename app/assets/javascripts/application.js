@@ -10,13 +10,65 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require modernizr-history
+//= require modernizr-svg
+//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require foundation
-//= require jquery_nested_form
-//= require_tree .
-
-$(function(){ $(document).foundation(); });
-
+//= require jquery.expander
+//
+//= require sugar
+//= require bootstrap
 //= require turbolinks
+//
+//= require moment
+//
+//= require angular
+//= require ngstorage
+//= require angular-bootstrap
+//= require angular-local-storage
+//= require angular-cache
+//= require angular-sanitize
+//= require angular-timeline
+//= require angular-moment
+//= require angular-translate
+//= require angular-translate-loader-static-files
+//= require angular-filter
+//= require angular-http-auth
+//= require humps
+//= require textAngular-rangy
+//= require textAngular
+//= require ng-file-upload
+//= require angular-growl-v2
+//
+//= require angular-rails-templates
+//= require_tree ../templates
+//
+// apiCheck must appear before formly
+//= require api-check
+//= require angular-formly
+//= require angular-formly-templates-bootstrap
+//
+//= require app/init
+//= require_tree ./app
+//=
+//= require smooth-anchor-scrolling
+
+function loginViaEmail() {
+  navigator.id.get(function(assertion) {
+    if (assertion) {
+      $('input[name=assertion]').val(assertion);
+      $('#browser_id_form').submit();
+    } else {
+      window.location = "#{failure_path}"
+    }
+  });
+}
+
+$(function() {
+  $('#browser_id_form button').click(function() {
+    loginViaEmail();
+    return false;
+  });
+});

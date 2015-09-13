@@ -26,4 +26,14 @@ Adoptajerry::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # https://github.com/kikonen/ngannotate-rails
+  config.ng_annotate.process = true
+  if ENV['NG_FORCE'] == 'true'
+    config.assets.js_compressor = :uglifier
+    config.assets.compress = true
+    config.assets.compile = false
+    config.assets.digest = true
+    config.assets.debug = false
+  end
 end

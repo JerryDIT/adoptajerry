@@ -7,6 +7,7 @@ Adoptajerry::Application.routes.draw do
 
   root 'jerries#index'
 
+  get "/comments" => 'pages#comments'
   get "/build" => 'pages#start'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
@@ -19,4 +20,6 @@ Adoptajerry::Application.routes.draw do
   resources :jerries do
     resources :organs
   end
+
+  resources :locales, controller: :translations, only: :show
 end

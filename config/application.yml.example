@@ -6,4 +6,6 @@ SECRET_TOKEN:
 # You need an account on Amazon S3
 AWS_ACCESS_KEY_ID:
 AWS_SECRET_ACCESS_KEY:
+AWS_BUCKET_NAME:
 
+HOST: localhost:3000

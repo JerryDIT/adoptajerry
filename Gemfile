@@ -4,17 +4,19 @@ ruby '2.0.0'
 
 gem 'rails', '4.2.4'
 
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '5.0.1'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+
 gem 'jquery-turbolinks'
 gem 'turbolinks'
+
 gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'foundation-rails'
 gem 'omniauth-browserid'
 gem 'nested_form'
 gem 'figaro'
@@ -44,7 +46,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Authorization library which restricts what resources a given user is allowed to access.
 gem 'cancancan', '~> 1.10'
 
+# Integrate Modernizr javascript library with Rails asset pipeline
+gem 'modernizr_rails', github: 'tsechingho/modernizr-rails'
+
+gem 'bootstrap-sass'
+
+# CSS Authoring Framework
+gem 'compass-rails', '2.0.4'
+# The iconic font designed for Bootstrap
+gem 'font-awesome-sass'
+
 source 'https://rails-assets.org' do
+  gem 'rails-assets-sugar'
+
   # Superheroic JavaScript MVW Framework
   gem 'rails-assets-angular', '1.4.0'
   gem 'rails-assets-angular-bootstrap'
