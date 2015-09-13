@@ -1,0 +1,9 @@
+# Add application configuration variables here, as shown below.
+
+# This one should be generated
+SECRET_TOKEN:
+
+# You need an account on Amazon S3
+AWS_ACCESS_KEY_ID:
+AWS_SECRET_ACCESS_KEY:
+
