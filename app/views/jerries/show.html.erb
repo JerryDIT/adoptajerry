@@ -17,6 +17,11 @@
   <%= link_to 'Edit profile', edit_jerry_path(@jerry), :class => "button tiny radius" if @jerry.makers.include? current_maker %>
 </div>
 <div class="medium-8 columns">
+  <div class="medium-12 columns">
+    <% @jerry.pictures.each do |picture| %>
+      <%= image_tag picture.image.url(:preview).to_s %>
+    <% end %>
+  </div>
   <div class="medium-6 columns">
     <% if @jerry.organs.any? %>
       <h2>Organs</h2>
