@@ -51,11 +51,13 @@ Do it [in the issues](https://github.com/JerryDIT/adoptajerry/issues) using the 
 
     `bundle install`
 
-  4. run the migrations
+  4. create and complete config/application.yml (see config/application.yml.example)
+
+  5. run the migrations
 
     `rake db:migrate`
 
-  4. start your app
+  6. start your app
 
     `rails server`
 
