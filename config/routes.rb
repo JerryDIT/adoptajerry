@@ -1,5 +1,9 @@
 Adoptajerry::Application.routes.draw do
   use_doorkeeper
+  mount API::Base => '/api'
+  constraints CanAccessAPIDocumentation do
+    mount GrapeSwaggerRails::Engine => '/api-doc'
+  end
 
   root 'jerries#index'
 
