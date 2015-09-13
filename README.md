@@ -74,7 +74,6 @@ Your app is running on <http://localhost:3000>
 
   3. Do a pull request from the github interface.
 
-
 ### Say hello :)
 
 If you are willing to put energy into the project let's get in touch on the forum : [Jerry DIT - Tech Lab](https://groups.google.com/forum/#!forum/techlab-jerrydit)

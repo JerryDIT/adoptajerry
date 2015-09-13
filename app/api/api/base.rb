@@ -30,8 +30,7 @@ module API
 
     mount API::Comments
 
-    add_swagger_documentation format: :json,
-      base_path: '/api', api_version: 'v1',
+    add_swagger_documentation base_path: '/api', api_version: 'v1',
       hide_documentation_path: true
   end
 end

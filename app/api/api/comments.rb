@@ -10,7 +10,7 @@ module API
         optional :commentable_type, type: String
         optional :commentable_id, type: Integer
       end
-      oauth2 'public'
+      # oauth2 'public'
       post do
         if params[:commentable_type].present? && params[:commentable_id].present?
           if params[:commentable_type] == "Jerry"
@@ -30,6 +30,10 @@ module API
         else
           error! "Error while saving the comment", 406
         end
+      end
+
+      get do
+        present Comment.all, with: API::Resources::Comment
       end
 
     end

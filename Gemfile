@@ -70,6 +70,9 @@ end
 gem 'angular-rails-templates'
 gem 'ngannotate-rails'
 
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Rails 3 and 4
+gem 'kaminari'
+
 # An opinionated micro-framework for creating REST-like APIs in Ruby
 gem 'grape'
 gem 'grape-entity'

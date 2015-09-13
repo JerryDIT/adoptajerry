@@ -5,7 +5,6 @@ module API
       expose :comment
       expose :commentable_type
       expose :commentable_id
-      expose :user, using: API::Resources::User
     end
   end
 end
