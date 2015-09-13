@@ -1,0 +1,38 @@
+doctype html
+html lang=I18n.locale
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    base href="/"
+
+    title
+      = content_for?(:title) ? yield(:title) : "Adopt a Jerry"
+
+    = favicon_link_tag '/jerry_favicon.ico'
+    = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
+    link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    script src="https://login.persona.org/include.js" type="text/javascript"
+    = js_env
+    = csrf_meta_tags
+
+  body
+    header#header data-turbolinks-permanent=""
+      == render 'layouts/navigation'
+    main[role="main"]
+      - if ['sessions', 'registrations', 'passwords', 'confirmations', 'unlocks'].include?(controller_name)
+        .container
+          .row
+            .col-md-8.col-md-offset-2
+              == render 'layouts/messages'
+              - if @client
+                = image_tag client_banner_path(@client), class: 'img-responsive center-block'
+              == yield
+      - else
+        .container
+          == render 'layouts/messages'
+          == yield
+      div growl=""
+    footer
+      == render 'layouts/footer'

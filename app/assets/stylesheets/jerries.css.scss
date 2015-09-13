@@ -37,11 +37,27 @@
   content: "» ";
 }
 .profile {
-  background-color: $jaune-canari;
+  background-color: $brand-primary;
   img:hover {
     opacity: 0.42;
   }
 }
+
+.profile-panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #f2f2f2;
+  color: #333333;
+
+  h5, h6 {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
 #fold {
   img {
     margin: 2.5rem auto;

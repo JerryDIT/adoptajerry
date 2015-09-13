@@ -1,0 +1,108 @@
+/* http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+=breakpoint($point)
+  @if $point == large
+    @media (min-width: 64.375em)
+      @content
+  @else if $point == medium
+    @media (min-width: 50em)
+      @content
+  @else if $point == small
+    @media (min-width: 37.5em)
+      @content
+
+=image-2x($image, $width, $height)
+  @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx)
+    /* on retina, use image that's scaled by 2
+    background-image: url($image)
+    background-size: $width $height
+
+=clearfix
+  &
+    *zoom: 1
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+=opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity = $opacity-ie)
+  //IE8
+
+=center-block
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+=text-truncate
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=abs-pos($top: auto, $right: auto, $bottom: auto, $left: auto)
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  position: absolute
+
+=font-size($sizeValue: 12, $important: "false")
+  @if $important == "true"
+    font-size: $sizeValue + px !important
+    //fallback for old browsers
+    font-size: 0.1 * $sizeValue + rem !important
+  @else
+    font-size: $sizeValue + px
+    //fallback for old browsers
+    font-size: 0.1 * $sizeValue + rem
+
+=line-height($heightValue: 12)
+  line-height: $heightValue + px
+  //fallback for old browsers
+  line-height: 0.125 * $heightValue + rem
+
+// compass
+=resize-sprite($map, $sprite, $percent)
+  $spritePath: sprite-path($map)
+  $spriteWidth: image-width($spritePath)
+  $spriteHeight: image-height($spritePath)
+  $width: image-width(sprite-file($map, $sprite))
+  $height: image-height(sprite-file($map, $sprite))
+  +background-size(ceil($spriteWidth * $percent / 100) ceil($spriteHeight * $percent / 100))
+  width: ceil($width * $percent / 100)
+  height: ceil($height * $percent / 100)
+  background-position: 0 floor(nth(sprite-position($map, $sprite), 2) * $percent / 100)
+
+// Placeholder @mixin for Sass
+//
+// A mixin to style placeholders in HTML5 form elements.
+// Includes also a .placeholder class to be used with a polyfill e.g.
+// https://github.com/mathiasbynens/jquery-placeholder
+// Requires Sass 3.2.
+//
+// Example usage (.scss):
+// 
+// input {
+//   @include placeholder {
+//     /* styles for placeholder here 
+//   }
+// }
+//
+
+=placeholder
+  &.placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-webkit-input-placeholder
+    @content
+
+=vertical-align
+  position: relative
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)

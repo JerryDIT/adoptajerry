@@ -1,0 +1,39 @@
+#fold.text-center
+  = image_tag("/welcome_to_jerry.gif", alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer",
+    class: "img-responsive")
+.text-center
+  a.btn.btn-default href="#tour"
+    | Take the Tour
+
+#tour.text-center
+  .embed-container
+    iframe { src="//www.youtube.com/embed/asZ11Nb3Rsg?rel=0"
+      frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" }
+
+#register
+  h2.text-center Register your Jerry
+  .row
+    .col-xs-4.col-xs-offset-4
+      .profile
+        = link_to image_tag("/add_jerry.png", alt: "+ add a new Jerry", class: 'img-responsive'), new_jerry_path
+      .profile-panel
+        h5.text-center
+          = link_to "Jerry [...]", new_jerry_path
+
+  #family.row
+    h2.text-center Meet the family!
+    - @jerries.each do |jerry|
+      .columns
+        .profile
+          - if jerry.avatar?
+            = link_to image_tag(jerry.avatar.url(:medium).to_s, alt: "Avatar of \#{jerry.name}"), jerry
+          - else
+            = link_to image_tag("http://placehold.it/300x300&text=#{jerry.name}", alt: "Avatar of #{jerry.name}", class: 'img-responsive'), jerry
+        .profile-panel
+          h5
+            = link_to jerry.name.to_s, jerry
+          h6.subheader
+            - if jerry.location
+              = "in #{jerry.location.split(',').first} "
+            - else
+              | on the internets

@@ -1,0 +1,609 @@
+// Base =======================================================================
+
+footer
+  > .container
+    padding: 15px 0
+    border-top: 1px solid black
+
+// Buttons ====================================================================
+
+.btn
+  padding: 8px $padding-base-horizontal 7px
+  font-size: 13px
+
+  &:hover
+    +box-shadow(inset 0 2px 0 rgba(0, 0, 0, 0.075))
+  &:active
+    +box-shadow(inset 0 2px 0 rgba(0, 0, 0, 0.075))
+
+.btn-lg,
+.btn-group-lg > .btn
+  padding: 14px $padding-large-horizontal 13px
+  line-height: 15px
+
+.btn-sm,
+.btn-group-sm > .btn
+  padding: 4px $padding-small-horizontal
+
+.btn-xs,
+.btn-group-xs > .btn
+  padding: $padding-xs-vertical $padding-xs-horizontal
+
+.btn-primary,
+.btn-group.open .dropdown-toggle.btn-primary
+  border: none
+  border-bottom: 3px solid $btn-primary-border
+  background-color: $btn-default-bg
+  color: $text-color
+  &:hover, &:focus
+    border-bottom: 3px solid $btn-primary-border
+    background-color: $btn-primary-bg
+
+.btn-success,
+.btn-group.open .dropdown-toggle.btn-success
+  border: none
+  border-bottom: 3px solid $btn-success-border
+  background-color: $btn-default-bg
+  color: $text-color
+  &:hover, &:focus
+    border-bottom: 3px solid $btn-success-border
+    background-color: $btn-success-bg
+
+.btn-info,
+.btn-group.open .dropdown-toggle.btn-info
+  border: none
+  border-bottom: 3px solid $btn-info-border
+  background-color: $btn-default-bg
+  color: $text-color
+  &:hover, &:focus
+    border-bottom: 3px solid $btn-info-border
+    background-color: $btn-info-bg
+
+.btn-warning,
+.btn-group.open .dropdown-toggle.btn-warning
+  border: none
+  border-bottom: 3px solid $btn-warning-border
+  background-color: $btn-default-bg
+  color: $text-color
+  &:hover, &:focus
+    border-bottom: 3px solid $btn-warning-border
+    background-color: $btn-warning-bg
+
+.btn-danger,
+.btn-group.open .dropdown-toggle.btn-danger
+  border: none
+  border-bottom: 3px solid $btn-danger-border
+  background-color: $btn-default-bg
+  color: $text-color
+  &:hover, &:focus
+    border-bottom: 3px solid $btn-danger-border
+    background-color: $btn-danger-bg
+
+.btn-group.open .dropdown-toggle
+  +box-shadow(none)
+
+.btn-link:hover
+  +box-shadow(none)
+
+.text-center
+  > .btn
+    margin: 20px 0
+
+// Typography =================================================================
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 700
+
+h1, .h1, h2, .h2, h3, .h3
+  margin-top: 50px
+  margin-bottom: 30px
+
+.text-primary,
+.text-primary:hover
+  color: $brand-primary
+
+.text-success,
+.text-success:hover
+  color: $brand-success
+
+.text-danger,
+.text-danger:hover
+  color: $brand-danger
+
+.text-warning,
+.text-warning:hover
+  color: $brand-warning
+
+.text-info,
+.text-info:hover
+  color: $brand-info
+
+// Tables =====================================================================
+
+table,
+.table
+
+  a
+    text-decoration: underline
+
+  .success,
+  .warning,
+  .danger,
+  .info
+    color: #fff
+
+    a
+      color: #fff
+
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td
+    border-color: transparent
+
+  a
+    text-decoration: none
+
+table.dataTable thead th, table.dataTable thead td
+  &.minimalist
+    border-bottom: none
+
+table.dataTable thead th, table.dataTable thead td
+  border-bottom-color: $gray-lighter
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody
+  border-bottom-color: $gray-lighter
+
+table.dataTable.no-footer
+  border-bottom: none
+
+div.dataTables_info
+  font-size: 11px
+  color: $gray-light !important
+
+// Forms ======================================================================
+
+.form-control
+  +box-shadow(inset 0 2px 0 rgba(0, 0, 0, 0.075))
+
+label
+  font-weight: normal
+
+.radio_buttons, .check_boxes
+  width: auto
+  height: auto
+
+.has-warning
+  .help-block,
+  .control-label
+    color: $brand-warning
+
+  .form-control,
+  .form-control:focus
+    border: 1px solid $brand-warning
+    +box-shadow(inset 0 2px 0 rgba(0, 0, 0, 0.075))
+
+.has-error
+  .help-block,
+  .control-label
+    color: $brand-danger
+
+  .form-control,
+  .form-control:focus
+    border: 1px solid $brand-danger
+    +box-shadow(inset 0 2px 0 rgba(0, 0, 0, 0.075))
+
+.has-success
+  .help-block,
+  .control-label
+    color: $brand-success
+
+  .form-control,
+  .form-control:focus
+    border: 1px solid $brand-success
+    +box-shadow(inset 0 2px 0 rgba(0, 0, 0, 0.075))
+
+input
+  &[type="checkbox"], &[type="radio"]
+    width: inherit
+
+// Navs =======================================================================
+
+.nav
+  .open > a,
+  .open > a:hover,
+  .open > a:focus
+    border-color: transparent
+
+.nav-tabs
+
+  > li > a
+    margin-top: 6px
+    border-color: $navbar-default-border
+    color: $gray-dark
+    +transition(all 0.2s ease-in-out)
+
+  > li > a:hover,
+  > li > a:focus,
+  > li.active > a,
+  > li.active > a:hover,
+  > li.active > a:focus,
+  .open > a,
+  .open > a:hover,
+  .open > a:focus
+    padding-top: $padding-large-vertical + 3px
+    padding-bottom: $padding-large-vertical + 3px
+    margin-top: 0
+
+  .open > a,
+  .open > a:hover,
+  .open > a:focus
+    border-color: $navbar-default-border
+
+  > li.disabled > a:hover,
+  > li.disabled > a:focus
+    padding-top: $padding-large-vertical
+    padding-bottom: $padding-large-vertical
+    margin-top: 6px
+
+.navbar-brand
+  height: initial
+  padding: 6px 8px
+
+.navbar-text
+  .btn
+    padding: 0
+
+.navbar-nav
+  .active
+    border-bottom: 2px solid $gray-dark
+
+.dropdown-menu
+  margin-top: 0
+  border-top-width: 1px
+  +box-shadow(none)
+
+.breadcrumb
+  border-color: darken($breadcrumb-bg, 5%)
+  border-style: solid
+
+.pagination,
+.pager
+
+  > li > a,
+  > li > span
+    position: relative
+    top: 0
+    color: $pagination-color
+    font-size: 12px
+    font-weight: bold
+    text-transform: uppercase
+
+    &:hover
+      top: 1px
+      border-bottom-width: 3px
+
+    &:active
+      top: 2px
+      border-bottom-width: 2px
+
+  > .disabled > a,
+  > .disabled > span
+
+    &:hover
+      top: 0
+
+    &:active
+      top: 0
+
+.pager
+  > li > a,
+  > li > span,
+  > .disabled > a,
+  > .disabled > span
+
+    &,
+    &:hover,
+    &:active
+      border-left-width: 2px
+      border-right-width: 2px
+
+.alert
+
+  a,
+  .alert-link
+    font-weight: normal
+    color: #fff
+    text-decoration: underline
+
+  .close
+    color: #fff
+    text-decoration: none
+    opacity: 0.4
+
+    &:hover,
+    &:focus
+      color: #fff
+      opacity: 1
+
+.label
+  background: none
+  font-weight: normal
+  border: 1px solid $text-color
+
+.label-default
+  background: none
+  color: $gray-light
+  border-color: $gray-light
+
+.label-success
+  background: none
+  color: $brand-success
+  border-color:  $brand-success
+
+.label-info
+  background: none
+  color: darken($brand-info, 10%)
+  border-color:  $brand-info
+
+.label-warning
+  background: none
+  color: darken($brand-warning, 10%)
+  border-color:  $brand-warning
+
+.label-danger
+  background: none
+  color: darken($brand-danger, 10%)
+  border-color:  $brand-danger
+
+small.label
+  font-size: 54%
+  margin: 6px
+  position: relative
+  top: -2px
+
+.panel-default > .panel-heading
+  background: none
+  border-bottom: 1px solid $gray-lighter
+
+  .badge
+    color: $gray
+    background: $gray-lighter
+
+  .badge-alert
+    color: white
+    background: $brand-danger
+
+// Progress bars ==============================================================
+
+.progress
+  border: 1px solid $navbar-default-border
+
+// Containers =================================================================
+
+.container
+  background-color: white
+  padding: 0px 25px
+
+.container-fluid
+  width: 100%
+
+.well
+  border: 1px solid $navbar-default-border
+
+.jumbotron
+  border: 1px solid $navbar-default-border
+
+.panel
+  border: 1px solid $navbar-default-border
+
+// Miscellaneous
+
+html, body
+  overflow: visible
+
+a, a:hover, a:focus
+  &.disabled,
+  &[disabled]
+    cursor: text
+    pointer-events: none
+    color: $text-color
+
+a.discrete
+  color: $text-color !important
+
+body
+  main > .container
+    padding: 60px 25px 25px
+
+/* First level of nav
+
+.sidenav
+  margin-top: 5px
+  margin-bottom: 30px
+  padding-top: 10px
+  padding-bottom: 10px
+  border-radius: 5px
+
+/* All levels of nav
+
+.sidebar .nav
+  >
+    li
+      > a
+        display: block
+        padding: 5px 20px
+        border-left: 2px solid transparent
+        color: $gray-light
+      &:hover, &:focus
+        text-decoration: none
+      &.active > a, &:hover > a, &:focus > a
+        background-color: transparent
+        border-left: 2px solid $gray-darker
+        color: $gray-darker
+  .nav
+    margin-bottom: 8px
+    > li > a
+      padding-top: 3px
+      padding-bottom: 3px
+      padding-left: 10px
+      font-size: 0.9em
+  > li.active .nav
+    display: block
+
+.pie-pophover
+  background: none
+  border: 0
+  +box-shadow(none)
+
+.text-truncate
+  +text-truncate()
+
+// _____________________________ wysihtml5
+.wysihtml5-sandbox
+  border: 1px solid $gray-lighter !important
+  padding: 5px 15px !important
+
+.textarea-value
+  .wysihtml5
+    label[for=contribution_value]
+      display: none
+
+  .wysihtml5-sandbox
+    width: 100% !important
+    min-height: 250px !important
+
+  .wysihtml5-toolbar > li
+    margin: 10px 0 -8px !important
+
+// _______________________________ Angular
+[ng-click]
+  cursor: pointer
+  cursor: hand
+.nav, .pagination, .carousel, .panel-title a
+  cursor: pointer
+  cursor: hand
+
+// ________________________________ Timeline
+
+#timeline
+  border-top: 1px solid $gray-lighter
+  margin-top: 40px
+  padding-top: 30px
+
+// overriding angular-timeline
+.timeline
+  &:before
+    width: 1px
+  margin-bottom: 0
+  padding: 2px 0
+  > li.timeline-inverted
+    > .timeline-panel
+      border: 1px solid $gray-lighter
+      +box-shadow(none)
+      &:before
+        top: 6px
+        border-left-color: $gray-lighter
+        border-right-color: $gray-lighter
+      &:after
+        top: 7px
+    > .timeline-badge
+      width: 40px
+      height: 40px
+      line-height: 40px
+      top: 6px
+      margin-left: 4px
+      background-color: darken($gray-lighter, 5%)
+  &.timeline-inverted > .timeline-panel:after
+    left: -13px
+.timeline-title
+  margin: 5px 0 15px
+.timeline-body
+  line-height: 20px
+.timeline-footer
+  margin-top: 10px
+  padding: 0
+  background: none
+ul.timeline.timeline-form
+  padding-bottom: 0
+  &:before
+    display: none
+  hr.hr-border
+    width: 20%
+    margin: 20px auto
+
+ul.timeline > li.timeline-inverted
+  > .timeline-panel
+    margin-right: 25px
+  &.timeline-node-highlighted
+    > .timeline-badge
+      display: none
+    > .timeline-panel
+      background: white
+      width: 100%
+      margin-right: 0
+    > .timeline-panel
+      &:before
+        display: none
+      &:after
+        display: none
+
+// ________________________________ Select
+
+.dropdown-menu > .disabled
+  cursor: not-allowed
+  > a
+    pointer-events: none
+    color: $gray-lighter
+    &:hover, &:focus
+      color: $gray-lighter
+
+// ________________________________ Rich text editor (textAngular)
+
+$editor-height: 60px
+.ta-editor
+  min-height: $editor-height
+  height: auto
+  overflow: auto
+  font-family: inherit
+  font-size: 100%
+  margin: 5px 0 10px
+.ta-scroll-window > .ta-bind
+  min-height: $editor-height
+.ta-editor.ta-html, .ta-scroll-window.form-control
+  min-height: $editor-height
+
+form.editable-text-angular
+  margin: 10px 0
+
+  .editable-buttons
+    display: block
+    margin: 0 0 10px -5px
+
+.editable-buttons
+  @extend .btn-group-sm
+
+.editing-context, form[name=newComment] .pull-right
+  margin-top: 5px
+  .multiselect
+    @extend .btn-xs
+    margin: -2px 0 0 -3px
+
+// ________________________________ Responsive
+
+.embed-container
+  position: relative
+  padding-bottom: 56.25%
+  height: 0
+  overflow: hidden
+  max-width: 100%
+  margin: 40px 0
+
+  iframe, object, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

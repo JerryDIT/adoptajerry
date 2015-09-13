@@ -1,0 +1,22 @@
+ul.nav.navbar-nav
+  li
+    = link_to "Profiles", root_path + "#family"
+  li
+    = link_to "Add a Jerry", new_jerry_path
+  li
+    = link_to "Build your Jerry", build_path
+  li
+    = link_to "About Jerry →", "http://youandjerrycan.org", target: "_blank"
+
+ul.nav.navbar-nav.navbar-right
+  - if current_maker
+    li
+      = link_to "Aloha! #{current_maker.name}", maker_path(current_maker)
+    li
+      = link_to "Sign Out", signout_path
+  - else
+    li
+      form id='browser_id_form' action='/auth/browser_id/callback'
+        input type='hidden' name='assertion'
+        button.btn.btn-link type='submit' class='secondary'
+          | Sign in with Persona
