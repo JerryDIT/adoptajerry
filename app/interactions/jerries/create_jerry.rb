@@ -1,4 +1,5 @@
 require 'active_interaction'
+require_relative '../pictures/add_pictures_to_jerry'
 
 class CreateJerry < ActiveInteraction::Base
   hash :params do
@@ -17,7 +18,7 @@ class CreateJerry < ActiveInteraction::Base
   def execute
     create_jerry
     associate_maker
-    add_pictures
+    compose(AddPicturesToJerry, images: images, jerry: @jerry)
     @jerry
   end
 
@@ -30,11 +31,5 @@ class CreateJerry < ActiveInteraction::Base
 
   def associate_maker
     maker.jerries << @jerry
-  end
-
-  def add_pictures
-    images.each do |image|
-      @jerry.pictures.create(image: image)
-    end
   end
 end
