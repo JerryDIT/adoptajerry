@@ -82,3 +82,6 @@ gem 'grape-swagger-rails'
 gem 'doorkeeper'
 # A Ruby gem that allows Oauth2 protection with Doorkeeper for Grape Api's
 gem 'wine_bouncer'
+
+# The ActiveRecord acts_as_commentable plugin
+gem 'acts_as_commentable'
