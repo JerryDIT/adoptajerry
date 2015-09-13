@@ -1,19 +1,24 @@
+require Rails.root.join('app/interactions/jerries/create_jerry')
+
 class JerriesController < ApplicationController
-  before_action :get_jerry, except: [:new, :create, :index, :roulette]
+  before_action :find_jerry, except: [:new, :create, :index, :roulette]
   before_action :maker_authenticate, except: [:index, :show, :roulette]
 
   def new
     @jerry = Jerry.new
     @jerry.organs.build
     @jerry.skills.build
+    @jerry.pictures.build
   end
 
   def create
-    @jerry = Jerry.new jerry_params
-    if @jerry.save && current_maker.jerries << @jerry
-      redirect_to @jerry
+    outcome = CreateJerry.run(params: params[:jerry],
+                              maker: current_maker,
+                              images: params[:jerry][:pictures][:image])
+    if outcome.valid?
+      redirect_to jerry_path outcome.result
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -38,7 +43,7 @@ class JerriesController < ApplicationController
           flash.now.notice = "Unknown maker '#{params[:jerry][:makers][:uid]}', can not be added to the team"
           return render 'edit_team'
         end
-      end 
+      end
       if @jerry.update jerry_params
         redirect_to @jerry
       else
@@ -66,7 +71,7 @@ class JerriesController < ApplicationController
 
   private
 
-  def get_jerry
+  def find_jerry
     @jerry = Jerry.find params[:id]
   end
 
@@ -80,14 +85,16 @@ class JerriesController < ApplicationController
 
   def jerry_params
     params.require(:jerry).permit(
-      :name, 
+      :name,
       :bio,
       :location,
-      :avatar, 
+      :avatar,
       organs_attributes:
         [:id, :role, :quantifier, :unit, :_destroy],
       skills_attributes:
-        [:id, :layer, :name, :url, :_destroy]
+        [:id, :layer, :name, :url, :_destroy],
+      pictures_attributes:
+        [:id, :jerry_id, :image, :_destroy]
     )
   end
 

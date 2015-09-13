@@ -18,6 +18,7 @@ gem 'nested_form'
 gem 'figaro'
 gem 'gravatarify'
 gem 'haml'
+gem 'active_interaction', '~> 2.1'
 
 group :doc do
   gem 'sdoc', require: false

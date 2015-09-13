@@ -12,7 +12,7 @@
     </ul>
   </div>
   <% end %>
-  
+
   <%# jerry fields %>
   <div class="row">
     <div class="medium-6 columns avatar">
@@ -35,6 +35,23 @@
     </div>
   </div>
 
+  <%# pictures gallery %>
+  <div class="panel">
+    <h3>Pictures</h3>
+    <% if @jerry.pictures.count > 0 %>
+      <% @jerry.pictures.each do |picture| %>
+        <%= image_tag picture.image.url(:small).to_s %>
+      <% end %>
+    <% end %>
+    <h5>Add a picture</h5>
+    <%= f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key" %>
+    <%= f.fields_for :pictures do |p| %>
+      <%= p.file_field :image, multiple: true %>
+    <% end %>
+  </div>
+
+
+
   <%# organs fields %>
   <div class="panel">
     <h3>Organs</h3>
@@ -56,7 +73,7 @@
   <%# submit %>
   <p>
     <%= f.submit class: 'button radius success' %>
-    or 
+    or
     <%= link_to "Cancel", action_name == "edit" ? jerry_path(@jerry) : root_path %>
   </p>
 <% end %>
