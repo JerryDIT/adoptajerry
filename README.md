@@ -4,7 +4,7 @@ Adopt a Jerry!
 [![Stories in Ready](https://badge.waffle.io/JerryDIT/adoptajerry.png?label=ready&title=Ready)](https://waffle.io/JerryDIT/adoptajerry)
 [![Code Climate](https://codeclimate.com/github/JerryDIT/adoptajerry/badges/gpa.svg)](https://codeclimate.com/github/JerryDIT/adoptajerry)
 
-[adoptajerry.cc](http://adoptajerry.cc) is the central repo to highlight the Jerry family.  
+[adoptajerry.cc](http://adoptajerry.cc) is the central repo to highlight the Jerry family.
 It aims to be a crowd-sourced portfolio for the purpose of inspiration,
 replicability, and dreams achievement.
 
