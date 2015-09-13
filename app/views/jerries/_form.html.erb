@@ -28,10 +28,10 @@
       <%= f.text_field :name, placeholder: "Jerry Khan" %>
       <%= f.label :bio %>
       <%= f.text_area :bio, placeholder: "Born to conquer the digital divides" %>
-      <%= f.label :change_avatar %>
-      <%= f.file_field :avatar %>
       <%= f.label :location %>
       <%= f.text_field :location, placeholder: "Lomé, Togo" %>
+      <%= f.label :change_avatar %>
+      <%= f.file_field :avatar, class: 'button small radius' %>
     </div>
   </div>
 
@@ -43,11 +43,13 @@
         <%= image_tag picture.image.url(:small).to_s %>
       <% end %>
     <% end %>
-    <h5>Add a picture</h5>
-    <%= f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key" %>
-    <%= f.fields_for :pictures do |p| %>
-      <%= p.file_field :image, multiple: true %>
-    <% end %>
+    <div class="text-center">
+      <h5>Add pictures</h5>
+      <%= f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key" %>
+      <%= f.fields_for :pictures do |p| %>
+        <%= p.file_field :image, multiple: true, class: 'button small radius' %>
+      <% end %>
+    </div>
   </div>
 
 
