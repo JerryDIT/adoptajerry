@@ -1,4 +1,5 @@
 require Rails.root.join('app/interactions/jerries/create_jerry')
+require Rails.root.join('app/interactions/jerries/update_jerry')
 
 class JerriesController < ApplicationController
   before_action :find_jerry, except: [:new, :create, :index, :roulette]
@@ -13,9 +14,11 @@ class JerriesController < ApplicationController
   end
 
   def create
-    outcome = CreateJerry.run(params: params[:jerry],
-                              maker: current_maker,
-                              images: params[:jerry][:pictures][:image])
+    outcome = CreateJerry.run(
+      params: params[:jerry],
+      maker: current_maker,
+      images: params[:jerry][:pictures][:image])
+
     if outcome.valid?
       redirect_to jerry_path outcome.result
     else
@@ -35,8 +38,11 @@ class JerriesController < ApplicationController
 
   def update
     update_team
-    outcome = UpdateJerry.run(params: params[:jerry],
-                              images: params[:jerry][:pictures][:image])
+    outcome = UpdateJerry.run(
+      jerry: @jerry,
+      params: params[:jerry],
+      images: params[:jerry][:pictures][:image])
+
     if outcome.valid?
       redirect_to jerry_path outcome.result
     else
@@ -86,21 +92,6 @@ class JerriesController < ApplicationController
         return render 'edit_team'
       end
     end
-  end
-
-  def jerry_params
-    params.require(:jerry).permit(
-      :name,
-      :bio,
-      :location,
-      :avatar,
-      organs_attributes:
-        [:id, :role, :quantifier, :unit, :_destroy],
-      skills_attributes:
-        [:id, :layer, :name, :url, :_destroy],
-      pictures_attributes:
-        [:id, :jerry_id, :image, :_destroy]
-    )
   end
 
 end
