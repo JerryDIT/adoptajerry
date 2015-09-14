@@ -48,7 +48,10 @@ en:
     on_the_internets: "on the internets"
 
     # Jerry form
+    edit: "edit"
     upload_a_new_jerry: "Upload a new Jerry"
     fill_in_the_birth_certificate_below: "Fill in the birth certificate below"
     pictures: "pictures"
     add_pictures: "Add pictures"
+    add_to_the_team: "Add to the team"
+    contributors_to: "Contributors to"

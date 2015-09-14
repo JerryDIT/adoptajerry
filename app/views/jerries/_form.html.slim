@@ -1,33 +1,19 @@
-= nested_form_for @jerry, :html => {:multipart => true} do |f|
-
-  - if @jerry.errors.any?
-    #error_explanation
-    h2
-      = pluralize(@jerry.errors.count, "error")
-      = " prohibited"
-      = "this Jerry from being saved:"
-    ul
-      - @jerry.errors.full_messages.each do |msg|
-        li
-          = msg
+= simple_form_for @jerry do |f|
 
   .row
-    .col-md-6.avatar
-      = f.label :avatar
-      - if @jerry.avatar?
-        = image_tag @jerry.avatar.url(:medium).to_s
-      - else
-        = image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Jerry picture"}"
+    .col-md-12
+      = f.input :name, placeholder: "Jerry Khan"
+      = f.input :bio, placeholder: "Born to conquer the digital divides"
+      = f.input :location, placeholder: "Lomé, Togo"
 
-    .col-md-6.avatar
-      = f.label :name
-      = f.text_field :name, placeholder: "Jerry Khan"
-      = f.label :bio
-      = f.text_area :bio, placeholder: "Born to conquer the digital divides"
-      = f.label :location
-      = f.text_field :location, placeholder: "Lomé, Togo"
-      = f.label :change_avatar
-      = f.file_field :avatar, class: 'button small radius'
+      .row
+        .col-md-8
+          = f.input :avatar
+        .col-md-4
+          - if @jerry.avatar?
+            = image_tag @jerry.avatar.url(:medium).to_s
+          - else
+            = image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Jerry picture"}", class: "img-responsive"
 
   .profile-panel
 
@@ -53,7 +39,7 @@
     = f.fields_for :organs do |organ_form|
       = render 'organs/fields', f: organ_form
 
-    = f.link_to_add "|+| Add an Organ", :organs, class: "button small radius"
+    /= f.link_to_add "|+| Add an Organ", :organs, class: "btn btn-link"
 
   .profile-panel
 
@@ -63,9 +49,6 @@
     = f.fields_for :skills do |skills_form|
       = render 'skills/fields', f: skills_form
 
-    = f.link_to_add "|+| Add a Skill", :skills, class: "button small radius"
+    /= f.link_to_add "|+| Add a Skill", :skills, class: "btn btn-link"
 
-  p
-    = f.submit class: 'button radius success'
-    or
-    = link_to "Cancel", action_name == "edit" ? jerry_path(@jerry) : root_path
+  = f.submit class: 'btn btn-default'

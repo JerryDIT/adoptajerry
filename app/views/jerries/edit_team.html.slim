@@ -1,0 +1,18 @@
+.col-md-8.col-md-offset-2
+
+  h1
+    | {{'contributors_to' | translate}}
+    = " "
+    = @jerry.name
+
+  - @jerry.makers.each do |maker|
+    = link_to "+#{maker.name}", maker_path(maker), class: 'label radius secondary'
+
+  = nested_form_for(@jerry, html: {class: 'new_maker'}) do |f|
+    = f.fields_for :makers do |maker_f|
+      = maker_f.label :new_maker
+      br
+      = maker_f.text_field :uid, placeholder: "email"
+
+    .submit
+      = f.submit t('js.add_to_the_team'), class: "btn btn-default btn-sm"

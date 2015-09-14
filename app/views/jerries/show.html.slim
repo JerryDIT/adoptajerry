@@ -14,7 +14,7 @@ h1.column= @jerry.name
         br
       = @jerry.bio
     - if @jerry.makers.include?(current_maker)
-      a.btn.btn-default href="/jerries/#{jerry.id}/edit"
+      a.btn.btn-default href="/jerries/#{@jerry.id}/edit"
         | {{'edit_profile' | translate}}
 
   .col-md-8
@@ -48,7 +48,7 @@ h1.column= @jerry.name
 
         = " "
         - if @jerry.makers.include?(current_maker)
-          a.btn.btn-link href="/jerries/#{jerry.id}/team/edit"
+          a.btn.btn-link href="/jerries/#{@jerry.id}/team/edit"
             | {{'add_a_maker' | translate}}
 
 .row

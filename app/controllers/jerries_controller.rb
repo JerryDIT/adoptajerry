@@ -17,7 +17,8 @@ class JerriesController < ApplicationController
     outcome = CreateJerry.run(
       params: params[:jerry],
       maker: current_maker,
-      images: params[:jerry][:pictures][:image])
+      images: [])
+      # images: params[:jerry][:pictures][:image])
 
     if outcome.valid?
       redirect_to jerry_path outcome.result
@@ -40,7 +41,8 @@ class JerriesController < ApplicationController
     outcome = UpdateJerry.run(
       jerry: @jerry,
       params: params[:jerry],
-      images: params[:jerry][:pictures][:image])
+      images: [])
+      # images: params[:jerry][:pictures][:image])
 
     if outcome.valid?
       redirect_to jerry_path outcome.result

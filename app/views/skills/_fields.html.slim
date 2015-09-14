@@ -1,0 +1,12 @@
+.row
+
+  .col-md-4
+    = f.input :layer, collection: ['OS', 'Application'], prompt: 'Select a layer'
+
+  .col-md-4
+    = f.input :name
+
+  .col-md-4
+    = f.input :url
+
+  /= f.link_to_remove "Remove this skill", class: "right"
