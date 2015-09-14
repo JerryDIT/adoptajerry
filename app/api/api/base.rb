@@ -29,6 +29,7 @@ module API
     end
 
     mount API::Comments
+    mount API::Timelines
 
     add_swagger_documentation base_path: '/api', api_version: 'v1',
       hide_documentation_path: true

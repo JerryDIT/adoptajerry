@@ -15,7 +15,7 @@ module API
         if params[:commentable_type].present? && params[:commentable_id].present?
           if params[:commentable_type] == "Jerry"
             commentable = Jerry.find params[:commentable_id]
-            commentable = nil unless current_user.can?(:update, commentable)
+            # commentable = nil unless current_user.can?(:update, commentable)
           end
         end
 

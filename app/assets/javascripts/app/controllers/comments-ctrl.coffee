@@ -1,6 +1,6 @@
 CommentsCtrl = null
 ### @ngInject ###
-CommentsCtrl = ($scope, $element, $translate, Comment, Rails) ->
+CommentsCtrl = ($rootScope, $scope, $element, $translate, Comment, Rails) ->
 
   $scope.user = Rails.userName
   $scope.verb = "commented"
@@ -27,10 +27,12 @@ CommentsCtrl = ($scope, $element, $translate, Comment, Rails) ->
 
   $scope.submit = (comment) ->
     $scope.saving = true
-    Comment.create(comment, $scope.commentable, $scope.users).then (comment) ->
+    Comment.create(comment, $scope.commentable).then (comment) ->
       $scope.createdAt = moment()
       $scope.saving = false
       $scope.saved = true
+      resetEditor()
+      $rootScope.$broadcast 'commentCreated'
 
   # TODO make this code work so that the placeholder doesn't use Rails
   $translate('leave_a_comment').then (placeholder) ->

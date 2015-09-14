@@ -109,3 +109,6 @@ gem 'acts_as_commentable'
 
 # Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
 gem 'simple_form'
+
+# Create plain old ruby models with functionality found in ORMs, like ActiveRecord
+gem 'active_attr'

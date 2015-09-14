@@ -2,4 +2,6 @@ en:
   hello: "Hello world"
 
   js:
-    comments: comments
+    comments: "comments"
+    leave_a_comment: "Leave a comment"
+    submit: "submit"

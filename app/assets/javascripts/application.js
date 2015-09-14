@@ -17,6 +17,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.expander
+//= require jquery-addrule
 //
 //= require sugar
 //= require bootstrap

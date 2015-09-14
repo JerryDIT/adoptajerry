@@ -4,7 +4,7 @@ Comment = ($q, $http, Rails, CacheFactory) ->
 
   base = "//#{Rails.host}/api/comments"
 
-  create: (comment, commentable, users) ->
+  create: (comment, commentable) ->
     deferred = $q.defer()
     $http.post(base,
       content: comment.content

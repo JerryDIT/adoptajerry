@@ -7,7 +7,6 @@ Adoptajerry::Application.routes.draw do
 
   root 'jerries#index'
 
-  get "/comments" => 'pages#comments'
   get "/build" => 'pages#start'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
