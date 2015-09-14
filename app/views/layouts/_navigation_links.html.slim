@@ -1,22 +1,29 @@
 ul.nav.navbar-nav
   li
-    = link_to "Profiles", root_path + "#family"
+    a href="/#family"
+      | {{'profiles' | translate | capitalize}}
   li
-    = link_to "Add a Jerry", new_jerry_path
+    a href="/jerries/new"
+      | {{'add_a_jerry' | translate}}
   li
-    = link_to "Build your Jerry", build_path
+    a href="/build"
+      | {{'build_your_jerry' | translate}}
   li
-    = link_to "About Jerry →", "http://youandjerrycan.org", target: "_blank"
+    a href="http://youandjerrycan.org" target="_blank"
+      | {{'about_jerry' | translate}}
 
 ul.nav.navbar-nav.navbar-right
   - if current_maker
     li
-      = link_to "Aloha! #{current_maker.name}", maker_path(current_maker)
+      a href="/makers/#{current_maker.id}"
+        | {{'aloha' | translate}} #{current_maker.name}
     li
-      = link_to "Sign Out", signout_path
+      a href="/signout"
+        | {{'sign_out' | translate}}
+
   - else
     li
       form id='browser_id_form' action='/auth/browser_id/callback'
         input type='hidden' name='assertion'
         button.btn.btn-link type='submit' class='secondary'
-          | Sign in with Persona
+          | {{'sign_in' | translate}}

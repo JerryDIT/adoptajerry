@@ -1,22 +1,27 @@
 .container
   .row
     .col-md-4.text-left
-      Follow
+      | {{'follow' | translate | capitalize}}
       = " "
-      = link_to "@JerryDIT on twitter", "http://twitter.com/JerryDIT", target: "_blank"
+      a href="http://twitter.com/JerryDIT" target="_blank"
+        | {{'jerry_on_twitter' | translate}}
       = " "
       | &amp;
       = " "
-      = link_to "on facebook", "http://www.facebook.com/pages/Jerry-Do-It-Together/518513301524401", target: "_blank"
+      a href="http://www.facebook.com/pages/Jerry-Do-It-Together/518513301524401" target="_blank"
+        | {{'on_facebook' | translate}}
     .col-md-8.text-right
-      Content
+      | {{'content' | translate | capitalize}}
       = " "
-      = link_to 'CC-BY-SA', 'http://creativecommons.org/licenses/by-sa/4.0/', target: "_blank"
+      a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
+        | {{'cc_by_sa' | translate}}
       = " "
-      Jerry DIT |+|
+      | {{'jerry_dit_plus' | translate}}
       = " "
-      = link_to "Source Code", 'https://github.com/JerryDIT/adoptajerry', target: "_blank"
+      a href="https://github.com/JerryDIT/adoptajerry" target="_blank"
+        | {{'source_code' | translate}}
       = " "
-      AGPLv3 |+|
+      | {{'agplv3' | translate}}
       = " "
-      = link_to "Feedback", 'https://groups.google.com/forum/#!forum/techlab-jerrydit', target: "_blank"
+      a href="https://groups.google.com/forum/#!forum/techlab-jerrydit" target="_blank"
+        | {{'feedback' | translate | translate}}

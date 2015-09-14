@@ -2,7 +2,27 @@ en:
   hello: "Hello world"
 
   js:
-    comments: "comments"
+    # Navigation
+    home: "home"
+    profiles: "profiles"
+    add_a_jerry: "Add a Jerry"
+    build_your_jerry: "Build your Jerry"
+    about_jerry: "About Jerry →"
+    aloha: "Aloha!"
+    sign_out: "Sign out"
+    sign_in: "Sign in"
+
+    # Footer
+    follow: "follow"
+    jerry_on_twitter: "@JerryDIT on Twitter"
+    on_facebook: "on Facebook"
+    content: "content"
+    cc_by_sa: "CC-BY-SA"
+    jerry_dit_plus: "Jerry DIT |+|"
+    source_code: "Source code"
+    agplv3: "AGPLv3 |+|"
+    feedback: "Feedback"
+
     leave_a_comment: "Leave a comment"
     submit: "submit"
     welcome_img_alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer"

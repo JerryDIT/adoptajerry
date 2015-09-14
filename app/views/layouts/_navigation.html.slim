@@ -6,8 +6,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to root_path, class: 'navbar-text' do
-        | Home
+      a.navbar-text href="/"
+        | {{'home' | translate | capitalize}}
         .sprite-logo
       .navbar-text.spinner
         /= icon('circle-o-notch fa-spin')
