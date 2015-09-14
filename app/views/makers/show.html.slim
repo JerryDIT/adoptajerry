@@ -22,12 +22,15 @@
       - if @maker.twitter_url?
         | tw:
         = " "
-        = link_to @maker.twitter_url.match(/twitter.com\/(\w*)/)[1], @maker.twitter_url
+        - if @maker.twitter_url.match(/twitter.com\/(\w*)/)
+          = link_to @maker.twitter_url.match(/twitter.com\/(\w*)/)[1], @maker.twitter_url
+        br
 
       - if @maker.website?
         | www:
         = " "
         = link_to @maker.website, @maker.website
+        br
 
       br
       em.text-muted

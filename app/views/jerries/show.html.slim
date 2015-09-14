@@ -1,41 +1,19 @@
-h1.column= @jerry.name
-
 .row ng-controller="JerriesCtrl"
   .col-md-4
+    h1
+      = @jerry.name
+
     - if @jerry.avatar?
       = image_tag @jerry.avatar.url(:medium).to_s, alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
     - else
       = image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
-    p
-      - if !@jerry.location.blank?
-        strong Location:
-        = " "
-        = @jerry.location
-        br
-      = @jerry.bio
-    - if @jerry.makers.include?(current_maker)
-      a.btn.btn-default href="/jerries/#{@jerry.id}/edit"
-        | {{'edit_profile' | translate}}
 
-  .col-md-8
     .row
       .col-md-12
-        - @jerry.pictures.each do |picture|
-          = image_tag picture.image.url(:preview).to_s
-
-    .row
-      .col-md-6
-        - if @jerry.organs.any?
-          h2
-            | {{'organs' | translate | capitalize}}
-          = render @jerry.organs
-
-      .col-md-6
-        - if @jerry.skills.any?
-          h2
-          h2
-            | {{'skills' | translate | capitalize}}
-          = render @jerry.skills
+        - if @jerry.location.present?
+          strong Location:
+          = " "
+          = @jerry.location
 
     .row
       .col-md-12
@@ -50,6 +28,49 @@ h1.column= @jerry.name
         - if @jerry.makers.include?(current_maker)
           a.btn.btn-link href="/jerries/#{@jerry.id}/team/edit"
             | {{'add_a_maker' | translate}}
+
+    hr
+
+    .row
+      .col-md-12
+
+        - if @jerry.makers.include?(current_maker)
+          a.btn.btn-default.btn-sm href="/jerries/#{@jerry.id}/edit"
+            | {{'edit_profile' | translate}}
+
+  .col-md-8
+    - if @jerry.pictures.any?
+      .row
+        .col-md-12
+          - @jerry.pictures.each do |picture|
+            = image_tag picture.image.url(:preview).to_s
+
+    - if @jerry.bio.present?
+      .row
+        .col-md-12
+          h2
+            | {{'bio' | translate | capitalize}}
+          = @jerry.bio
+
+    - if @jerry.mission.present?
+      .row
+        .col-md-12
+          h2
+            | {{'mission' | translate | capitalize}}
+          = @jerry.mission
+
+    .row
+      .col-md-6
+        - if @jerry.organs.any?
+          h2
+            | {{'organs' | translate | capitalize}}
+          = render @jerry.organs
+
+      .col-md-6
+        - if @jerry.skills.any?
+          h2
+            | {{'skills' | translate | capitalize}}
+          = render @jerry.skills
 
 .row
 

@@ -5,6 +5,7 @@ class CreateJerry < ActiveInteraction::Base
   hash :params do
     string :name
     string :bio
+    string :mission
     string :location
     object :avatar,
       class: ActionDispatch::Http::UploadedFile,
