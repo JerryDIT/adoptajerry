@@ -1,9 +1,10 @@
 #fold.text-center
-  = image_tag("/welcome_to_jerry.gif", alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer",
-    class: "img-responsive")
+
+  img.img-responsive src="/welcome_to_jerry.gif" alt=t('js.welcome_img_alt')
+
 .text-center
   a.btn.btn-default href="#tour"
-    | Take the Tour
+    | {{'take_the_tour' | translate}}
 
 #tour.text-center
   .embed-container
@@ -11,29 +12,39 @@
       frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" }
 
 #register
-  h2.text-center Register your Jerry
+  h2.text-center
+    | {{'register_your_jerry' | translate}}
+
   .row
     .col-xs-4.col-xs-offset-4
       .profile
-        = link_to image_tag("/add_jerry.png", alt: "+ add a new Jerry", class: 'img-responsive'), new_jerry_path
+        a href="/jerries/new"
+          img.img-responsive src="/add_jerry.png" alt=t('js.add_a_new_jerry')
+
       .profile-panel
         h5.text-center
-          = link_to "Jerry [...]", new_jerry_path
+          a href="/jerries/new"
+            | {{'jerry_etc' | translate}}
 
-  #family.row
-    h2.text-center Meet the family!
-    - @jerries.each do |jerry|
-      .columns
-        .profile
-          - if jerry.avatar?
-            = link_to image_tag(jerry.avatar.url(:medium).to_s, alt: "Avatar of \#{jerry.name}"), jerry
-          - else
-            = link_to image_tag("http://placehold.it/300x300&text=#{jerry.name}", alt: "Avatar of #{jerry.name}", class: 'img-responsive'), jerry
-        .profile-panel
-          h5
-            = link_to jerry.name.to_s, jerry
-          h6.subheader
-            - if jerry.location
-              = "in #{jerry.location.split(',').first} "
-            - else
-              | on the internets
+#family.row ng-controller="JerriesCtrl" ng-show="jerries"
+
+  h2.text-center
+    | {{'meet_the_family' | translate}}
+
+  div ng-repeat="jerry in jerries | orderBy:'-createdAt'"
+    .columns
+      .profile
+        a ng-href="jerries/{{jerry.id}}"
+          div ng-show="jerry.avatar"
+            img ng-src="{{jerry.avatar}}" alt="#{t('js.avatar_of')} {{jerry.name}}"
+          div ng-hide="jerry.avatar"
+            img ng-src="http://placehold.it/300x300&text={{jerry.name}}" alt="#{t('js.avatar_of')} {{jerry.name}}"
+      .profile-panel
+        h5
+          a ng-href="jerries/{{jerry.id}}"
+            | {{jerry.name}}
+        h6.subheader
+          div ng-show="jerry.location"
+            | {{'in' | translate}} {{jerry.location}}
+          div ng-hide="jerry.location"
+            | {{'on_the_internets' | translate}}

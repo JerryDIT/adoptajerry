@@ -30,7 +30,6 @@ class JerriesController < ApplicationController
   end
 
   def index
-    @jerries = Jerry.all.reverse
   end
 
   def edit
