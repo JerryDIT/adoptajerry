@@ -23,6 +23,13 @@ en:
     agplv3: "AGPLv3 |+|"
     feedback: "Feedback"
 
+    # Maker profile
+    edit_my_profile: "Edit my profile"
+    gravatar_of: "Gravatar of"
+    happy_maker_since: "Happy maker since"
+    contributions: "contributions"
+
+    # Jerry profile
     leave_a_comment: "Leave a comment"
     submit: "submit"
     welcome_img_alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer"

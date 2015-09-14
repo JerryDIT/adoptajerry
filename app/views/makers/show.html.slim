@@ -4,9 +4,10 @@
 
     .pull-right
       - if @maker == current_maker
-        = link_to 'Edit my profile', edit_profile_path, class: 'btn btn-default'
+        a.btn.btn-default href="/makers/profile"
+          | {{'edit_my_profile' | translate}}
 
-    = gravatar_tag @maker.uid, size: 50, alt: "Gravatar of \#{@maker.name}"
+    = gravatar_tag @maker.uid, size: 50, alt: "#{t('js.gravatar_of')} #{@maker.name}"
 
     p.makername.label.radius.secondary
       = "+#{@maker.name}"
@@ -30,16 +31,19 @@
 
       br
       em.text-muted
-        = "Happy maker since #{@maker.created_at.strftime("%B %Y")}"
+        | {{'happy_maker_since' | translate}}
+        = " #{l(@maker.created_at.to_date, format: :short)}"
 
   - if @jerries.any?
-    h3 Contributions
+
+    h3
+      | {{'contributions' | translate | capitalize}}
 
     - @jerries.each do |jerry|
       p
         - if jerry.avatar.url
-          = link_to image_tag(jerry.avatar.url(:small).to_s, alt: "Avatar of \#{jerry.name}"), jerry_path(jerry)
+          = link_to image_tag(jerry.avatar.url(:small).to_s, alt: "#{t('js.avatar_of')} #{jerry.name}"), jerry_path(jerry)
         - else
-          = link_to image_tag("http://placehold.it/50x50&text=#{jerry.name.first.upcase}", alt: "Avatar of #{jerry.name}"), jerry_path(jerry)
+          = link_to image_tag("http://placehold.it/50x50&text=#{jerry.name.first.upcase}", alt: "#{t('js.avatar_of')} #{jerry.name}"), jerry_path(jerry)
         = " "
         = link_to jerry.name, jerry_path(jerry)
