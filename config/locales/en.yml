@@ -30,6 +30,11 @@ en:
     contributions: "contributions"
 
     # Jerry profile
+    edit_profile: "Edit profile"
+    organs: "organs"
+    skills: "skills"
+    makers: "makers"
+    add_a_maker: "Add a maker"
     leave_a_comment: "Leave a comment"
     submit: "submit"
     welcome_img_alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer"
@@ -41,3 +46,9 @@ en:
     avatar_of: "Avatar of"
     in: "in"
     on_the_internets: "on the internets"
+
+    # Jerry form
+    upload_a_new_jerry: "Upload a new Jerry"
+    fill_in_the_birth_certificate_below: "Fill in the birth certificate below"
+    pictures: "pictures"
+    add_pictures: "Add pictures"

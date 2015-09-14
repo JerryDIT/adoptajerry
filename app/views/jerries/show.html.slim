@@ -3,9 +3,9 @@ h1.column= @jerry.name
 .row ng-controller="JerriesCtrl"
   .col-md-4
     - if @jerry.avatar?
-      = image_tag @jerry.avatar.url(:medium).to_s, alt: "Avatar of #{@jerry.name}", class: 'img-responsive'
+      = image_tag @jerry.avatar.url(:medium).to_s, alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
     - else
-      = image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "Avatar of #{@jerry.name}", class: 'img-responsive'
+      = image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
     p
       - if !@jerry.location.blank?
         strong Location:
@@ -13,7 +13,9 @@ h1.column= @jerry.name
         = @jerry.location
         br
       = @jerry.bio
-    = link_to 'Edit profile', edit_jerry_path(@jerry), :class => "button tiny radius" if @jerry.makers.include?(current_maker)
+    - if @jerry.makers.include?(current_maker)
+      a.btn.btn-default href="/jerries/#{jerry.id}/edit"
+        | {{'edit_profile' | translate}}
 
   .col-md-8
     .row
@@ -24,23 +26,30 @@ h1.column= @jerry.name
     .row
       .col-md-6
         - if @jerry.organs.any?
-          h2 Organs
+          h2
+            | {{'organs' | translate | capitalize}}
           = render @jerry.organs
 
       .col-md-6
         - if @jerry.skills.any?
-          h2 Skills
+          h2
+          h2
+            | {{'skills' | translate | capitalize}}
           = render @jerry.skills
 
     .row
       .col-md-12
 
-        h2 Makers
+        h2
+          | {{'makers' | translate | capitalize}}
+
         - @jerry.makers.each do |maker|
           = link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary"
 
         = " "
-        = link_to 'Add a maker', edit_team_path(@jerry), :class => "button tiny radius right" if @jerry.makers.include?(current_maker)
+        - if @jerry.makers.include?(current_maker)
+          a.btn.btn-link href="/jerries/#{jerry.id}/team/edit"
+            | {{'add_a_maker' | translate}}
 
 .row
 

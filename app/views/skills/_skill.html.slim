@@ -1,0 +1,8 @@
+p
+  strong
+    = skill.layer
+    = ": "
+  - if skill.url.empty?
+    = skill.name
+  - else
+    = link_to skill.name, skill.url
