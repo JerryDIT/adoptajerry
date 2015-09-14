@@ -1,0 +1,43 @@
+h1.column= @jerry.name
+
+.row
+  .col-md-4
+    - if @jerry.avatar?
+      = image_tag @jerry.avatar.url(:medium).to_s, alt: "Avatar of #{@jerry.name}", class: 'img-responsive'
+    - else
+      = image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "Avatar of #{@jerry.name}", class: 'img-responsive'
+    p
+      - if !@jerry.location.blank?
+        strong Location:
+        = " "
+        = @jerry.location
+        br
+      = @jerry.bio
+    = link_to 'Edit profile', edit_jerry_path(@jerry), :class => "button tiny radius" if @jerry.makers.include?(current_maker)
+
+  .col-md-8
+    .row
+      .col-md-12
+        - @jerry.pictures.each do |picture|
+          = image_tag picture.image.url(:preview).to_s
+
+    .row
+      .col-md-6
+        - if @jerry.organs.any?
+          h2 Organs
+          = render @jerry.organs
+
+      .col-md-6
+        - if @jerry.skills.any?
+          h2 Skills
+          = render @jerry.skills
+
+    .row
+      .col-md-12
+
+        h2 Makers
+        - @jerry.makers.each do |maker|
+          = link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary"
+
+        = " "
+        = link_to 'Add a maker', edit_team_path(@jerry), :class => "button tiny radius right" if @jerry.makers.include?(current_maker)

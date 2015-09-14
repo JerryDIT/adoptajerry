@@ -1,0 +1,22 @@
+.row
+  .col-md-6.col-md-offset-3.col-xs-10.col-xs-offset-1
+
+    h1
+      = "Hi #{@maker.name}!"
+
+    = gravatar_tag @maker.uid, size: 50
+
+    p
+      | Change your avatar at
+      = " "
+      = link_to "gravatar.com"
+
+    = simple_form_for @maker, url: edit_profile_path do |f|
+
+      = f.input :name
+      = f.input :city
+      = f.input :bio
+      = f.input :twitter_url
+      = f.input :website
+
+      = f.button :submit, 'Save', class: 'btn btn-default'

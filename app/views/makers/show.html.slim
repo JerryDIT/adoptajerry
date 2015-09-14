@@ -1,0 +1,45 @@
+.col-md-8.col-md-offset-2
+
+  .profile-panel
+
+    .pull-right
+      - if @maker == current_maker
+        = link_to 'Edit my profile', edit_profile_path, class: 'btn btn-default'
+
+    = gravatar_tag @maker.uid, size: 50, alt: "Gravatar of \#{@maker.name}"
+
+    p.makername.label.radius.secondary
+      = "+#{@maker.name}"
+
+    p
+      = "@#{@maker.city}" unless @maker.city.blank?
+      - if @maker.bio.present?
+        br
+        = @maker.bio
+        br
+
+      - if @maker.twitter_url?
+        | tw:
+        = " "
+        = link_to @maker.twitter_url.match(/twitter.com\/(\w*)/)[1], @maker.twitter_url
+
+      - if @maker.website?
+        | www:
+        = " "
+        = link_to @maker.website, @maker.website
+
+      br
+      em.text-muted
+        = "Happy maker since #{@maker.created_at.strftime("%B %Y")}"
+
+  - if @jerries.any?
+    h3 Contributions
+
+    - @jerries.each do |jerry|
+      p
+        - if jerry.avatar.url
+          = link_to image_tag(jerry.avatar.url(:small).to_s, alt: "Avatar of \#{jerry.name}"), jerry_path(jerry)
+        - else
+          = link_to image_tag("http://placehold.it/50x50&text=#{jerry.name.first.upcase}", alt: "Avatar of #{jerry.name}"), jerry_path(jerry)
+        = " "
+        = link_to jerry.name, jerry_path(jerry)

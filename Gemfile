@@ -23,6 +23,7 @@ gem 'figaro'
 gem 'gravatarify'
 gem 'haml'
 gem 'slim-rails'
+gem 'active_interaction', '~> 2.1'
 
 group :doc do
   gem 'sdoc', require: false
@@ -105,3 +106,6 @@ gem 'wine_bouncer'
 
 # The ActiveRecord acts_as_commentable plugin
 gem 'acts_as_commentable'
+
+# Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
+gem 'simple_form'

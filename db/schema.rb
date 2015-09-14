@@ -107,6 +107,15 @@ ActiveRecord::Schema.define(version: 20150913140233) do
 
   add_index "organs", ["jerry_id"], name: "index_organs_on_jerry_id"
 
+  create_table "pictures", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "jerry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pictures", ["jerry_id"], name: "index_pictures_on_jerry_id"
+
   create_table "skills", force: :cascade do |t|
     t.string   "layer",      limit: 255
     t.string   "name",       limit: 255
