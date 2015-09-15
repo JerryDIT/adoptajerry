@@ -18,15 +18,15 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    available = ENV['LOCALES'].split(' ')
+    @locales = ENV['LOCALES'].split(' ')
     I18n.locale = if maker_signed_in? && current_maker.locale.present?
                     current_maker.locale
                   elsif session[:locale].present?
                     session[:locale]
                   else
-                    if locale = http_accept_language.preferred_language_from(available)
+                    if locale = http_accept_language.preferred_language_from(@locales)
                       locale
-                    elsif locale = http_accept_language.compatible_language_from(available)
+                    elsif locale = http_accept_language.compatible_language_from(@locales)
                       locale
                     else
                       I18n.default_locale

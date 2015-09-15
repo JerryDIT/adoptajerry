@@ -13,7 +13,7 @@ ul.nav.navbar-nav
       | {{'about_jerry' | translate}}
 
 ul.nav.navbar-nav.navbar-right
-  - if current_maker
+  - if maker_signed_in?
     li
       a href="/makers/#{current_maker.id}"
         | {{'aloha' | translate}} #{current_maker.name}
@@ -28,3 +28,12 @@ ul.nav.navbar-nav.navbar-right
     li
       a href="/makers/sign_up"
         | {{'sign_up' | translate}}
+
+  li.dropdown
+    a#languages-dropdown.dropdown-toggle data-toggle="dropdown" href="#"
+      = I18n.locale
+      span.caret
+    ul.dropdown-menu aria-labelledby="languages-dropdown"
+      - @locales.each do |locale|
+        li
+          = link_to locale, save_locale_path(locale), class: "#{"active" if I18n.locale == locale}"

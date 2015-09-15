@@ -3,7 +3,7 @@ require Rails.root.join('app/interactions/jerries/update_jerry')
 
 class JerriesController < ApplicationController
   before_action :find_jerry, except: [:new, :create, :index, :roulette]
-  before_action :maker_authenticate, except: [:index, :show, :roulette]
+  before_action :authenticate_maker!, except: [:index, :show, :roulette]
   before_action :check_maker_clearance, only: [:edit, :update, :edit_team]
 
   def new
@@ -71,14 +71,8 @@ class JerriesController < ApplicationController
     @jerry = Jerry.find params[:id]
   end
 
-  def maker_authenticate
-    redirect_to root_path, notice: 'Please Sign in first --→' unless current_maker
-  end
-
   def check_maker_clearance
-    if @jerry.makers.include? current_maker
-      # all right you can continue
-    else
+    unless @jerry.makers.include? current_maker
       redirect_to @jerry, notice: 'You can not edit this Jerry'
     end
   end

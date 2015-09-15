@@ -21,6 +21,7 @@ Adoptajerry::Application.routes.draw do
     resources :organs
   end
 
+  get "makers/locale/:name" => 'makers#locale', as: :save_locale
   resources :locales, controller: :translations, only: :show
 
   # tiny API to get an access_token for the main API

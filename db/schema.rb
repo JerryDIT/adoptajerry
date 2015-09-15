@@ -53,17 +53,17 @@ ActiveRecord::Schema.define(version: 20150915135209) do
     t.text     "bio"
     t.string   "twitter_url",            limit: 255
     t.string   "website",                limit: 255
-    t.string   "email",                              default: "",   null: false
-    t.string   "encrypted_password",                 default: "",   null: false
+    t.string   "email",                              default: "", null: false
+    t.string   "encrypted_password",                 default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,    null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "locale",                             default: "en"
+    t.string   "locale"
   end
 
   add_index "makers", ["email"], name: "index_makers_on_email", unique: true

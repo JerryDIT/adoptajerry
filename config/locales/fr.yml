@@ -1,0 +1,76 @@
+fr:
+
+  simple_form:
+    labels:
+      makers:
+        name: "What's your name or pseudo?"
+        city: "Where do you live?"
+
+  user:
+    edit:
+      password:
+        hint: "leave it blank if you don't want to change it"
+      current_password:
+        hint: "we need your current password to confirm your changes"
+
+  js:
+    # Navigation
+    home: "accueil"
+    profiles: "profiles"
+    add_a_jerry: "Add a Jerry"
+    build_your_jerry: "Build your Jerry"
+    about_jerry: "About Jerry →"
+    aloha: "Aloha!"
+    sign_out: "Sign out"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+
+    # Footer
+    follow: "follow"
+    jerry_on_twitter: "@JerryDIT on Twitter"
+    on_facebook: "on Facebook"
+    content: "content"
+    cc_by_sa: "CC-BY-SA"
+    jerry_dit_plus: "Jerry DIT |+|"
+    source_code: "Source code"
+    agplv3: "AGPLv3 |+|"
+    feedback: "Feedback"
+
+    # Maker profile
+    edit_my_profile: "Edit my profile"
+    gravatar_of: "Gravatar of"
+    happy_maker_since: "Happy maker since"
+    contributions: "contributions"
+    save: "save"
+
+    # Maker form
+    send_me_reset_password_instructions: "Send me reset password instructions"
+
+    # Jerry profile
+    edit_profile: "Edit profile"
+    bio: "bio"
+    mission: "mission"
+    organs: "organs"
+    skills: "skills"
+    makers: "makers"
+    add_a_maker: "Add a maker"
+    leave_a_comment: "Leave a comment"
+    submit: "submit"
+    welcome_img_alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer"
+    take_the_tour: "Take the Tour"
+    register_your_jerry: "Register your Jerry"
+    add_a_new_jerry: "+ add a new Jerry"
+    jerry_etc: "Jerry [...]"
+    meet_the_family: "Meet the family!"
+    avatar_of: "Avatar of"
+    in: "in"
+    on_the_internets: "on the internets"
+
+    # Jerry form
+    edit: "edit"
+    upload_a_new_jerry: "Upload a new Jerry"
+    fill_in_the_birth_certificate_below: "Fill in the birth certificate below"
+    pictures: "pictures"
+    add_pictures: "Add pictures"
+    add_to_the_team: "Add to the team"
+    contributors_to: "Contributors to"
