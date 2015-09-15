@@ -1,12 +1,15 @@
 .row
 
   .col-md-6
-    = f.input :role, collection: ['Hard drive', 'Processor', 'Power supply', 'RAM', 'Wired network interface', 'Wireless network interface'], prompt: "Select an organ"
+    = f.input :role, collection: ['Hard drive', 'Processor', 'Power supply', 'RAM', 'Wired network interface',
+      'Wireless network interface'], prompt: t('js.select_an_organ')
 
   .col-md-3
     = f.input :quantifier
 
   .col-md-3
-    = f.input :unit, collection: ['GB', 'MB', 'GHz', 'MHz', 'Watts', 'MB/s'], prompt: "Select unit"
+    = f.input :unit, collection: ['GB', 'MB', 'GHz', 'MHz', 'Watts', 'MB/s'], prompt: t('js.select_unit')
 
-  /= f.link_to_remove "Remove this organ", class: "right"
+  .col-md-12
+    .text-right
+      = f.link_to_remove t('js.remove_this_organ')

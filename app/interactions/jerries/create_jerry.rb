@@ -11,7 +11,9 @@ class CreateJerry < ActiveInteraction::Base
       class: ActionDispatch::Http::UploadedFile,
       default: nil
     hash :organs_attributes, strip: false
+    string :organs_improvment
     hash :skills_attributes, strip: false
+    string :skills_improvment
   end
   array :images
   object :maker

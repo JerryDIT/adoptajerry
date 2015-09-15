@@ -1,4 +1,4 @@
-= simple_form_for @jerry do |f|
+= simple_nested_form_for @jerry do |f|
 
   .row
     .col-md-12 ng-controller="TabsCtrl"
@@ -59,12 +59,12 @@
           .profile-panel
 
             h4
-              | {{'organs' | translate | capitalize}}
+              | {{'what_is_the_hardware_configuration' | translate | capitalize}}
 
             = f.fields_for :organs do |organ_form|
               = render 'organs/fields', f: organ_form
 
-            /= f.link_to_add "|+| Add an Organ", :organs, class: "btn btn-link"
+            = f.link_to_add "|+| #{t('js.add_an_organ')}", :organs, class: "btn btn-link"
 
           = f.input :organs_improvment
 
@@ -87,12 +87,12 @@
           .profile-panel
 
             h4
-              | {{'skills' | translate | capitalize}}
+              | {{'what_is_the_software_configuration' | translate | capitalize}}
 
             = f.fields_for :skills do |skills_form|
               = render 'skills/fields', f: skills_form
 
-            /= f.link_to_add "|+| Add a Skill", :skills, class: "btn btn-link"
+            = f.link_to_add "|+| #{t('js.add_a_skill')}", :skills, class: "btn btn-link"
 
           = f.input :skills_improvment
 

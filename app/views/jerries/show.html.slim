@@ -78,11 +78,15 @@
                 | {{'organs' | translate | capitalize}}
               = render @jerry.organs
 
+            = @jerry.organs_improvment
+
           .col-md-6
             - if @jerry.skills.any?
               h2
                 | {{'skills' | translate | capitalize}}
               = render @jerry.skills
+
+            = @jerry.skills_improvment
 
 .row
 

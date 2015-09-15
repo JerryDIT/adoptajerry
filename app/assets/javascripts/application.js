@@ -18,6 +18,7 @@
 //= require jquery_ujs
 //= require jquery.expander
 //= require jquery-addrule
+//= require jquery_nested_form
 //
 //= require sugar
 //= require bootstrap

@@ -1,7 +1,7 @@
 .row
 
   .col-md-4
-    = f.input :layer, collection: ['OS', 'Application'], prompt: 'Select a layer'
+    = f.input :layer, collection: ['OS', 'Application'], prompt: t('js.select_a_layer')
 
   .col-md-4
     = f.input :name
@@ -9,4 +9,6 @@
   .col-md-4
     = f.input :url
 
-  /= f.link_to_remove "Remove this skill", class: "right"
+  .col-md-12
+    .text-right
+      = f.link_to_remove t('js.remove_this_skill')

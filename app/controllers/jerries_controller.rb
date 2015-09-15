@@ -14,11 +14,15 @@ class JerriesController < ApplicationController
   end
 
   def create
+    images = if params[:jerry][:pictures].present?
+               params[:jerry][:pictures][:image]
+             else
+               []
+             end
     outcome = CreateJerry.run(
       params: params[:jerry],
       maker: current_maker,
-      images: [])
-      # images: params[:jerry][:pictures][:image])
+      images: images)
 
     if outcome.valid?
       redirect_to jerry_path outcome.result
@@ -38,11 +42,16 @@ class JerriesController < ApplicationController
 
   def update
     update_team
+    images = if params[:jerry][:pictures].present?
+               params[:jerry][:pictures][:image]
+             else
+               []
+             end
+
     outcome = UpdateJerry.run(
       jerry: @jerry,
       params: params[:jerry],
-      images: [])
-      # images: params[:jerry][:pictures][:image])
+      images: images)
 
     if outcome.valid?
       redirect_to jerry_path outcome.result
