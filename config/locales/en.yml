@@ -65,8 +65,23 @@ en:
     avatar_of: "Avatar of"
     in: "in"
     on_the_internets: "on the internets"
+    commented: "commented"
 
     # Jerry form
+    jerry_form:
+      steps:
+        first:
+          short: "1. Bio"
+          long: "1. Tell the world about the story of your Jerry Computer"
+        second:
+          short: "2. Organs"
+          long: "2. Everyone is curious about the Organs of your Jerry Computer!"
+        three:
+          short: "3. Skills"
+          long: "3. We all want to know about the free|open source Skills of your Jerry Computer!"
+        fourth:
+          short: "4. Mission"
+          long: "4. Each Jerry was made to accomplish a Mission"
     edit: "edit"
     upload_a_new_jerry: "Upload a new Jerry"
     fill_in_the_birth_certificate_below: "Fill in the birth certificate below"

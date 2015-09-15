@@ -1,58 +1,87 @@
 = simple_form_for @jerry do |f|
 
   .row
-    .col-md-12
+    .col-md-12 ng-controller="TabsCtrl"
 
       = f.error_notification
 
-      = f.input :name, placeholder: "Jerry Khan"
-      = f.input :bio, placeholder: "Born to conquer the digital divides"
-      = f.input :mission
-      = f.input :location, placeholder: "Lomé, Togo"
+      tabset
+        tab
+          tab-heading
+            | {{'jerry_form.steps.first.short' | translate}}
+          h3
+            | {{'jerry_form.steps.first.long' | translate}}
 
-      .row
-        .col-md-8
-          = f.input :avatar
-        .col-md-4
-          - if @jerry.avatar?
-            = image_tag @jerry.avatar.url(:medium).to_s
-          - else
-            = image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Jerry picture"}", class: "img-responsive"
+          = f.input :name, placeholder: "Jerry Khan"
+          = f.input :bio, placeholder: "Born to conquer the digital divides"
+          = f.input :location, placeholder: "Lomé, Togo"
 
-  .profile-panel
+          .row
+            .col-md-3
+              - if @jerry.avatar?
+                = image_tag @jerry.avatar.url(:medium).to_s
+              - else
+                = image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Jerry picture"}", class: "img-responsive"
+            .col-md-9
+              = f.input :avatar
 
-    h4
-      | {{'pictures' | translate | capitalize}}
+          hr
 
-    - unless @jerry.pictures.count.zero?
-      - @jerry.pictures.each do |picture|
-        = image_tag picture.image.url(:small).to_s
+          .row
+            .col-md-12.profile-panel
 
-      h5
-        | {{'add_pictures' | translate}}
+              h4
+                | {{'pictures' | translate | capitalize}}
 
-    = f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key"
-    = f.fields_for :pictures do |p|
-      = p.file_field :image, multiple: true, class: 'button small radius'
+              - unless @jerry.pictures.count.zero?
+                - @jerry.pictures.each do |picture|
+                  = image_tag picture.image.url(:small).to_s
 
-  .profile-panel
+                h5
+                  | {{'add_pictures' | translate}}
 
-    h4
-      | {{'organs' | translate | capitalize}}
+              = f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key"
+              = f.fields_for :pictures do |p|
+                = p.file_field :image, multiple: true, class: 'button small radius'
 
-    = f.fields_for :organs do |organ_form|
-      = render 'organs/fields', f: organ_form
+        tab
+          tab-heading
+            | {{'jerry_form.steps.second.short' | translate}}
+          h3
+            | {{'jerry_form.steps.second.long' | translate}}
 
-    /= f.link_to_add "|+| Add an Organ", :organs, class: "btn btn-link"
+          .profile-panel
 
-  .profile-panel
+            h4
+              | {{'organs' | translate | capitalize}}
 
-    h4
-      | {{'skills' | translate | capitalize}}
+            = f.fields_for :organs do |organ_form|
+              = render 'organs/fields', f: organ_form
 
-    = f.fields_for :skills do |skills_form|
-      = render 'skills/fields', f: skills_form
+            /= f.link_to_add "|+| Add an Organ", :organs, class: "btn btn-link"
 
-    /= f.link_to_add "|+| Add a Skill", :skills, class: "btn btn-link"
+        tab
+          tab-heading
+            | {{'jerry_form.steps.three.short' | translate}}
+          h3
+            | {{'jerry_form.steps.three.long' | translate}}
 
-  = f.submit class: 'btn btn-default'
+          .profile-panel
+
+            h4
+              | {{'skills' | translate | capitalize}}
+
+            = f.fields_for :skills do |skills_form|
+              = render 'skills/fields', f: skills_form
+
+            /= f.link_to_add "|+| Add a Skill", :skills, class: "btn btn-link"
+
+        tab
+          tab-heading
+            | {{'jerry_form.steps.fourth.short' | translate}}
+          h3
+            | {{'jerry_form.steps.fourth.long' | translate}}
+
+          = f.input :mission
+
+          = f.submit class: 'btn btn-default'

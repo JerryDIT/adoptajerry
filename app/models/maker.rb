@@ -16,6 +16,10 @@ class Maker < ActiveRecord::Base
   end
   # .Cancan
 
+  def locale
+    self[:locale] || 'en'
+  end
+
   def self.create_with_omniauth(auth)
     create! do |maker|
       maker.provider = auth[:provider]

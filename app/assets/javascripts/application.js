@@ -24,6 +24,8 @@
 //= require turbolinks
 //
 //= require moment
+//= require moment/locale/fr
+//= require moment/locale/es
 //
 //= require angular
 //= require ngstorage
