@@ -10,18 +10,18 @@ module API
         optional :commentable_type, type: String
         optional :commentable_id, type: Integer
       end
-      # oauth2 'public'
+      oauth2 'public'
       post do
         if params[:commentable_type].present? && params[:commentable_id].present?
           if params[:commentable_type] == "Jerry"
             commentable = Jerry.find params[:commentable_id]
-            # commentable = nil unless current_user.can?(:update, commentable)
+            commentable = nil unless current_maker.can?(:read, commentable)
           end
         end
 
         if commentable && params[:content].present?
           comment = Comment.new
-          comment.user = current_user
+          comment.user = current_maker
           comment.commentable = commentable
           comment.comment = params[:content]
           comment.save

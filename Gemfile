@@ -44,6 +44,9 @@ end
 # http://tzinfo.github.io/datasourcenotfound
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# Fishes out the Accept-Language header into an array.
+gem 'http_accept_language'
+
 # Flexible authentication solution for Rails with Warden.
 gem 'devise'
 

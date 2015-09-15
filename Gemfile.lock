@@ -277,6 +277,7 @@ GEM
       hashie (>= 3.0)
     hike (1.2.3)
     hirb (0.7.3)
+    http_accept_language (2.0.5)
     i18n (0.7.0)
     ice_nine (0.11.1)
     inflecto (0.0.2)
@@ -546,6 +547,7 @@ DEPENDENCIES
   gravatarify
   haml
   hashie-forbidden_attributes
+  http_accept_language
   jazz_hands
   jbuilder (~> 1.2)
   jquery-rails

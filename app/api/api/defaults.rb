@@ -12,7 +12,7 @@ module API
           doorkeeper_access_token
         end
 
-        def current_user
+        def current_maker
           resource_owner
         end
 

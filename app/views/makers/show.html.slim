@@ -4,7 +4,7 @@
 
     .pull-right
       - if @maker == current_maker
-        a.btn.btn-default href="/makers/profile"
+        a.btn.btn-default href="/makers/edit"
           | {{'edit_my_profile' | translate}}
 
     = gravatar_tag @maker.uid, size: 50, alt: "#{t('js.gravatar_of')} #{@maker.name}"

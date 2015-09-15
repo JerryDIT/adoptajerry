@@ -27,20 +27,20 @@ class Timeline
       when "PaperTrail::Version"
         type = "version"
         picto = "history"
-        user = Maker.find_by_id(activity.whodunnit.to_i) if activity.whodunnit
+        maker = Maker.find_by_id(activity.whodunnit.to_i) if activity.whodunnit
         verb = ""
         content = ""
         changeset = activity.changeset
       when "Comment"
         type = "comment"
         picto = "comments"
-        user = activity.user
+        maker = activity.maker
         verb = "commented"
         content = simple_format(activity.comment)
       when "Upload"
         type = "upload"
         picto = "file"
-        user = activity.user
+        maker = activity.maker
         verb = "uploaded"
         object = "a_file"
         content = ""
@@ -48,7 +48,6 @@ class Timeline
         downloadName = activity.file_file_name
       end
 
-      name = user.name if user
       time = activity.created_at
 
       if type && time
@@ -57,7 +56,8 @@ class Timeline
           type: type,
           mode: (['comment', 'upload'].include?(type)) ? 'highlighted' : 'normal',
           picto: picto,
-          user: name,
+          maker_name: maker.try(:name),
+          maker_id: maker.try(:id),
           verb: verb,
           object: object,
           content: content,

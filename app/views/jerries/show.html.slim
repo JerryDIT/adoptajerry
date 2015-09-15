@@ -133,7 +133,9 @@
               timeline-heading
 
                 timeline-title ng-show="activity.type == 'comment' || activity.type == 'upload'"
-                  | {{activity.user}}
+                  span ng-if="activity.makerId"
+                    a href="/makers/{{activity.makerId}}"
+                      | {{activity.makerName}}
                   = " "
                   span.small.text-muted
                     | {{activity.verb | translate}}

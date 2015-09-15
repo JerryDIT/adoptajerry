@@ -2,6 +2,9 @@
 
   .row
     .col-md-12
+
+      = f.error_notification
+
       = f.input :name, placeholder: "Jerry Khan"
       = f.input :bio, placeholder: "Born to conquer the digital divides"
       = f.input :mission
@@ -21,12 +24,12 @@
     h4
       | {{'pictures' | translate | capitalize}}
 
-    - if @jerry.pictures.count > 0
+    - unless @jerry.pictures.count.zero?
       - @jerry.pictures.each do |picture|
         = image_tag picture.image.url(:small).to_s
 
-    h5
-      | {{'add_pictures' | translate}}
+      h5
+        | {{'add_pictures' | translate}}
 
     = f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key"
     = f.fields_for :pictures do |p|

@@ -85,7 +85,7 @@ class JerriesController < ApplicationController
 
   def update_team
     if params[:jerry][:makers]
-      new_maker = Maker.find_by :uid => params[:jerry][:makers][:uid]
+      new_maker = Maker.find_by uid: params[:jerry][:makers][:uid]
       if new_maker
         @jerry.makers << new_maker
       else

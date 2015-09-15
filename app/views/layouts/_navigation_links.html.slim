@@ -18,7 +18,7 @@ ul.nav.navbar-nav.navbar-right
       a href="/makers/#{current_maker.id}"
         | {{'aloha' | translate}} #{current_maker.name}
     li
-      a href="/signout"
+      a href="/makers/sign_out" data-method='delete'
         | {{'sign_out' | translate}}
 
   - else

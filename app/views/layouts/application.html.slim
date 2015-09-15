@@ -17,7 +17,7 @@ html lang=I18n.locale
     = js_env
     = csrf_meta_tags
 
-  body
+  body ng-controller="AuthCtrl"
     header#header data-turbolinks-permanent=""
       == render 'layouts/navigation'
     main[role="main"]

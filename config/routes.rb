@@ -22,4 +22,15 @@ Adoptajerry::Application.routes.draw do
   end
 
   resources :locales, controller: :translations, only: :show
+
+  # tiny API to get an access_token for the main API
+  namespace :api, format: :json do
+    namespace :v1 do
+      resources :makers do
+        collection do
+          get :me
+        end
+      end
+    end
+  end
 end

@@ -1,0 +1,29 @@
+h1
+  = "Hi #{resource.name}!"
+
+= gravatar_tag resource.uid, size: 50
+
+p
+  | Change your avatar at
+  = " "
+  = link_to "gravatar.com"
+
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+
+  = f.error_notification
+
+  = f.input :name
+  = f.input :email
+  = f.input :city
+  = f.input :bio
+  = f.input :twitter_url
+  = f.input :website
+
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    p
+      | Currently waiting confirmation for: #{resource.unconfirmed_email}
+  = f.input :password, autofocus: true, autocomplete: "off", hint: t('user.edit.password.hint')
+  = f.input :password_confirmation
+  = f.input :current_password, hint: t('user.edit.current_password.hint')
+
+  = f.button :submit, t('js.save').capitalize, class: 'btn btn-default'

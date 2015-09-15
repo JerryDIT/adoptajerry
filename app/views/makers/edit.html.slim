@@ -13,7 +13,10 @@
 
     = simple_form_for @maker, url: edit_profile_path do |f|
 
+      = f.error_notification
+
       = f.input :name
+      = f.input :email
       = f.input :city
       = f.input :bio
       = f.input :twitter_url

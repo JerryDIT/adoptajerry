@@ -27,7 +27,13 @@ Adoptajerry::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # ActionMailer Config
+  config.action_mailer.asset_host = { host: ENV["HOST"] }
+  config.action_mailer.default_url_options = { host: ENV["HOST"] }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  # Mailcatcher
+  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
 
   # https://github.com/kikonen/ngannotate-rails
   config.ng_annotate.process = true

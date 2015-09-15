@@ -5,8 +5,16 @@ class Maker < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_and_belongs_to_many :jerries
 
-  validates :uid, uniqueness: true
-  validates :name, uniqueness: true
+  # ------------- Cancan # https://github.com/ryanb/cancan/wiki/ability-for-other-users
+  delegate :can?, :cannot?, to: :ability
+
+  validates :name, presence: true
+  validates :email, presence: true
+
+  def ability
+    @ability ||= Ability.new(self)
+  end
+  # .Cancan
 
   def self.create_with_omniauth(auth)
     create! do |maker|
