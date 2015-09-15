@@ -44,6 +44,9 @@ end
 # http://tzinfo.github.io/datasourcenotfound
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+
 # Authorization library which restricts what resources a given user is allowed to access.
 gem 'cancancan', '~> 1.10'
 

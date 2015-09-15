@@ -1,76 +1,86 @@
 .row ng-controller="JerriesCtrl"
-  .col-md-4
-    h1
-      = @jerry.name
 
-    - if @jerry.avatar?
-      = image_tag @jerry.avatar.url(:medium).to_s, alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
-    - else
-      = image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
+  .col-md-12
 
     .row
-      .col-md-12
-        - if @jerry.location.present?
-          strong Location:
-          = " "
-          = @jerry.location
 
-    .row
       .col-md-12
 
-        h2
-          | {{'makers' | translate | capitalize}}
+        .pull-right
 
-        - @jerry.makers.each do |maker|
-          = link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary"
+          - if @jerry.makers.include?(current_maker)
+            a.btn.btn-default.btn-sm href="/jerries/#{@jerry.id}/edit"
+              | {{'edit_profile' | translate}}
 
-        = " "
-        - if @jerry.makers.include?(current_maker)
-          a.btn.btn-link href="/jerries/#{@jerry.id}/team/edit"
-            | {{'add_a_maker' | translate}}
-
-    hr
+        h1
+          = @jerry.name
 
     .row
-      .col-md-12
 
-        - if @jerry.makers.include?(current_maker)
-          a.btn.btn-default.btn-sm href="/jerries/#{@jerry.id}/edit"
-            | {{'edit_profile' | translate}}
+      .col-md-4
 
-  .col-md-8
-    - if @jerry.pictures.any?
-      .row
-        .col-md-12
-          - @jerry.pictures.each do |picture|
-            = image_tag picture.image.url(:preview).to_s
+        .row
+          .col-md-12
 
-    - if @jerry.bio.present?
-      .row
-        .col-md-12
-          h2
-            | {{'bio' | translate | capitalize}}
-          = @jerry.bio
+            - if @jerry.avatar?
+              = image_tag @jerry.avatar.url(:medium).to_s, alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
+            - else
+              = image_tag "http://placehold.it/300x300&text=#{@jerry.name}", alt: "#{t('js.avatar_of')} #{@jerry.name}", class: 'img-responsive'
 
-    - if @jerry.mission.present?
-      .row
-        .col-md-12
-          h2
-            | {{'mission' | translate | capitalize}}
-          = @jerry.mission
+        .row
+          .col-md-12
+            - if @jerry.location.present?
+              strong Location:
+              = " "
+              = @jerry.location
 
-    .row
-      .col-md-6
-        - if @jerry.organs.any?
-          h2
-            | {{'organs' | translate | capitalize}}
-          = render @jerry.organs
+        .row
+          .col-md-12
 
-      .col-md-6
-        - if @jerry.skills.any?
-          h2
-            | {{'skills' | translate | capitalize}}
-          = render @jerry.skills
+            h2
+              | {{'makers' | translate | capitalize}}
+
+            - @jerry.makers.each do |maker|
+              = link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary"
+
+            = " "
+            - if @jerry.makers.include?(current_maker)
+              a.btn.btn-link href="/jerries/#{@jerry.id}/team/edit"
+                | {{'add_a_maker' | translate}}
+
+      .col-md-8
+        - if @jerry.pictures.any?
+          .row
+            .col-md-12
+              - @jerry.pictures.each do |picture|
+                = image_tag picture.image.url(:preview).to_s
+
+        - if @jerry.bio.present?
+          .row
+            .col-md-12
+              h2
+                | {{'bio' | translate | capitalize}}
+              = @jerry.bio
+
+        - if @jerry.mission.present?
+          .row
+            .col-md-12
+              h2
+                | {{'mission' | translate | capitalize}}
+              = @jerry.mission
+
+        .row
+          .col-md-6
+            - if @jerry.organs.any?
+              h2
+                | {{'organs' | translate | capitalize}}
+              = render @jerry.organs
+
+          .col-md-6
+            - if @jerry.skills.any?
+              h2
+                | {{'skills' | translate | capitalize}}
+              = render @jerry.skills
 
 .row
 

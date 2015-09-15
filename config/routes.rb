@@ -5,6 +5,7 @@ Adoptajerry::Application.routes.draw do
     mount GrapeSwaggerRails::Engine => '/api-doc'
   end
 
+  devise_for :makers
   root 'jerries#index'
 
   get "/build" => 'pages#start'

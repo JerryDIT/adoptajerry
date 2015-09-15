@@ -77,4 +77,7 @@ Adoptajerry::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Routes
+  routes.default_url_options = { host: ENV["HOST"] }
 end

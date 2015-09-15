@@ -36,9 +36,9 @@
       .profile
         a ng-href="jerries/{{jerry.id}}"
           div ng-show="jerry.avatar"
-            img ng-src="{{jerry.avatar}}" alt="#{t('js.avatar_of')} {{jerry.name}}"
+            img.img-responsive ng-src="{{jerry.avatar}}" alt="#{t('js.avatar_of')} {{jerry.name}}"
           div ng-hide="jerry.avatar"
-            img ng-src="http://placehold.it/300x300&text={{jerry.name}}" alt="#{t('js.avatar_of')} {{jerry.name}}"
+            img.img-responsive ng-src="http://placehold.it/300x300&text={{jerry.name}}" alt="#{t('js.avatar_of')} {{jerry.name}}"
       .profile-panel
         h5
           a ng-href="jerries/{{jerry.id}}"

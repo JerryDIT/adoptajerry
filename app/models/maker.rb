@@ -1,9 +1,11 @@
 class Maker < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   has_and_belongs_to_many :jerries
 
-  validates :uid, presence: true
   validates :uid, uniqueness: true
-  validates :provider, presence: true
   validates :name, uniqueness: true
 
   def self.create_with_omniauth(auth)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914202312) do
+ActiveRecord::Schema.define(version: 20150915104343) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -44,16 +44,29 @@ ActiveRecord::Schema.define(version: 20150914202312) do
   end
 
   create_table "makers", force: :cascade do |t|
-    t.string   "provider",    limit: 255
-    t.string   "uid",         limit: 255
-    t.string   "name",        limit: 255
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
+    t.string   "name",                   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "city",        limit: 255
+    t.string   "city",                   limit: 255
     t.text     "bio"
-    t.string   "twitter_url", limit: 255
-    t.string   "website",     limit: 255
+    t.string   "twitter_url",            limit: 255
+    t.string   "website",                limit: 255
+    t.string   "email",                              default: "", null: false
+    t.string   "encrypted_password",                 default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "makers", ["email"], name: "index_makers_on_email", unique: true
+  add_index "makers", ["reset_password_token"], name: "index_makers_on_reset_password_token", unique: true
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", null: false

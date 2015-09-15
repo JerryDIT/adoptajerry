@@ -11,6 +11,7 @@ en:
     aloha: "Aloha!"
     sign_out: "Sign out"
     sign_in: "Sign in"
+    sign_up: "Sign up"
 
     # Footer
     follow: "follow"

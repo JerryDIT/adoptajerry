@@ -9,10 +9,10 @@ module JsEnv
 
     data = {
       host: host,
-      user: current_user.try(:id),
-      userName: current_user.try(:name),
-      locale: current_user.try(:locale) || 'en',
-      apiNamespace: "#{current_user.try(:id)}-#{current_user.try(:locale)}"
+      user: current_maker.try(:id),
+      userName: current_maker.try(:name),
+      locale: current_maker.try(:locale) || 'en',
+      apiNamespace: "#{current_maker.try(:id)}-#{current_maker.try(:locale)}"
     }
 
     <<-EOS.html_safe

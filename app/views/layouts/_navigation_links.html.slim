@@ -23,7 +23,8 @@ ul.nav.navbar-nav.navbar-right
 
   - else
     li
-      form id='browser_id_form' action='/auth/browser_id/callback'
-        input type='hidden' name='assertion'
-        button.btn.btn-link type='submit' class='secondary'
-          | {{'sign_in' | translate}}
+      a href="/makers/sign_in"
+        | {{'sign_in' | translate}}
+    li
+      a href="/makers/sign_up"
+        | {{'sign_up' | translate}}

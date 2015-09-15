@@ -5,7 +5,7 @@ Jerry = ($q, $http, Rails, CacheFactory) ->
   base = "//#{Rails.host}/api/jerries"
   jerriesCache = CacheFactory.get("jerriesCache.#{Rails.apiNamespace}") or
     CacheFactory "jerriesCache.#{Rails.apiNamespace}",
-      maxAge: (2).minutes()
+      maxAge: (10).seconds()
 
   all: ->
     deferred = $q.defer()
