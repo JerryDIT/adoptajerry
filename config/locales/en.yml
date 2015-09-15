@@ -57,6 +57,7 @@ en:
     # Jerry profile
     edit_profile: "Edit profile"
     bio: "bio"
+    location: "location"
     mission: "mission"
     organs: "organs"
     skills: "skills"
@@ -73,6 +74,7 @@ en:
     avatar_of: "Avatar of"
     in: "in"
     on_the_internets: "on the internets"
+    you_need_to_sign_in_to_add_a_comment: "You need to be logged in to add a comment"
     commented: "commented"
 
     # Jerry form
@@ -94,7 +96,7 @@ en:
     previous: "previous"
     edit: "edit"
     upload_a_new_jerry: "Upload your Jerry Computer"
-    fill_in_the_birth_certificate_below: "Fill in the birth certificate below"
+    fill_in_the_birth_certificate_below: "Each Jerry is unique, please introduce him or her to the family!"
     pictures: "pictures"
     add_pictures: "Add pictures"
     add_to_the_team: "Add to the team"

@@ -2,6 +2,9 @@ ActivitiesCtrl = null
 ### @ngInject ###
 ActivitiesCtrl = ($scope, $timeout, Timeline) ->
 
+  $scope.$on 'event:auth-loginConfirmed', (event, args) ->
+    $scope.makerSignedIn = true
+
   $scope.$on 'jerryChanged', (event, args) ->
 
     $scope.jerryId = args.jerry.id

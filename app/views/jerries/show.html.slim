@@ -30,14 +30,16 @@
         .row
           .col-md-12
             - if @jerry.location.present?
-              strong Location:
-              = " "
-              = @jerry.location
+              h5
+                | {{'location' | translate | capitalize}}
+                = ": "
+                em
+                  = @jerry.location
 
         .row
           .col-md-12
 
-            h2
+            h5
               | {{'makers' | translate | capitalize}}
 
             - @jerry.makers.each do |maker|
@@ -88,7 +90,7 @@
 
     #timeline.row ng-cloak="" data-no-transition-cache="" ng-controller="ActivitiesCtrl"
       .col-md-9.col-md-offset-1
-        timeline class="timeline-form"
+        timeline class="timeline-form" ng-show="makerSignedIn"
           timeline-node side="right" class="timeline-node-highlighted"
             timeline-badge
               i.fa class="fa-comments"
@@ -118,6 +120,10 @@
                   div ta-bind="" ng-model="comment.content" ng-show="saved"
 
           hr.hr-border
+
+        div ng-hide="makerSignedIn"
+          .well.well-sm
+            | {{'you_need_to_sign_in_to_add_a_comment' | translate | capitalize}}
 
         .text-center ng-hide="activitiesLoaded"
           = icon('circle-o-notch fa-spin')

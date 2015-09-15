@@ -33,6 +33,7 @@ group :development do
   gem 'jazz_hands'
   gem 'sqlite3'
   gem 'thin'
+  gem 'quiet_assets'
 end
 
 group :production do
