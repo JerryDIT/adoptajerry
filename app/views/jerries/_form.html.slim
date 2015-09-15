@@ -6,7 +6,7 @@
       = f.error_notification
 
       tabset
-        tab
+        tab active="tabs[0].active"
           tab-heading
             | {{'jerry_form.steps.first.short' | translate}}
           h3
@@ -28,23 +28,29 @@
           hr
 
           .row
-            .col-md-12.profile-panel
+            .col-md-12
+              .profile-panel
 
-              h4
-                | {{'pictures' | translate | capitalize}}
+                h4
+                  | {{'pictures' | translate | capitalize}}
 
-              - unless @jerry.pictures.count.zero?
-                - @jerry.pictures.each do |picture|
-                  = image_tag picture.image.url(:small).to_s
+                - unless @jerry.pictures.count.zero?
+                  - @jerry.pictures.each do |picture|
+                    = image_tag picture.image.url(:small).to_s
 
-                h5
-                  | {{'add_pictures' | translate}}
+                  h5
+                    | {{'add_pictures' | translate}}
 
-              = f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key"
-              = f.fields_for :pictures do |p|
-                = p.file_field :image, multiple: true, class: 'button small radius'
+                = f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key"
+                = f.fields_for :pictures do |p|
+                  = p.file_field :image, multiple: true, class: 'button small radius'
 
-        tab
+          .pull-right
+
+            button.btn.btn-default.btn-sm type="button" ng-click="tabs[1].active = true"
+              | {{'next' | translate | capitalize}}
+
+        tab active="tabs[1].active"
           tab-heading
             | {{'jerry_form.steps.second.short' | translate}}
           h3
@@ -60,7 +66,19 @@
 
             /= f.link_to_add "|+| Add an Organ", :organs, class: "btn btn-link"
 
-        tab
+          = f.input :organs_improvment
+
+          .pull-left
+
+            button.btn.btn-default.btn-sm type="button" ng-click="tabs[0].active = true"
+              | {{'previous' | translate | capitalize}}
+
+          .pull-right
+
+            button.btn.btn-default.btn-sm type="button" ng-click="tabs[2].active = true"
+              | {{'next' | translate | capitalize}}
+
+        tab active="tabs[2].active"
           tab-heading
             | {{'jerry_form.steps.three.short' | translate}}
           h3
@@ -76,7 +94,19 @@
 
             /= f.link_to_add "|+| Add a Skill", :skills, class: "btn btn-link"
 
-        tab
+          = f.input :skills_improvment
+
+          .pull-left
+
+            button.btn.btn-default.btn-sm type="button" ng-click="tabs[1].active = true"
+              | {{'previous' | translate | capitalize}}
+
+          .pull-right
+
+            button.btn.btn-default.btn-sm type="button" ng-click="tabs[3].active = true"
+              | {{'next' | translate | capitalize}}
+
+        tab active="tabs[3].active"
           tab-heading
             | {{'jerry_form.steps.fourth.short' | translate}}
           h3
@@ -84,4 +114,11 @@
 
           = f.input :mission
 
-          = f.submit class: 'btn btn-default'
+          .pull-left
+
+            button.btn.btn-default.btn-sm type="button" ng-click="tabs[2].active = true"
+              | {{'previous' | translate | capitalize}}
+
+          .pull-right
+
+            = f.submit class: 'btn btn-default'

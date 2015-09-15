@@ -2,7 +2,15 @@ en:
 
   simple_form:
     labels:
-      makers:
+      jerry:
+        name: "Choose a nice name :)"
+        bio: "Where the components come from? What are you proud of about your Jerry? How your Jerry came to the world?"
+        organs: "What is the hardware configuration?"
+        organs_improvment: "What do you need to finish or improve it?"
+        skills: "What is the software configuration?"
+        skills_improvment: "What do you need to finish or improve it?"
+        mission: "Who use your Jerry? How your Jerry help them? What do you need to finish or improve it?"
+      maker:
         name: "What's your name or pseudo?"
         city: "Where do you live?"
 
@@ -58,7 +66,7 @@ en:
     submit: "submit"
     welcome_img_alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer"
     take_the_tour: "Take the Tour"
-    register_your_jerry: "Register your Jerry"
+    register_your_jerry: "Upload your Jerry Computer"
     add_a_new_jerry: "+ add a new Jerry"
     jerry_etc: "Jerry [...]"
     meet_the_family: "Meet the family!"
@@ -82,8 +90,10 @@ en:
         fourth:
           short: "4. Mission"
           long: "4. Each Jerry was made to accomplish a Mission"
+    next: "next"
+    previous: "previous"
     edit: "edit"
-    upload_a_new_jerry: "Upload a new Jerry"
+    upload_a_new_jerry: "Upload your Jerry Computer"
     fill_in_the_birth_certificate_below: "Fill in the birth certificate below"
     pictures: "pictures"
     add_pictures: "Add pictures"
