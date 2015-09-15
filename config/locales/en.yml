@@ -4,12 +4,12 @@ en:
     labels:
       jerry:
         name: "Choose a nice name :)"
-        bio: "Where the components come from? What are you proud of about your Jerry? How your Jerry came to the world?"
+        bio: "Where did the components come from? What makes you proud in your Jerry? How did your Jerry come to the world?"
         organs: "What is the hardware configuration?"
         organs_improvment: "What do you need to finish or improve it?"
         skills: "What is the software configuration?"
         skills_improvment: "What do you need to finish or improve it?"
-        mission: "Who use your Jerry? How your Jerry help them? What do you need to finish or improve it?"
+        mission: "Who uses your Jerry? How does your Jerry help them? What do you need to finish or improve it?"
       maker:
         name: "What's your name or pseudo?"
         city: "Where do you live?"
