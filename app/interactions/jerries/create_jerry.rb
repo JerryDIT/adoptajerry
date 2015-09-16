@@ -20,8 +20,8 @@ class CreateJerry < ActiveInteraction::Base
 
   def execute
     create_jerry
-    associate_maker
-    compose(AddPicturesToJerry, images: images, jerry: @jerry)
+    associate_maker if @jerry.valid?
+    compose(AddPicturesToJerry, images: images, jerry: @jerry) if @jerry.valid?
     @jerry
   end
 
@@ -29,7 +29,7 @@ class CreateJerry < ActiveInteraction::Base
 
   def create_jerry
     @jerry = Jerry.new(params)
-    errors.merge!(@jerry.errors) unless @jerry.save
+    errors.merge!(@jerry.errors) unless @jerry.valid?
   end
 
   def associate_maker

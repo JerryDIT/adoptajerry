@@ -27,6 +27,7 @@ class JerriesController < ApplicationController
     if outcome.valid?
       redirect_to jerry_path outcome.result
     else
+      @jerry = outcome.result
       render :new
     end
   end
@@ -56,6 +57,7 @@ class JerriesController < ApplicationController
     if outcome.valid?
       redirect_to jerry_path outcome.result
     else
+      @jerry = outcome.result || @jerry
       render :edit
     end
   end
@@ -88,12 +90,11 @@ class JerriesController < ApplicationController
 
   def update_team
     if params[:jerry][:makers]
-      new_maker = Maker.find_by uid: params[:jerry][:makers][:uid]
+      new_maker = Maker.find_by email: params[:jerry][:makers][:uid]
       if new_maker
         @jerry.makers << new_maker
       else
         flash.now.notice = "Unknown maker '#{params[:jerry][:makers][:uid]}', can not be added to the team"
-        return render 'edit_team'
       end
     end
   end

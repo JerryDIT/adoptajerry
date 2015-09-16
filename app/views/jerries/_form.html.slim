@@ -19,7 +19,7 @@
           .row
             .col-md-3
               - if @jerry.avatar?
-                = image_tag @jerry.avatar.url(:medium).to_s
+                = image_tag @jerry.avatar.url(:medium).to_s, class: 'img-responsive'
               - else
                 = image_tag "http://placehold.it/300x300&text=#{@jerry.name ? @jerry.name : "Jerry picture"}", class: "img-responsive"
             .col-md-9
