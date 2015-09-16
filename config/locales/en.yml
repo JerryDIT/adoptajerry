@@ -52,7 +52,9 @@ en:
     save: "save"
 
     # Maker form
+    sign_in_with_persona: "Sign in with Persona"
     send_me_reset_password_instructions: "Send me reset password instructions"
+    or: "or"
 
     # Jerry profile
     edit_profile: "Edit profile"
