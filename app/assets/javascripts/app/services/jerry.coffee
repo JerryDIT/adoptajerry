@@ -16,6 +16,15 @@ Jerry = ($q, $http, Rails, CacheFactory) ->
       deferred.resolve data
     deferred.promise
 
+  find: (id) ->
+    deferred = $q.defer()
+    $http.get(base + "/#{id}",
+      cache: jerriesCache
+    ).success (data) ->
+      data = humps.camelizeKeys(data)
+      deferred.resolve data
+    deferred.promise
+
 angular
   .module 'app'
   .service 'Jerry', Jerry

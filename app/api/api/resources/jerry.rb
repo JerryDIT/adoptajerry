@@ -10,6 +10,7 @@ module API
       end
       expose :created_at
       expose :updated_at
+      expose :pictures, if: { type: :full }
     end
   end
 end

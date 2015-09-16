@@ -34,12 +34,12 @@
                 h4
                   | {{'pictures' | translate | capitalize}}
 
-                - unless @jerry.pictures.count.zero?
-                  - @jerry.pictures.each do |picture|
-                    = image_tag picture.image.url(:small).to_s
+                div ng-controller="GalleryCtrl"
+                  span ng-repeat="picture in pictures"
+                    img ng-src="{{picture.image.small.url}}" ng-click="delete(picture)"
 
-                  h5
-                    | {{'add_pictures' | translate}}
+                h5
+                  | {{'add_pictures' | translate}}
 
                 = f.label :pictures, "You can select multiple pictures at once by holding the Ctrl key"
                 = f.fields_for :pictures do |p|

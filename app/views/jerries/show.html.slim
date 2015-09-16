@@ -51,25 +51,42 @@
                 | {{'add_a_maker' | translate}}
 
       .col-md-8
-        - if @jerry.pictures.any?
-          .row
-            .col-md-12
-              - @jerry.pictures.each do |picture|
-                = image_tag picture.image.url(:preview).to_s
+
+        .row ng-controller="GalleryCtrl"
+          .col-md-12
+            span ng-repeat="picture in pictures"
+              img ng-src="{{picture.image.preview.url}}" ng-click="open('')"
+
+            script id="gallery.html" type="text/ng-template"
+
+              .modal-header
+                h3 class="modal-title"
+                  | {{'gallery' | translate | capitalize}}
+
+              .modal-body
+
+                div
+                  carousel no-wrap="noWrapSlides"
+                    slide active="picture.active" ng-repeat="picture in pictures"
+                      img ng-src="{{picture.image.large.url}}" style="margin:auto;"
+
+              .modal-footer
+                button.btn.btn-default type="button" ng-click="close()"
+                  | {{'close' | translate | capitalize}}
 
         - if @jerry.bio.present?
           .row
             .col-md-12
               h2
                 | {{'bio' | translate | capitalize}}
-              = @jerry.bio
+              = simple_format @jerry.bio
 
         - if @jerry.mission.present?
           .row
             .col-md-12
               h2
                 | {{'mission' | translate | capitalize}}
-              = @jerry.mission
+              = simple_format @jerry.mission
 
         .row
           .col-md-6
@@ -78,7 +95,7 @@
                 | {{'organs' | translate | capitalize}}
               = render @jerry.organs
 
-            = @jerry.organs_improvment
+            = simple_format @jerry.organs_improvment
 
           .col-md-6
             - if @jerry.skills.any?
@@ -86,7 +103,7 @@
                 | {{'skills' | translate | capitalize}}
               = render @jerry.skills
 
-            = @jerry.skills_improvment
+            = simple_format @jerry.skills_improvment
 
 .row
 
@@ -158,3 +175,4 @@
 
               timeline-content
                 div ng-bind-html="activity.content"
+

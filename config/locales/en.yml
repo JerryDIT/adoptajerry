@@ -78,6 +78,8 @@ en:
     on_the_internets: "on the internets"
     you_need_to_sign_in_to_add_a_comment: "You need to be logged in to add a comment"
     commented: "commented"
+    gallery: "gallery"
+    close: "close"
 
     # Jerry form
     jerry_form:
