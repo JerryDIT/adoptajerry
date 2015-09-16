@@ -35,8 +35,10 @@
                   | {{'pictures' | translate | capitalize}}
 
                 div ng-controller="GalleryCtrl"
+                  div ng-hide="pictures | isEmpty"
+                    | {{'click_on_a_picture_to_delete_it' | translate}}
                   span ng-repeat="picture in pictures"
-                    img ng-src="{{picture.image.small.url}}" ng-click="delete(picture)"
+                    img ng-src="{{picture.image.small.url}}" ng-click="delete(picture)" popover="Click to delete" popover-trigger="mouseenter"
 
                 h5
                   | {{'add_pictures' | translate}}

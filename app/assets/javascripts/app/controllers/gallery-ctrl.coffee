@@ -24,7 +24,8 @@ GalleryCtrl = ($scope, $modal, $location, Jerry, Picture) ->
 
   $scope.delete = (picture) ->
     pictureId = picture.id
-    Picture.delete(pictureId)
+    Picture.delete(pictureId).then ->
+      $scope.pictures = $scope.pictures.findAll id: (id) -> id isnt pictureId
 
 angular
   .module 'app'
