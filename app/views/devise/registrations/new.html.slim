@@ -1,18 +1,26 @@
 h2
   | {{'sign_up' | translate}}
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+.row
 
-  = f.error_notification
+  .col-md-6
 
-  = f.input :name, autofocus: true
-  = f.input :email
-  = f.input :city
-  = f.input :bio
-  = f.input :twitter_url
-  = f.input :password
-  = f.input :password_confirmation
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 
-  = f.button :submit, t('js.sign_up')
+      = f.error_notification
+
+      = f.input :name, autofocus: true
+      = f.input :email
+      = f.input :city
+      = f.input :bio
+      = f.input :twitter_url
+      = f.input :password
+      = f.input :password_confirmation
+
+      = f.button :submit, t('js.sign_up')
+
+  .col-md-6.text-center
+
+    = render 'devise/shared/persona'
 
 = render "devise/shared/links"

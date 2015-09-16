@@ -9,7 +9,7 @@ Adoptajerry::Application.routes.draw do
   root 'jerries#index'
 
   get "/build" => 'pages#start'
-  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/:provider/callback' => 'omniauth_callbacks#create'
   get '/signout' => 'sessions#destroy'
   get 'makers/profile' => 'makers#edit', as: :edit_profile
   patch 'makers/profile' => 'makers#update', as: :profile

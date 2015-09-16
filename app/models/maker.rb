@@ -24,7 +24,9 @@ class Maker < ActiveRecord::Base
     create! do |maker|
       maker.provider = auth[:provider]
       maker.uid = auth[:uid]
-      maker.set_name(auth[:info][:name])
+      maker.password = Devise.friendly_token[0,20]
+      maker.email = auth[:info][:name]
+      maker.set_name auth[:info][:name]
     end
   end
 
