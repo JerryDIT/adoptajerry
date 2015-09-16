@@ -1,6 +1,6 @@
 AuthCtrl = null
 ### @ngInject ###
-AuthCtrl = ($scope, authService, Rails, Maker, AccessToken) ->
+AuthCtrl = ($scope, $location, authService, Rails, Maker, AccessToken) ->
 
   setLoggedIn = ->
     if Rails.user # user is logged in
@@ -24,6 +24,11 @@ AuthCtrl = ($scope, authService, Rails, Maker, AccessToken) ->
 
 
   logIn()
+
+  # Used when the user changes of language.
+  # We need to reload the page for the change to take effect.
+  if $location.absUrl().split('?').last() is 'changed=true'
+    window.location = $location.absUrl().split('?').first()
 
 angular
   .module 'app'

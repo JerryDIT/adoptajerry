@@ -10,7 +10,7 @@ class MakersController < ApplicationController
         session[:locale] = name
       end
     end
-    redirect_to :back
+    redirect_to root_path(changed: true)
   end
 
   def show

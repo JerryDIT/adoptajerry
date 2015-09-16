@@ -35,8 +35,9 @@
                   | {{'pictures' | translate | capitalize}}
 
                 div ng-controller="GalleryCtrl"
-                  div ng-hide="pictures | isEmpty"
-                    | {{'click_on_a_picture_to_delete_it' | translate}}
+                  - if @jerry.pictures.count > 0
+                    div
+                      | {{'click_on_a_picture_to_delete_it' | translate}}
                   span ng-repeat="picture in pictures"
                     img ng-src="{{picture.image.small.url}}" ng-click="delete(picture)" tooltip="Click to delete" tooltip-trigger="mouseenter"
 

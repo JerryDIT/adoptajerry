@@ -2,7 +2,15 @@ fr:
 
   simple_form:
     labels:
-      makers:
+      jerry:
+        name: "Choose a nice name :)"
+        bio: "Where did the components come from? What makes you proud in your Jerry? How did your Jerry come to the world?"
+        organs: "What is the hardware configuration?"
+        organs_improvment: "What do you need to finish or improve it?"
+        skills: "What is the software configuration?"
+        skills_improvment: "What do you need to finish or improve it?"
+        mission: "Who uses your Jerry? How does your Jerry help them? What do you need to finish or improve it?"
+      maker:
         name: "What's your name or pseudo?"
         city: "Where do you live?"
 
@@ -44,34 +52,66 @@ fr:
     save: "save"
 
     # Maker form
+    sign_in_with_persona: "Sign in with Persona"
     send_me_reset_password_instructions: "Send me reset password instructions"
+    or: "or"
 
     # Jerry profile
     edit_profile: "Edit profile"
     bio: "bio"
+    location: "location"
     mission: "mission"
     organs: "organs"
+    what_is_the_hardware_configuration: "What is the hardware configuration?"
     skills: "skills"
+    what_is_the_software_configuration: "What is the software configuration?"
     makers: "makers"
     add_a_maker: "Add a maker"
     leave_a_comment: "Leave a comment"
     submit: "submit"
     welcome_img_alt: "Welcome to adopt a Jerry, the social network for your Jerry Computer"
     take_the_tour: "Take the Tour"
-    register_your_jerry: "Register your Jerry"
+    register_your_jerry: "Upload your Jerry Computer"
     add_a_new_jerry: "+ add a new Jerry"
     jerry_etc: "Jerry [...]"
     meet_the_family: "Meet the family!"
     avatar_of: "Avatar of"
     in: "in"
     on_the_internets: "on the internets"
+    you_need_to_sign_in_to_add_a_comment: "You need to be logged in to add a comment"
     commented: "commented"
+    gallery: "gallery"
+    close: "close"
 
     # Jerry form
+    jerry_form:
+      steps:
+        first:
+          short: "1. Bio"
+          long: "1. Tell the world about the story of your Jerry Computer"
+        second:
+          short: "2. Organs"
+          long: "2. Everyone is curious about the Organs of your Jerry Computer!"
+        three:
+          short: "3. Skills"
+          long: "3. We all want to know about the free|open source Skills of your Jerry Computer!"
+        fourth:
+          short: "4. Mission"
+          long: "4. Each Jerry was made to accomplish a Mission"
+    next: "next"
+    previous: "previous"
     edit: "edit"
-    upload_a_new_jerry: "Upload a new Jerry"
-    fill_in_the_birth_certificate_below: "Fill in the birth certificate below"
+    upload_a_new_jerry: "Upload your Jerry Computer"
+    fill_in_the_birth_certificate_below: "Each Jerry is unique, please introduce him or her to the family!"
     pictures: "pictures"
     add_pictures: "Add pictures"
+    click_on_a_picture_to_delete_it: "Click on a picture to delete it"
+    add_an_organ: "Add an organ"
+    remove_this_organ: "Remove this organ"
+    select_an_organ: "Select an organ"
+    add_a_skill: "Add a skill"
+    remove_this_skill: "Remove this skill"
+    select_a_layer: "Select a layer"
+    select_unit: "Select unit"
     add_to_the_team: "Add to the team"
     contributors_to: "Contributors to"
