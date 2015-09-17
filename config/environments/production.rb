@@ -84,10 +84,10 @@ Adoptajerry::Application.configure do
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.mandrillapp.com",
-    port: 587,
-    user_name: ENV["MANDRILL_USERNAME"],
-    password: ENV["MANDRILL_APIKEY"]
+    :port           => '25', # or 2525
+    :address        => ENV['POSTMARK_SMTP_SERVER'],
+    :user_name      => ENV['POSTMARK_API_TOKEN'],
+    :password       => ENV['POSTMARK_API_TOKEN'],
   }
 
   # Routes
