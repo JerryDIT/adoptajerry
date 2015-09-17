@@ -7,9 +7,9 @@ Timeline = ($q, $http, Rails, CacheFactory) ->
     CacheFactory "timelinesCache.#{Rails.apiNamespace}",
       maxAge: (1).second()
 
-  forJerry: (jerryId) ->
+  for: (timelinableType, timelinableId) ->
     deferred = $q.defer()
-    url = base + '/' + "?jerry_id=#{jerryId}"
+    url = base + '/' + "?#{timelinableType.toLowerCase()}_id=#{timelinableId}"
     $http.get(url, cache: timelinesCache).success (data) ->
       data = humps.camelizeKeys(data)
       deferred.resolve data

@@ -37,6 +37,10 @@ RailsAdmin.config do |config|
     edit do
       field :name
       field :content, :ck_editor
+      field :step do
+        help "ex: type 1 for 'Define & Plan', 4b for 'Make', 0 for 'Document'.
+          Let it empty if the page is not associated to the diagram of the page 'Build your Jerry'"
+      end
       include_all_fields
     end
 

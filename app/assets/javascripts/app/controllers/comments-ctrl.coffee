@@ -4,7 +4,6 @@ CommentsCtrl = ($rootScope, $scope, $element, $translate, Comment, Rails) ->
 
   $scope.user = Rails.userName
   $scope.verb = "commented"
-  $scope.commentable = {}
 
   editor = ->
     angular.element($element.find('.ta-editor')).scope()
@@ -19,6 +18,16 @@ CommentsCtrl = ($rootScope, $scope, $element, $translate, Comment, Rails) ->
     $scope.commentable =
       type: "Jerry"
       id: args.jerry.id
+    $rootScope.$broadcast 'commentableChanged',
+      commentable: $scope.commentable
+
+  $scope.$on 'pageChanged', (event, args) ->
+    resetEditor()
+    $scope.commentable =
+      type: "Page"
+      id: args.page.id
+    $rootScope.$broadcast 'commentableChanged',
+      commentable: $scope.commentable
 
   $scope.$on 'fileUploaded', (event, args) ->
     data = args.file.result

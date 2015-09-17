@@ -4,18 +4,23 @@ class Timeline
   include Rails.application.routes.url_helpers
 
   attribute :jerry_id, type: Integer
+  attribute :page_id, type: Integer
   attribute :activities, type: Array
 
-  def jerry
-    Jerry.find jerry_id if jerry_id
+  def timelinable
+    if jerry_id
+      Jerry.find jerry_id
+    else
+      Page.find page_id
+    end
   end
 
   def activities
     list = []
     activities = []
 
-    if jerry
-      comments = jerry.comments.reverse
+    if timelinable
+      comments = timelinable.comments.reverse
       uploads = []
       versions = []
       activities = (comments + uploads + versions).sort_by { |k| k.created_at } .reverse

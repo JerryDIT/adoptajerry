@@ -10,6 +10,7 @@ class Ability
       can :dashboard              # grant access to the dashboard
     else
       can :read, Jerry
+      can :read, Page
       can :read, Comment
       can [:create, :update], Comment, user_id: maker.id
     end

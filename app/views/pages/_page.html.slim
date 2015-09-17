@@ -1,0 +1,13 @@
+h2
+  - unless @page.step.empty? || @page.step == "0"
+    span.text-muted
+      = "##{@page.step} "
+  = @page.name
+
+=simple_format @page.content
+
+.row
+
+  .col-md-12
+
+    = render '/shared/timeline'

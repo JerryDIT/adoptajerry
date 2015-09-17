@@ -8,24 +8,41 @@ div ng-controller="PagesCtrl"
 
   img.img-responsive src="/jerry_build_workflow.png" alt="" usemap="#Map" width="2621" height="679"
   map name="Map" id="Map"
-    area alt="" title="" href="/pages/1" shape="rect" coords="25,377,207,627"
-    area alt="" title="" href="#" shape="rect" coords="332,379,523,626"
-    area alt="" title="" href="#" shape="rect" coords="613,377,805,621"
-    area alt="" title="" href="#" shape="rect" coords="922,375,1143,625"
-    area alt="" title="" href="#" shape="rect" coords="1212,370,1418,643"
-    area alt="" title="" href="#" shape="rect" coords="1487,258,1696,593"
-    area alt="" title="" href="#" shape="rect" coords="2038,627,1805,367"
-    area alt="" title="" href="#" shape="rect" coords="2104,362,2339,619"
-    area alt="" title="" href="#" shape="rect" coords="2394,363,2583,614"
-    area alt="" title="" href="#" shape="rect" coords="748,32,992,267"
+    - if @page_1
+      area alt="" title="" href="/pages/#{@page_1.id}" shape="rect" coords="25,377,207,627"
+    - if @page_2
+      area alt="" title="" href="/pages/#{@page_2.id}" shape="rect" coords="332,379,523,626"
+    - if @page_3
+      area alt="" title="" href="/pages/#{@page_3.id}" shape="rect" coords="613,377,805,621"
+    - if @page_4a
+      area alt="" title="" href="/pages/#{@page_4a.id}" shape="rect" coords="922,375,1143,625"
+    - if @page_4b
+      area alt="" title="" href="/pages/#{@page_4b.id}" shape="rect" coords="1212,370,1418,643"
+    - if @page_4c
+      area alt="" title="" href="/pages/#{@page_4c.id}" shape="rect" coords="1487,258,1696,593"
+    - if @page_4d
+      area alt="" title="" href="/pages/#{@page_4d.id}" shape="rect" coords="2038,627,1805,367"
+    - if @page_5
+      area alt="" title="" href="/pages/#{@page_5.id}" shape="rect" coords="2104,362,2339,619"
+    - if @page_6
+      area alt="" title="" href="/pages/#{@page_6.id}" shape="rect" coords="2394,363,2583,614"
+    - if @page_0
+      area alt="" title="" href="/pages/#{@page_0.id}" shape="rect" coords="748,32,992,267"
 
-  .text-muted
-    i.fa.fa-info-circle
-    = " "
-    | {{'flow_chart_guidance' | translate}}
+  - if @page
 
-  .text-center
-    = link_to t('js.more_documentation'), "https://drive.google.com/folderview?id=0B5QAJ2wPKizPdlZ5ekJZa1hPUVk&usp=sharing", target: "_blank", class: "btn btn-default"
+    hr
+    = render @page
 
-  .embed-container
-    iframe src="https://docs.google.com/presentation/d/1gqRxKAMPCHz9Px4jxWcmtv-5ju8aKYkvKKFtdsa9PWg/embed?start=false&loop=false&delayms=5000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+  - else
+
+    .text-muted
+      i.fa.fa-info-circle
+      = " "
+      | {{'flow_chart_guidance' | translate}}
+
+    .text-center
+      = link_to t('js.more_documentation'), "https://drive.google.com/folderview?id=0B5QAJ2wPKizPdlZ5ekJZa1hPUVk&usp=sharing", target: "_blank", class: "btn btn-default"
+
+    .embed-container
+      iframe src="https://docs.google.com/presentation/d/1gqRxKAMPCHz9Px4jxWcmtv-5ju8aKYkvKKFtdsa9PWg/embed?start=false&loop=false&delayms=5000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"

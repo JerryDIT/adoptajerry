@@ -1,6 +1,6 @@
-AuthCtrl = null
+MainCtrl = null
 ### @ngInject ###
-AuthCtrl = ($scope, $location, authService, Rails, Maker, AccessToken) ->
+MainCtrl = ($scope, $location, authService, Rails, Maker, AccessToken) ->
 
   setLoggedIn = ->
     if Rails.user # user is logged in
@@ -32,4 +32,4 @@ AuthCtrl = ($scope, $location, authService, Rails, Maker, AccessToken) ->
 
 angular
   .module 'app'
-  .controller 'AuthCtrl', AuthCtrl
+  .controller 'MainCtrl', MainCtrl

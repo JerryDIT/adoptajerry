@@ -1,0 +1,66 @@
+#timeline.row ng-cloak="" data-no-transition-cache="" ng-controller="ActivitiesCtrl" ng-show="commentable"
+  .col-md-9.col-md-offset-1
+    timeline class="timeline-form" ng-show="makerSignedIn"
+      timeline-node side="right" class="timeline-node-highlighted"
+        timeline-badge
+          i.fa class="fa-comments"
+        timeline-panel
+          timeline-content
+            div ng-controller="CommentsCtrl"
+
+              form name="newComment" novalidate="" ng-hide="saving || saved"
+                div { text-angular="" ng-model="comment.content" ta-toolbar-group-class="btn-group btn-group-xs"
+                  ta-toolbar="[['h4'], ['bold', 'italics', 'underline'], ['ul', 'ol'],
+                  ['pre', 'quote'], ['insertLink']]"
+                  placeholder="#{t('js.leave_a_comment').capitalize}" required="" }
+
+                button.btn.btn-sm.btn-default type="submit" ng-click="submit(comment)" ng-disabled="newComment.$invalid"
+                  | {{'submit' | translate | capitalize}}
+
+              h4.timeline-title ng-show="saving || saved"
+                | {{user}}
+                = " "
+                span.small.text-muted
+                  | {{verb | translate}}
+                  = " "
+                  time { title="{{ createdAt | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"
+                    am-time-ago="createdAt" }
+              div ng-show="saving"
+                = icon('circle-o-notch fa-spin')
+              div ta-bind="" ng-model="comment.content" ng-show="saved"
+
+      hr.hr-border
+
+    div ng-hide="makerSignedIn"
+      .well.well-sm
+        | {{'you_need_to_sign_in_to_add_a_comment' | translate | capitalize}}
+
+    .text-center ng-hide="activitiesLoaded"
+      = icon('circle-o-notch fa-spin')
+
+    timeline ng-show="activitiesLoaded" ng-repeat="activity in activities"
+      timeline-node side="right" class="timeline-node-{{activity.mode}}"
+
+        timeline-badge
+          i.fa class="fa-{{activity.picto}}"
+
+        timeline-panel
+
+          timeline-heading
+
+            timeline-title ng-show="activity.type == 'comment' || activity.type == 'upload'"
+              span ng-if="activity.makerId"
+                a href="/makers/{{activity.makerId}}"
+                  | {{activity.makerName}}
+              = " "
+              span.small.text-muted
+                | {{activity.verb | translate}}
+                = " "
+                span ng-if="activity.object"
+                  | {{activity.object | translate}}
+                  = " "
+                time { title="{{ activity.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"
+                  am-time-ago="activity.time" }
+
+          timeline-content
+            div ng-bind-html="activity.content"

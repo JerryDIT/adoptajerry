@@ -16,6 +16,9 @@ module API
           if params[:commentable_type] == "Jerry"
             commentable = Jerry.find params[:commentable_id]
             commentable = nil unless current_maker.can?(:read, commentable)
+          elsif params[:commentable_type] == "Page"
+            commentable = Page.find params[:commentable_id]
+            commentable = nil unless current_maker.can?(:read, commentable)
           end
         end
 

@@ -115,3 +115,10 @@ fr:
     select_unit: "Select unit"
     add_to_the_team: "Add to the team"
     contributors_to: "Contributors to"
+
+    # Build your Jerry
+    build_your_jerry: "Build your Jerry"
+    flow_chart_title: "We sum up Jerry contruction process:
+      each step of the building process has dedicated documentation made by JerryClan contributors."
+    flow_chart_guidance: "Click on a step to see more information."
+    more_documentation: "More documentation"
