@@ -19,6 +19,7 @@
 //= require jquery.expander
 //= require jquery-addrule
 //= require jquery_nested_form
+//= require jquery.rwdImageMaps
 //
 //= require sugar
 //= require bootstrap

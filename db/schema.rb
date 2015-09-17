@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915212051) do
+ActiveRecord::Schema.define(version: 20150917125855) do
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -71,6 +87,13 @@ ActiveRecord::Schema.define(version: 20150915212051) do
   add_index "makers", ["email"], name: "index_makers_on_email", unique: true
   add_index "makers", ["reset_password_token"], name: "index_makers_on_reset_password_token", unique: true
 
+  create_table "makers_roles", id: false, force: :cascade do |t|
+    t.integer "maker_id"
+    t.integer "role_id"
+  end
+
+  add_index "makers_roles", ["maker_id", "role_id"], name: "index_makers_roles_on_maker_id_and_role_id"
+
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", null: false
     t.integer  "application_id",    null: false
@@ -124,6 +147,13 @@ ActiveRecord::Schema.define(version: 20150915212051) do
 
   add_index "organs", ["jerry_id"], name: "index_organs_on_jerry_id"
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string   "image"
     t.integer  "jerry_id"
@@ -132,6 +162,17 @@ ActiveRecord::Schema.define(version: 20150915212051) do
   end
 
   add_index "pictures", ["jerry_id"], name: "index_pictures_on_jerry_id"
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "skills", force: :cascade do |t|
     t.string   "layer",      limit: 255
@@ -143,5 +184,28 @@ ActiveRecord::Schema.define(version: 20150915212051) do
   end
 
   add_index "skills", ["jerry_id"], name: "index_skills_on_jerry_id"
+
+  create_table "version_associations", force: :cascade do |t|
+    t.integer "version_id"
+    t.string  "foreign_key_name", null: false
+    t.integer "foreign_key_id"
+  end
+
+  add_index "version_associations", ["foreign_key_name", "foreign_key_id"], name: "index_version_associations_on_foreign_key"
+  add_index "version_associations", ["version_id"], name: "index_version_associations_on_version_id"
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "item_type",                         null: false
+    t.integer  "item_id",                           null: false
+    t.string   "event",                             null: false
+    t.string   "whodunnit"
+    t.text     "object",         limit: 1073741823
+    t.datetime "created_at"
+    t.text     "object_changes", limit: 1073741823
+    t.integer  "transaction_id"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  add_index "versions", ["transaction_id"], name: "index_versions_on_transaction_id"
 
 end

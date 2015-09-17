@@ -1,4 +1,7 @@
 Adoptajerry::Application.routes.draw do
+
+  mount Ckeditor::Engine => '/ckeditor'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   use_doorkeeper
   mount API::Base => '/api'
   constraints CanAccessAPIDocumentation do
@@ -21,6 +24,8 @@ Adoptajerry::Application.routes.draw do
     resources :organs
   end
 
+  resources :pages, only: :show
+
   get "makers/locale/:name" => 'makers#locale', as: :save_locale
   resources :locales, controller: :translations, only: :show
 
@@ -34,4 +39,5 @@ Adoptajerry::Application.routes.draw do
       end
     end
   end
+
 end

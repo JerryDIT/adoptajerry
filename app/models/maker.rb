@@ -1,15 +1,19 @@
 class Maker < ActiveRecord::Base
+  rolify
+  rolify
+  has_paper_trail
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_and_belongs_to_many :jerries
 
-  # ------------- Cancan # https://github.com/ryanb/cancan/wiki/ability-for-other-users
-  delegate :can?, :cannot?, to: :ability
-
   validates :name, presence: true
   validates :email, presence: true
+
+  # ------------- Cancan # https://github.com/ryanb/cancan/wiki/ability-for-other-users
+  delegate :can?, :cannot?, to: :ability
 
   def ability
     @ability ||= Ability.new(self)

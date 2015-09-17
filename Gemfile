@@ -50,6 +50,7 @@ gem 'http_accept_language'
 
 # Flexible authentication solution for Rails with Warden.
 gem 'devise'
+gem 'rolify', github: 'EppO/rolify' # issues/221
 
 # Authorization library which restricts what resources a given user is allowed to access.
 gem 'cancancan', '~> 1.10'
@@ -119,3 +120,12 @@ gem 'simple_form'
 
 # Create plain old ruby models with functionality found in ORMs, like ActiveRecord
 gem 'active_attr'
+
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+gem 'rails_admin'
+# Ckeditor integration gem for rails http://ckeditor.com/
+gem 'ckeditor'
+# Fix the Rails 4 asset pipeline to generate non-digest along with digest assets
+gem 'non-stupid-digest-assets'
+# Track changes to your models' data. Good for auditing or versioning.
+gem 'paper_trail'
