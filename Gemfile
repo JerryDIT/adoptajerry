@@ -37,7 +37,7 @@ group :development do
 end
 
 group :production do
-  gem 'passenger'
+  gem 'puma'
   gem 'rails_12factor'
   gem 'pg'
 end
