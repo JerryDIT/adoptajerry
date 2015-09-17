@@ -331,6 +331,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mimemagic (0.3.0)
     mini_magick (4.3.3)
     mini_portile (0.6.2)
     minitest (5.8.0)
@@ -359,9 +360,12 @@ GEM
       activerecord (>= 3.0, < 6.0)
       activesupport (>= 3.0, < 6.0)
       request_store (~> 1.1)
-    passenger (5.0.18)
-      rack
-      rake (>= 0.8.1)
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     pg (0.18.3-x86-mingw32)
     posix-spawn (0.3.11)
     pry (0.9.12.6-x86-mingw32)
@@ -605,8 +609,9 @@ DEPENDENCIES
   non-stupid-digest-assets
   omniauth-browserid
   paper_trail
-  passenger
+  paperclip (~> 4.3)
   pg
+  puma
   quiet_assets
   rails (= 4.2.4)
   rails-assets-angular (= 1.4.0)!

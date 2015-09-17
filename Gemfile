@@ -37,7 +37,9 @@ group :development do
 end
 
 group :production do
-  gem 'puma'
+  platforms :ruby do # linux
+   gem 'puma'
+  end
   gem 'rails_12factor'
   gem 'pg'
 end
@@ -129,3 +131,7 @@ gem 'ckeditor'
 gem 'non-stupid-digest-assets'
 # Track changes to your models' data. Good for auditing or versioning.
 gem 'paper_trail'
+
+# Easy file attachment management for ActiveRecord
+# Only used by ckeditor
+gem "paperclip", "~> 4.3"
