@@ -26,8 +26,6 @@ html lang=I18n.locale
           .row
             .col-md-8.col-md-offset-2
               == render 'layouts/messages'
-              - if @client
-                = image_tag client_banner_path(@client), class: 'img-responsive center-block'
               == yield
       - else
         .container
