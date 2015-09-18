@@ -71,8 +71,24 @@
     border: none;
   }
 }
+
 #tour {
   padding-top: rem-calc(120);
   margin-bottom: rem-calc(60);
 }
 
+a img:hover {
+  opacity: 0.8;
+}
+
+.columns {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+@media (max-width: $screen-sm) {
+  .columns {
+    width: 33%;
+  }
+}

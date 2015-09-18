@@ -44,6 +44,15 @@ en:
     agplv3: "AGPLv3 |+|"
     feedback: "Feedback"
 
+    # Home
+    presentation:
+      one: "Jerry (or Jerry Computer) is a funky upcycled IT infrastructure (server or computer)
+        powered by free|open source software & built to answer a local community need."
+      two: "Around the world, citizens take action to become JerryClan contributors by deconstructing machines,
+        sharing knowledge & facilitating Jerry construction during opened workshops for general interest initiatives."
+      three: "As you build your Jerry thanks to thousands of moneyless actions lead by JerryClans,
+        thanks for sharing your experience here to contribute to commons."
+
     # Maker profile
     edit_my_profile: "Edit my profile"
     gravatar_of: "Gravatar of"

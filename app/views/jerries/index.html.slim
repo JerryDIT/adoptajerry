@@ -1,17 +1,36 @@
-#fold.text-center
+section#fold.text-center
 
   img.img-responsive src="/welcome_to_jerry.gif" alt=t('js.welcome_img_alt')
 
-.text-center
+  .row
+    .col-md-4
+      .text-center.text-primary
+        i.fa.fa-wrench.fa-2x
+      .text-justify
+        = t('js.presentation.one')
+    .col-md-4
+      .text-center.text-primary
+        i.fa.fa-group.fa-2x
+      .text-justify
+        = t('js.presentation.two')
+    .col-md-4
+      .text-center.text-primary
+        i.fa.fa-globe.fa-2x
+      .text-justify
+        = t('js.presentation.three')
+
+section.text-center
   a.btn.btn-default href="#tour"
     | {{'take_the_tour' | translate}}
 
-#tour.text-center
-  .embed-container
-    iframe { src="//www.youtube.com/embed/asZ11Nb3Rsg?rel=0"
-      frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" }
+section.row
+  .col-md-8.col-md-offset-2
+    #tour.text-center
+      .embed-container
+        iframe { src="//www.youtube.com/embed/asZ11Nb3Rsg?rel=0"
+          frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" }
 
-#register
+section#register
   h2.text-center
     | {{'register_your_jerry' | translate}}
 
@@ -26,7 +45,7 @@
           a href="/jerries/new"
             | {{'jerry_etc' | translate}}
 
-#family.row ng-controller="JerriesCtrl" ng-show="jerries"
+section#family.row ng-controller="JerriesCtrl" ng-show="jerries"
 
   h2.text-center
     | {{'meet_the_family' | translate}}

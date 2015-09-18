@@ -29,56 +29,6 @@ footer
 .btn-group-xs > .btn
   padding: $padding-xs-vertical $padding-xs-horizontal
 
-.btn-primary,
-.btn-group.open .dropdown-toggle.btn-primary
-  border: none
-  border-bottom: 3px solid $btn-primary-border
-  background-color: $btn-default-bg
-  color: $text-color
-  &:hover, &:focus
-    border-bottom: 3px solid $btn-primary-border
-    background-color: $btn-primary-bg
-
-.btn-success,
-.btn-group.open .dropdown-toggle.btn-success
-  border: none
-  border-bottom: 3px solid $btn-success-border
-  background-color: $btn-default-bg
-  color: $text-color
-  &:hover, &:focus
-    border-bottom: 3px solid $btn-success-border
-    background-color: $btn-success-bg
-
-.btn-info,
-.btn-group.open .dropdown-toggle.btn-info
-  border: none
-  border-bottom: 3px solid $btn-info-border
-  background-color: $btn-default-bg
-  color: $text-color
-  &:hover, &:focus
-    border-bottom: 3px solid $btn-info-border
-    background-color: $btn-info-bg
-
-.btn-warning,
-.btn-group.open .dropdown-toggle.btn-warning
-  border: none
-  border-bottom: 3px solid $btn-warning-border
-  background-color: $btn-default-bg
-  color: $text-color
-  &:hover, &:focus
-    border-bottom: 3px solid $btn-warning-border
-    background-color: $btn-warning-bg
-
-.btn-danger,
-.btn-group.open .dropdown-toggle.btn-danger
-  border: none
-  border-bottom: 3px solid $btn-danger-border
-  background-color: $btn-default-bg
-  color: $text-color
-  &:hover, &:focus
-    border-bottom: 3px solid $btn-danger-border
-    background-color: $btn-danger-bg
-
 .btn-group.open .dropdown-toggle
   +box-shadow(none)
 
@@ -259,8 +209,9 @@ input
     padding: 0
 
 .navbar-nav
-  .active
-    border-bottom: 2px solid $gray-dark
+  > li
+    .active, &:hover
+      background-color: $brand-primary
 
 .dropdown-menu
   margin-top: 0
@@ -330,36 +281,6 @@ input
       color: #fff
       opacity: 1
 
-.label
-  background: none
-  font-weight: normal
-  border: 1px solid $text-color
-
-.label-default
-  background: none
-  color: $gray-light
-  border-color: $gray-light
-
-.label-success
-  background: none
-  color: $brand-success
-  border-color:  $brand-success
-
-.label-info
-  background: none
-  color: darken($brand-info, 10%)
-  border-color:  $brand-info
-
-.label-warning
-  background: none
-  color: darken($brand-warning, 10%)
-  border-color:  $brand-warning
-
-.label-danger
-  background: none
-  color: darken($brand-danger, 10%)
-  border-color:  $brand-danger
-
 small.label
   font-size: 54%
   margin: 6px
@@ -379,6 +300,10 @@ small.label
     background: $brand-danger
 
 // Progress bars ==============================================================
+
+html.turbolinks-progress-bar::before
+  background-color: $brand-primary !important
+  height: 2px !important
 
 .progress
   border: 1px solid $navbar-default-border
@@ -620,3 +545,14 @@ form.editable-text-angular
 
 .glyphicon-chevron-right:before
   content: "\f054"
+
+// ___________________________________ Other
+
+#fold .fa
+  margin: 10px 0 20px
+
+section
+  margin-top: 20px
+  margin-bottom: 50px
+  > h2
+    margin-bottom: 30px

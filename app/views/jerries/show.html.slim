@@ -43,7 +43,7 @@
               | {{'makers' | translate | capitalize}}
 
             - @jerry.makers.each do |maker|
-              = link_to "+#{maker.name}", maker_path(maker), class: "label radius secondary"
+              = link_to "+#{maker.name}", maker_path(maker), class: "label label-default"
 
             = " "
             - if @jerry.makers.include?(current_maker)

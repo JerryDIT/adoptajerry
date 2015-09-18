@@ -5,6 +5,14 @@ GIT
     rolify (4.1.1)
 
 GIT
+  remote: git://github.com/rails/turbolinks.git
+  revision: 937f5f65dde1bcde189daddb1c4678a2332cb837
+  ref: 937f5f6
+  specs:
+    turbolinks (3.0.0)
+      coffee-rails
+
+GIT
   remote: git://github.com/tsechingho/modernizr-rails.git
   revision: 188fd3440d21eda996dd735aded9a4fe4b4015e4
   specs:
@@ -546,8 +554,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     tzinfo-data (1.2015.6)
@@ -643,7 +649,7 @@ DEPENDENCIES
   slim-rails
   sqlite3
   thin
-  turbolinks
+  turbolinks!
   tzinfo-data
   uglifier (>= 1.3.0)
   wine_bouncer

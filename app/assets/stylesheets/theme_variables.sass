@@ -8,17 +8,12 @@ $gray:                   lighten(#000, 33.5%) // #555
 $gray-light:             lighten(#000, 60%)   // #999
 $gray-lighter:           lighten(#000, 95%)
 
-$brand-primary:         yellow
+$brand-primary:         #F89C08
+$brand-default:         #4ab49f
 $brand-success:         #76c7b7
 $brand-info:            #76A9C7
 $brand-warning:         #FBCF6D
 $brand-danger:          #FB7A6D
-
-$nav-color-1: #999
-$nav-color-2: #828282
-$nav-color-3: #6E6E6E
-$nav-color-4: #5A5A5A
-$nav-color-5: #464646
 
 $topbar-bg-color: #333
 $topbar-title-weight: 700
@@ -148,7 +143,7 @@ $table-border-color:            #ddd
 $btn-font-weight:                normal
 
 $btn-default-color:              white
-$btn-default-bg:                 #4ab49f
+$btn-default-bg:                 $brand-default
 $btn-default-border:             darken($btn-default-bg, 5%)
 
 $btn-primary-color:              #fff
@@ -350,11 +345,11 @@ $navbar-default-bg:                #333
 $navbar-default-border:            darken($navbar-default-bg, 6.5%)
 
 // Navbar links
-$navbar-default-link-color:                $gray-light
-$navbar-default-link-hover-color:          $gray-dark
-$navbar-default-link-hover-bg:             transparent
-$navbar-default-link-active-color:         $navbar-default-link-hover-color
-$navbar-default-link-active-bg:            transparent
+$navbar-default-link-color:                $gray-dark
+$navbar-default-link-hover-color:          white
+$navbar-default-link-hover-bg:             $brand-primary
+$navbar-default-link-active-color:         white
+$navbar-default-link-active-bg:            $brand-primary
 $navbar-default-link-disabled-color:       $gray-lighter
 $navbar-default-link-disabled-bg:          transparent
 

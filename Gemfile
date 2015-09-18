@@ -11,7 +11,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'jquery-turbolinks'
-gem 'turbolinks'
+# data-turbolinks-permanent is available in versions 3.0+
+gem 'turbolinks', github: 'rails/turbolinks', ref: '937f5f6'
 
 gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
