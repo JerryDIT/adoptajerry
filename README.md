@@ -3,6 +3,8 @@ Adopt a Jerry!
 
 [![Stories in Ready](https://badge.waffle.io/JerryDIT/adoptajerry.png?label=ready&title=Ready)](https://waffle.io/JerryDIT/adoptajerry)
 [![Code Climate](https://codeclimate.com/github/JerryDIT/adoptajerry/badges/gpa.svg)](https://codeclimate.com/github/JerryDIT/adoptajerry)
+[![Join the chat at https://gitter.im/JerryDIT](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JerryDIT?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 [adoptajerry.cc](http://adoptajerry.cc) is the central repo to highlight the Jerry family.
 It aims to be a crowd-sourced portfolio for the purpose of inspiration,
